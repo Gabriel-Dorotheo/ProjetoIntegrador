@@ -30,6 +30,17 @@
             background: rgb(175, 255, 226);
             background: linear-gradient(270deg, rgba(175, 255, 226, 1) 0%, rgba(240, 210, 255, 1) 100%);
         }
+        .animar {
+            /* Estilo da animação */
+            animation: slideInLeft;
+
+            /* tempo que irá levar para que ela seja executada. */
+            animation-duration: 2s;
+        }
+
+        .posicaoModal {
+            top: 180px;
+        }
     </style>
 </head>
 
@@ -84,7 +95,7 @@
             <div class="col mt-5 fs-4 d-flex justify-content-center">
                 <ul class="nav nav-underline ">
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Início</a>
+                        <a class="nav-link" href="page1.html">Início</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="#">Usuários</a>
@@ -99,56 +110,221 @@
             </div>
         </div>
 
+
+        <!-- Menu lateral esquerdo -->
         <div class="row">
             <div class="col">
                 <div class="container mt-5 mb-5 border rounded-2 shadow bg-white rounded">
                     <div class="row">
-                        <div class="col-2 p-4 fs-5 mt-5">
+
+
+                        <div class="titulo text-center m-5">
+                            <h1 class="h1">Gerenciamento de contas</h1>
+                        </div>
+
+
+                        <div class="col-2 p-4 fs-5">
                             <ul class="list-group list-group-flush border border-0">
-                                <a href="#" class="list-group-item list-group-item-action" id="btnMudar1">Novo
+                                <a href="#" class="list-group-item list-group-item-action" data-bs-toggle="modal"
+                                    data-bs-target="#staticBackdrop">Novo
                                     Usuário</a>
-                                <a href="#" class="list-group-item list-group-item-action" id="btnMudar2">Remover
+                                <a href="#" class="list-group-item list-group-item-action">Remover
                                     Usuário</a>
-                                <a href="#" class="list-group-item list-group-item-action" id="btnMudar2">Alterar</a>
+                                <a href="#" class="list-group-item list-group-item-action">Alterar</a>
 
                             </ul>
                         </div>
-
-                        <div class="col align-self-end">
+                        <!-- Conteúdo da tabela -->
+                        <div class="col">
                             <div class="table-responsive">
                                 <table class="table">
                                     <thead>
-                                      <tr>
-                                        <th scope="col">#</th>
-                                        <th scope="col">Nome</th>
-                                        <th scope="col">Sobrenome</th>
-                                        <th scope="col">Email</th>
-                                        <th scope="col">Usuário</th>
-                                        <th scope="col">Senha</th>
-                                      </tr>
+                                        <tr>
+                                            <th scope="col">#</th>
+                                            <th scope="col">Nome</th>
+                                            <th scope="col">Sobrenome</th>
+                                            <th scope="col">Email</th>
+                                            <th scope="col">Usuário</th>
+                                            <th scope="col">Senha</th>
+                                        </tr>
                                     </thead>
                                     <tbody class="table-group-divider">
-                                      <tr>
-                                        <th scope="row">1</th>
-                                        <td>Taldo</td>
-                                        <td>Junin Mandrake</td>
-                                        <td>JuninDoGrau@sp.gov.br</td>
-                                        <td>Junin123</td>
-                                        <td>SADhu32fKE@JDkl2</td>
-                                      </tr>
-                                      <tr>
-                                        <th scope="row">2</th>
-                                        <td>Gustavo</td>
-                                        <td>Batista da Silva</td>
-                                        <td>Gustavo.bdasilva@gmail.com</td>
-                                        <td>Gtv_Bsilva</td>
-                                        <td>9SUAh34ls$21jLSK</td>
-                                      </tr>
+                                        <tr>
+                                            <th scope="row">1</th>
+                                            <td>Lorem</td>
+                                            <td>Ipsum</td>
+                                            <td>Lorem@Ipsum.com</td>
+                                            <td>Lorem</td>
+                                            <td>ipsum@1234</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">2</th>
+                                            <td>Lorem</td>
+                                            <td>Ipsum</td>
+                                            <td>Lorem@Ipsum.com</td>
+                                            <td>Lorem</td>
+                                            <td>ipsum@1234</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">3</th>
+                                            <td>Lorem</td>
+                                            <td>Ipsum</td>
+                                            <td>Lorem@Ipsum.com</td>
+                                            <td>Lorem</td>
+                                            <td>ipsum@1234</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">4</th>
+                                            <td>Lorem</td>
+                                            <td>Ipsum</td>
+                                            <td>Lorem@Ipsum.com</td>
+                                            <td>Lorem</td>
+                                            <td>ipsum@1234</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">5</th>
+                                            <td>Lorem</td>
+                                            <td>Ipsum</td>
+                                            <td>Lorem@Ipsum.com</td>
+                                            <td>Lorem</td>
+                                            <td>ipsum@1234</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">6</th>
+                                            <td>Lorem</td>
+                                            <td>Ipsum</td>
+                                            <td>Lorem@Ipsum.com</td>
+                                            <td>Lorem</td>
+                                            <td>ipsum@1234</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">7</th>
+                                            <td>Lorem</td>
+                                            <td>Ipsum</td>
+                                            <td>Lorem@Ipsum.com</td>
+                                            <td>Lorem</td>
+                                            <td>ipsum@1234</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">8</th>
+                                            <td>Lorem</td>
+                                            <td>Ipsum</td>
+                                            <td>Lorem@Ipsum.com</td>
+                                            <td>Lorem</td>
+                                            <td>ipsum@1234</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">9</th>
+                                            <td>Lorem</td>
+                                            <td>Ipsum</td>
+                                            <td>Lorem@Ipsum.com</td>
+                                            <td>Lorem</td>
+                                            <td>ipsum@1234</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">10</th>
+                                            <td>Lorem</td>
+                                            <td>Ipsum</td>
+                                            <td>Lorem@Ipsum.com</td>
+                                            <td>Lorem</td>
+                                            <td>ipsum@1234</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">11</th>
+                                            <td>Lorem</td>
+                                            <td>Ipsum</td>
+                                            <td>Lorem@Ipsum.com</td>
+                                            <td>Lorem</td>
+                                            <td>ipsum@1234</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">12</th>
+                                            <td>Lorem</td>
+                                            <td>Ipsum</td>
+                                            <td>Lorem@Ipsum.com</td>
+                                            <td>Lorem</td>
+                                            <td>ipsum@1234</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">13</th>
+                                            <td>Lorem</td>
+                                            <td>Ipsum</td>
+                                            <td>Lorem@Ipsum.com</td>
+                                            <td>Lorem</td>
+                                            <td>ipsum@1234</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">14</th>
+                                            <td>Lorem</td>
+                                            <td>Ipsum</td>
+                                            <td>Lorem@Ipsum.com</td>
+                                            <td>Lorem</td>
+                                            <td>ipsum@1234</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">15</th>
+                                            <td>Lorem</td>
+                                            <td>Ipsum</td>
+                                            <td>Lorem@Ipsum.com</td>
+                                            <td>Lorem</td>
+                                            <td>ipsum@1234</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">16</th>
+                                            <td>Lorem</td>
+                                            <td>Ipsum</td>
+                                            <td>Lorem@Ipsum.com</td>
+                                            <td>Lorem</td>
+                                            <td>ipsum@1234</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">17</th>
+                                            <td>Lorem</td>
+                                            <td>Ipsum</td>
+                                            <td>Lorem@Ipsum.com</td>
+                                            <td>Lorem</td>
+                                            <td>ipsum@1234</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">18</th>
+                                            <td>Lorem</td>
+                                            <td>Ipsum</td>
+                                            <td>Lorem@Ipsum.com</td>
+                                            <td>Lorem</td>
+                                            <td>ipsum@1234</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">19</th>
+                                            <td>Lorem</td>
+                                            <td>Ipsum</td>
+                                            <td>Lorem@Ipsum.com</td>
+                                            <td>Lorem</td>
+                                            <td>ipsum@1234</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">20</th>
+                                            <td>Lorem</td>
+                                            <td>Ipsum</td>
+                                            <td>Lorem@Ipsum.com</td>
+                                            <td>Lorem</td>
+                                            <td>ipsum@1234</td>
+                                        </tr>
+
                                     </tbody>
-                                  </table>
+                                </table>
                             </div>
                         </div>
                     </div>
+
+                    <!-- Páginas da tabela -->
+
+                    <nav aria-label="Page navigation example">
+                        <ul class="pagination justify-content-center m-5">
+                          <li class="page-item"><a class="page-link" href="#">1</a></li>
+                          <li class="page-item"><a class="page-link" href="#">2</a></li>
+                          <li class="page-item"><a class="page-link" href="#">3</a></li>
+                        </ul>
+                      </nav>
                 </div>
             </div>
         </div>
@@ -165,61 +341,41 @@
 
     </div>
 
+    
+
+    <!-- Modal -->
+    <div class="modal fade posicaoModal" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false"
+        tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content fundo">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="staticBackdropLabel">Novo Usuário</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body text-center mt-3">
+                    <form action="">
+                        <input type="text" placeholder="Nome"> <br><br>
+
+                        <input type="text" placeholder="Sobrenome"> <br><br>
+
+                        <input type="email" placeholder="Email"> <br><br>
+
+                        <input type="text" placeholder="Usuário"> <br><br>
+
+                        <input type="password" placeholder="Senha"> <br><br>
 
 
 
 
-
-<!-- Button trigger modal -->
-<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-    Launch static backdrop modal
-  </button>
-  
-  <!-- Modal -->
-  <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h1 class="modal-title fs-5" id="staticBackdropLabel">Modal title</h1>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Sair</button>
+                    <button type="button" class="btn btn-primary">Criar</button>
+                </div>
+            </div>
         </div>
-        <div class="modal-body">
-          <form action="">
-            <input type="text" placeholder="Nome"> <br><br>
-
-            <input type="text" placeholder="Sobrenome"> <br><br>
-
-            <input type="email" placeholder="Email"> <br><br>
-
-            <input type="text" placeholder="Usuário"> <br><br>
-
-            <input type="password" placeholder="Senha"> <br><br>
-
-
-
-
-          </form>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary">Understood</button>
-        </div>
-      </div>
     </div>
-  </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
