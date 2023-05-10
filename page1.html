@@ -21,9 +21,7 @@
 
 
         body {
-            font-family: 'Kalam', cursive;
-            font-family: 'Noto Sans', sans-serif;
-            font-family: 'Roboto Condensed', sans-serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
 
         .fundo {
@@ -39,8 +37,12 @@
             animation-duration: 2s;
         }
 
-        .tabela {
-            display: none;
+        .posicaoModal {
+            top: 180px;
+        }
+
+        .sombra-texto {
+            text-shadow: 4px 4px 4px rgba(110, 110, 110, 0.72);
         }
     </style>
 </head>
@@ -49,21 +51,19 @@
 
     <div class="container-fluid fundo overflow-hidden m-0 p-0">
 
-
         <!-- Linha da logo do site -->
 
         <div class="row border border-bottom border-secondary-subtle bg-white">
             <!-- Coluna da logo -->
             <div class="col-3 text-center">
-                <logo class="animar fs-1 d-inline-flex mt-1">
+                <logo class="animar fs-1 d-inline-flex mt-1 mb-2 sombra-texto">
                     Pharma Flow
                 </logo>
 
             </div>
 
-
             <!-- Coluna do icone de menu -->
-            <div class="col-9 d-flex justify-content-end fs-3">
+            <div class="col-9 d-flex justify-content-end fs-5">
                 <nav class="navbar navbar-expand-lg me-5">
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                         data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false"
@@ -89,30 +89,29 @@
             </div>
         </div>
 
-
         <!-- Menu -->
-
         <div class="row">
-            <div class="col mt-5 fs-4 d-flex justify-content-center">
-                <ul class="nav nav-underline ">
+            <div class="col mt-3 fs-4 d-flex justify-content-center">
+                <ul class="nav justify-content-center">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="page1.html">Início</a>
+                        <a class="nav-link active" aria-current="page" href="#">Início</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="usuario.html">Usuários</a>
+                        <a class="nav-link" href="usuario.php">Usuários</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">Produtos</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Configurações</a>
-                    </li>
                 </ul>
             </div>
+
         </div>
 
         <div class="row">
             <div class="col">
+                <div class="titulo text-center m-5">
+                    <h1 class="h1 sombra-texto">Inicio</h1>
+                </div>
                 <div class="container mt-5 mb-5 border rounded-2 shadow mb-5 bg-white rounded d-flex ">
                     <div class="row">
                         <div class="col-4 p-4 fs-5 mt-5 stricky-top">
