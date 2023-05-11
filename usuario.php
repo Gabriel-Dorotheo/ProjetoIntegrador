@@ -1,5 +1,13 @@
+<?php
+require_once('classes/Usuario.class.php');
+$usuario = new Usuario;
+$resultado = $usuario->Listar();
+
+?>
+
+
 <!doctype html>
-<html lang="en">
+<html lang="pt-br">
 
 <head>
     <meta charset="utf-8">
@@ -25,9 +33,12 @@
         }
 
         .fundo {
-            background: #2980B9;  /* fallback for old browsers */
-background: -webkit-linear-gradient(to bottom, #FFFFFF, #6DD5FA, #2980B9);  /* Chrome 10-25, Safari 5.1-6 */
-background: linear-gradient(to bottom, #FFFFFF, #6DD5FA, #2980B9); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+            background: #2980B9;
+            /* fallback for old browsers */
+            background: -webkit-linear-gradient(to bottom, #FFFFFF, #6DD5FA, #2980B9);
+            /* Chrome 10-25, Safari 5.1-6 */
+            background: linear-gradient(to bottom, #FFFFFF, #6DD5FA, #2980B9);
+            /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 
         }
 
@@ -65,6 +76,7 @@ background: linear-gradient(to bottom, #FFFFFF, #6DD5FA, #2980B9); /* W3C, IE 10
 
             </div>
 
+            <!-- Menu -->
             <div class="col mt-4 fs-4 d-flex justify-content-center">
                 <ul class="nav justify-content-center">
                     <li class="nav-item">
@@ -90,8 +102,8 @@ background: linear-gradient(to bottom, #FFFFFF, #6DD5FA, #2980B9); /* W3C, IE 10
                     <div class="collapse navbar-collapse me-5" id="navbarNavDropdown">
                         <ul class="navbar-nav">
                             <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="#" role="button"
-                                    data-bs-toggle="dropdown" aria-expanded="false">
+                                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                    aria-expanded="false">
                                     <i class="bi bi-person-circle fs-4"></i>
                                 </a>
                                 <ul class="dropdown-menu">
@@ -105,11 +117,6 @@ background: linear-gradient(to bottom, #FFFFFF, #6DD5FA, #2980B9); /* W3C, IE 10
                 </nav>
             </div>
         </div>
-
-        <!-- Menu -->
-
-
-
 
         <div class="row">
             <div class="col">
@@ -125,13 +132,8 @@ background: linear-gradient(to bottom, #FFFFFF, #6DD5FA, #2980B9); /* W3C, IE 10
                         <div class="col p-3 mt-5 mb-0 d-flex justify-content-end me-5">
 
                             <button type="button" class="btn btn-success btn-sm me-3" data-bs-toggle="modal"
-                                data-bs-target="#staticBackdrop"><i class="bi bi-person-plus fs-5"></i></button>
-
-                            <button type="button" class="btn btn-primary btn-sm fs-5 me-3"><i
-                                    class="bi bi-pencil-square"></i></button>
-
-                            <button type="button" class="btn btn-danger btn-sm fs-5" onclick="removerConta()"><i
-                                    class="bi bi-trash3"></i></button>
+                                data-bs-target="#staticBackdrop" href="../forms/cadastrar_contato.php"><i
+                                    class="bi bi-person-plus fs-5"></i></button>
                         </div>
                     </div>
 
@@ -143,41 +145,45 @@ background: linear-gradient(to bottom, #FFFFFF, #6DD5FA, #2980B9); /* W3C, IE 10
                                 <table class="table">
                                     <thead>
                                         <tr>
-
-                                            <th scope="col">
-                                            <div class="form-check">
-                                                    <input class="form-check-input border border-primary" type="checkbox" value="checked"
-                                                        id="flexCheckDefault">
-                                                    <label class="form-check-label" for="flexCheckDefault">
-                                                        #
-                                                    </label>
-                                                </div></th>
+                                            <th scope="col">#</th>
                                             <th scope="col">Nome</th>
                                             <th scope="col">Sobrenome</th>
                                             <th scope="col">Email</th>
                                             <th scope="col">Usuário</th>
                                             <th scope="col">Senha</th>
+                                            <th scope="col">Editar</th>
                                         </tr>
                                     </thead>
                                     <tbody class="table-group-divider">
-                                        <?php for ($i = 0; $i < 15; $i++) { ?>
-                                            <tr>
-                                                <th scope="row">
-                                                <div class="form-check">
-                                                    <input class="form-check-input border border-primary d-flex" type="checkbox" value=""
-                                                        id="flexCheckDefault">
-                                                    <label class="form-check-label" for="flexCheckDefault">
-                                                        <?= $i + 1 ?>                                      
-                                                    </label>
-                                                </div>
-                                                </th>
-                                                <td>Lorem</td>
-                                                <td>Ipsum</td>
-                                                <td>Lorem@Ipsum.com</td>
-                                                <td>Lorem</td>
-                                                <td>ipsum@1234</td>
-                                            </tr>
+                                        <?php foreach ($resultado as $usuario) { ?>
 
+                                            <tr>
+                                                <td>
+                                                    <?= $usuario['id'] ?>
+                                                </td>
+                                                <td>
+                                                    <?= $usuario['nome'] ?>
+                                                </td>
+                                                <td>
+                                                    <?= $usuario['sobrenome'] ?>
+                                                </td>
+                                                <td>
+                                                    <?= $usuario['email'] ?>
+                                                </td>
+                                                <td>
+                                                    <?= $usuario['usuario'] ?>
+                                                </td>
+                                                <td>
+                                                    <?= $usuario['senha'] ?>
+                                                </td>
+                                                <td>
+                                                    <button type="submit" class="btn btn-primary btn-sm fs-5 me-3"><i
+                                                            class="bi bi-pencil-square"></i></button>
+
+                                                    <a href="forms/deletar.php?id=<?= $usuario['id'] ?>"><button type="submit" class="btn btn-danger btn-sm fs-5">
+                                                    <i class="bi bi-trash3"></i></button></a>
+                                                </td>
+                                            </tr>
                                         <?php } ?>
 
                                     </tbody>
@@ -198,8 +204,8 @@ background: linear-gradient(to bottom, #FFFFFF, #6DD5FA, #2980B9); /* W3C, IE 10
                 </div>
             </div>
         </div>
-
     </div>
+
 
 
 
@@ -213,7 +219,7 @@ background: linear-gradient(to bottom, #FFFFFF, #6DD5FA, #2980B9); /* W3C, IE 10
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body mt-3">
-                    <form class="row g-3" action="forms/recebe.php" method="POST">
+                    <form class="row g-3" action="forms/cadastrar_contato.php" method="POST">
 
                         <div class="col-md-6">
                             <label for="nome" class="form-label">Nome</label>
@@ -225,7 +231,7 @@ background: linear-gradient(to bottom, #FFFFFF, #6DD5FA, #2980B9); /* W3C, IE 10
                         </div>
                         <div class="col-12">
                             <label for="email" class="form-label">Email</label>
-                            <input type="email" class="form-control" name="email"id="email" placeholder="">
+                            <input type="email" class="form-control" name="email" id="email" placeholder="">
                         </div>
                         <div class="col-12">
                             <label for="inputAddress2" class="form-label">Usuário</label>
@@ -250,10 +256,6 @@ background: linear-gradient(to bottom, #FFFFFF, #6DD5FA, #2980B9); /* W3C, IE 10
     </div>
 
 
-
-
-
-
     <!-- Bootstrap -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
@@ -266,36 +268,6 @@ background: linear-gradient(to bottom, #FFFFFF, #6DD5FA, #2980B9); /* W3C, IE 10
 
     <!-- Sweet Alert  -->
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-
-    <script>
-        //quando clicado no botão Criar do modal de Novo Usuário, irá aparecer uma janela de success (warning, dander, error, success)
-        function criarConta() {
-            swal({
-                title: "Sucesso!",
-                text: "Novo usuário adicionado!",
-                icon: "success",
-                button: "Concluir",
-            });
-        }
-
-        function removerConta() {
-            swal({
-                title: "Tem certeza?",
-                text: "Uma vez excluído, você não poderá recuperar os dados deste usuário!",
-                icon: "warning",
-                buttons: true,
-                dangerMode: true,
-            })
-                .then((willDelete) => {
-                    if (willDelete) {
-                        swal("Usuário removido com sucesso!", {
-                            icon: "success",
-                        });
-                    }
-                });
-        }
-    </script>
-
 </body>
 
 </html>
