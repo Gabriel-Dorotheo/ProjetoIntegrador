@@ -14,8 +14,12 @@
         }
 
         .fundo {
-            background: rgb(175, 255, 226);
-            background: linear-gradient(270deg, rgba(175, 255, 226, 1) 0%, rgba(240, 210, 255, 1) 100%);
+            background: #2980B9;
+            /* fallback for old browsers */
+            background: -webkit-linear-gradient(to top, #FFFFFF, #6DD5FA, #2980B9);
+            /* Chrome 10-25, Safari 5.1-6 */
+            background: linear-gradient(to top, #FFFFFF, #6DD5FA, #2980B9);
+            /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
         }
 
         .sombra {
@@ -27,14 +31,31 @@
         .fundo2 {
             background: #c7ecff
         }
+
+        .form-control {
+            background-color: rgb(233, 233, 233);
+            border: 1px solid rgb(158, 158, 158);
+        }
+
+        .form-control:hover {
+            background-color: white;
+            transition: .6s;
+        }
+
+        .botaohover:hover {
+            -webkit-box-shadow: 0px 5px 12px -2px rgba(158, 158, 158, 1);
+            -moz-box-shadow: 0px 5px 12px -2px rgba(158, 158, 158, 1);
+            box-shadow: 0px 5px 12px -2px rgba(158, 158, 158, 1);
+            transition: .7s;
+        }
     </style>
 </head>
 
-<body>
+<body class="fundo">
 
-    <div class="container-fluid fundo p-3 vh-100">
+    <div class="container-fluid p-3 vh-100">
 
-        <div class="row mx-auto sombra rounded position-absolute top-50 start-50 translate-middle "
+        <div class="row sombra rounded position-absolute top-50 start-50 translate-middle"
             style="width: 1000px; height: 500px;">
 
 
@@ -50,7 +71,7 @@
 
 
             <div class="col-md-6 col-6 fundo2 rounded-end-3">
-                <div class="container bg-white w-75 mt-5 d-flex justify-content-center rounded border-rounded-3 mb-2">
+                <div class="container bg-white w-75 d-flex justify-content-center rounded border-rounded-3 m-5">
                     <div class="row">
                         <div class="col">
                             <h1 class="h2 text-center text-black mt-5 mb-5">Pharma Flow <i
@@ -62,10 +83,11 @@
                             </div>
 
                             <label for="inputPassword5" class="form-label fw-bold">Senha</label>
-                            <input type="password" id="inputPassword5" class="form-control campos"
+                            <input type="password" id="inputPassword5 bg-body-secondary" class="form-control campos"
                                 aria-labelledby="passwordHelpBlock">
 
-                            <button type="button" class="btn btn-primary text-white btn-lg mt-4 mb-4"><a href="page1.html" class="text-white">Entrar</a></button>
+                            <button type="button" class="btn btn-primary text-white btn-lg mt-4 mb-4 botaohover"><a
+                                    href="page1.html" class="text-white">Entrar</a></button>
                         </div>
                     </div>
                 </div>

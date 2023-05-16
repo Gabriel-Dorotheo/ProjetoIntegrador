@@ -21,100 +21,58 @@ $resultado = $usuario->Listar();
 
     <!-- Animate CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
-
-
-    <style>
-        /* Fonte google fonts */
-        @import url('https://fonts.googleapis.com/css2?family=Kalam:wght@300;400&family=Noto+Sans:wght@300&family=Roboto+Condensed&display=swap');
-
-
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-
-        .fundo {
-            background: #2980B9;
-            /* fallback for old browsers */
-            background: -webkit-linear-gradient(to bottom, #FFFFFF, #6DD5FA, #2980B9);
-            /* Chrome 10-25, Safari 5.1-6 */
-            background: linear-gradient(to bottom, #FFFFFF, #6DD5FA, #2980B9);
-            /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-
-        }
-
-        .animar {
-            /* Estilo da animação */
-            animation: slideInLeft;
-
-            /* tempo que irá levar para que ela seja executada. */
-            animation-duration: 2s;
-        }
-
-        .posicaoModal {
-            top: 180px;
-        }
-
-        .sombra-texto {
-            text-shadow: 4px 4px 4px rgba(110, 110, 110, 0.72);
-        }
-    </style>
+    <link rel="stylesheet" href="estilo/style.css">
 </head>
 
 <body>
 
-    <div class="container-fluid fundo overflow-hidden m-0 p-0">
+    <div class="container-fluid overflow-hidden m-0 p-0">
 
 
         <!-- Linha da logo do site -->
 
         <div class="row bg-transparent">
             <!-- Coluna da logo -->
-            <div class="col-4 text-center opacity-100">
+            <div class="col-3 text-center">
                 <logo class="animar fs-1 d-inline-flex mt-1 mb-2 sombra-texto">
-                    Pharma Flow
+                    <div class="letra">Pharma Flow</div>
+
                 </logo>
 
             </div>
 
-            <!-- Menu -->
-            <div class="col mt-4 fs-4 d-flex justify-content-center">
+            <div class="col-6 mt-4 fs-4 d-flex justify-content-center">
                 <ul class="nav justify-content-center">
                     <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="page1.html">Início</a>
+                        <a class="nav-link text-white" aria-current="page" href="page1.html">Início</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" href="#">Usuários</a>
+                        <a class="nav-link active text-white" href="usuario.php">Usuários</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Produtos</a>
+                        <a class="nav-link text-white" href="#">Produtos</a>
                     </li>
                 </ul>
             </div>
 
             <!-- Coluna do icone de menu -->
-            <div class="col-4 d-flex justify-content-end fs-5">
-                <nav class="navbar navbar-expand-lg me-5">
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                        data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false"
-                        aria-label="Toggle navigation">
-                        <span class="bi bi-person-circle"></span>
+            <div class="col-2 d-flex justify-content-between mt-4">
+                <div class="dropdown">
+                    <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <i class="bi bi-person-circle fs-4"></i>
                     </button>
-                    <div class="collapse navbar-collapse me-5" id="navbarNavDropdown">
-                        <ul class="navbar-nav">
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                                    aria-expanded="false">
-                                    <i class="bi bi-person-circle fs-4"></i>
-                                </a>
-                                <ul class="dropdown-menu">
-                                    <li><a class="dropdown-item" href="#">Configurações</a></li>
-                                    <li><a class="dropdown-item" href="#">Ajuda</a></li>
-                                    <li><a class="dropdown-item" href="#">Sair</a></li>
-                                </ul>
-                            </li>
-                        </ul>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">Configurações</a></li>
+                        <li><a class="dropdown-item" href="#">Ajuda</a></li>
+                        <li><a class="dropdown-item" href="index.html">Sair</a></li>
+                    </ul>
+                </div>
+                <!-- botão tema -->
+                <div class="col">
+                    <div class="button">
+                        <div class="ball"></div>
                     </div>
-                </nav>
+                </div>
             </div>
         </div>
 
@@ -180,8 +138,9 @@ $resultado = $usuario->Listar();
                                                     <button type="submit" class="btn btn-primary btn-sm fs-5 me-3"><i
                                                             class="bi bi-pencil-square"></i></button>
 
-                                                    <a href="forms/deletar.php?id=<?= $usuario['id'] ?>"><button type="submit" class="btn btn-danger btn-sm fs-5">
-                                                    <i class="bi bi-trash3"></i></button></a>
+                                                    <a href="forms/deletar.php?id=<?= $usuario['id'] ?>"><button
+                                                            type="submit" class="btn btn-danger btn-sm fs-5">
+                                                            <i class="bi bi-trash3"></i></button></a>
                                                 </td>
                                             </tr>
                                         <?php } ?>
@@ -255,6 +214,7 @@ $resultado = $usuario->Listar();
         </div>
     </div>
 
+    <script src="script/script.js"></script>
 
     <!-- Bootstrap -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
@@ -268,6 +228,7 @@ $resultado = $usuario->Listar();
 
     <!-- Sweet Alert  -->
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="script.js"></script>
 </body>
 
 </html>
