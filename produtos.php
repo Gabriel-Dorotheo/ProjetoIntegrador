@@ -18,10 +18,13 @@ $resultado = $usuario->Listar();
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
-
     <!-- Animate CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <!-- Meu CSS -->
     <link rel="stylesheet" href="estilo/style.css">
+    <!-- Javascript Data Table -->
+    <link href="https://unpkg.com/tabulator-tables/dist/css/tabulator.min.css" rel="stylesheet">
+
 </head>
 
 <body>
@@ -47,10 +50,10 @@ $resultado = $usuario->Listar();
                         <a class="nav-link text-white" aria-current="page" href="inicio.html">Início</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link link-body-emphasis" href="usuario.php">Usuários</a>
+                        <a class="nav-link text-white" href="usuario.php">Usuários</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text-white" href="produtos.php">Produtos</a>
+                        <a class="nav-link link-body-emphasis" href="produtos.php">Produtos</a>
                     </li>
                 </ul>
             </div>
@@ -85,71 +88,12 @@ $resultado = $usuario->Listar();
 
                 <div class="container mt-5 mb-5 border border-0 rounded-2 shadow bg-body-secondary">
 
-                    <!-- botões de adicionar, remover, alterar -->
-                    <div class="row">
-                        <div class="col p-3 mt-5 mb-0 d-flex justify-content-end me-5">
+                    <div id="example-table">
 
-                            <button type="button" class="btn btn-success btn-sm me-3" data-bs-toggle="modal"
-                                data-bs-target="#staticBackdrop" href="../forms/cadastrar_contato.php"><i
-                                    class="bi bi-person-plus fs-5"></i></button>
-                        </div>
                     </div>
 
 
-                    <!-- Conteúdo da tabela -->
-                    <div class="row">
-                        <div class="col mb-5">
-                            <div class="table-responsive ms-5 me-5">
-                                <table class="table">
-                                    <thead>
-                                        <tr>
-                                            <th scope="col">#</th>
-                                            <th scope="col">Nome</th>
-                                            <th scope="col">Sobrenome</th>
-                                            <th scope="col">Email</th>
-                                            <th scope="col">Usuário</th>
-                                            <th scope="col">Senha</th>
-                                            <th scope="col">Editar</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody class="table-group-divider">
-                                        <?php foreach ($resultado as $usuario) { ?>
 
-                                            <tr>
-                                                <td>
-                                                    <?= $usuario['id'] ?>
-                                                </td>
-                                                <td>
-                                                    <?= $usuario['nome'] ?>
-                                                </td>
-                                                <td>
-                                                    <?= $usuario['sobrenome'] ?>
-                                                </td>
-                                                <td>
-                                                    <?= $usuario['email'] ?>
-                                                </td>
-                                                <td>
-                                                    <?= $usuario['usuario'] ?>
-                                                </td>
-                                                <td>
-                                                    <?= $usuario['senha'] ?>
-                                                </td>
-                                                <td>
-                                                    <button type="submit" class="btn btn-primary btn-sm fs-5 me-3"><i
-                                                            class="bi bi-pencil-square"></i></button>
-
-                                                    <a href="forms/deletar.php?id=<?= $usuario['id'] ?>"><button
-                                                            type="submit" class="btn btn-danger btn-sm fs-5">
-                                                            <i class="bi bi-trash3"></i></button></a>
-                                                </td>
-                                            </tr>
-                                        <?php } ?>
-
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                    </div>
                 </div>
             </div>
         </div>
@@ -214,8 +158,8 @@ $resultado = $usuario->Listar();
         </div>
     </div>
 
-    <script src="script/script.js"></script>
-
+    
+    
     <!-- Bootstrap -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
@@ -229,6 +173,10 @@ $resultado = $usuario->Listar();
     <!-- Sweet Alert  -->
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
+    <!-- Javascript Data Table -->
+    <script type="text/javascript" src="https://unpkg.com/tabulator-tables/dist/js/tabulator.min.js"></script>
+    
+    <script src="script/script.js"></script>
 </body>
 
 </html>
