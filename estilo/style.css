@@ -48,7 +48,7 @@ body {
 }
 
 .posicaoModal {
-    top: 180px;
+    width: 0 auto;
 }
 .sombra-texto {
     text-shadow: 4px 4px 4px rgba(110, 110, 110, 0.72);

@@ -6,27 +6,28 @@ class Usuario{
     //atributos da classe Usuario
     public $id;
     public $nome;
-    public $sobrenome;
-    public $email;
-    public $usuario;
+    public $usuario_email;
+    public $id_nivel;
     public $senha;
+    public $usuario_telefone;
     //ações da classe
     public function Inserir(){
-        $sql = "INSERT INTO contas (nome, sobrenome, email, usuario, senha) VALUES(?,?,?,?,?)";
+        $sql = "INSERT INTO usuario (nome, usuario_email, id_nivel, senha, usuario_telefone) VALUES(?,?,?,?,?)";
         //Trabalhar com banco de dados
         //conexão com banco de dados
         $banco = Banco::conectar();
         //Transformar a string em comando sql;
         $comando = $banco->prepare($sql);
         //Executar e substituir os coringas(?);
-        $comando->execute(array($this->nome,$this->sobrenome,$this->email,$this->usuario,$this->senha));
+        $hashSenha = hash('MD5',$this->senha);
+        $comando->execute(array($this->nome,$this->usuario_email,$this->id_nivel, $hashSenha,$this->usuario_telefone));
         //Desconectar do banco
         Banco::desconectar();
     }
 
     public function Listar(){
         $banco = Banco::conectar();
-        $sql = "SELECT * FROM contas";
+        $sql = "SELECT * FROM usuario";
         $comando = $banco->prepare($sql);
         $comando->execute();
         // "Salvar" o resultado da consulta (tabela) na $resultado
@@ -40,7 +41,7 @@ class Usuario{
 
     public function Deletar(){
         $banco = Banco::conectar();
-        $sql = "DELETE FROM contas WHERE id = ?";
+        $sql = "DELETE FROM usuario WHERE id = ?";
         $banco->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         $comando = $banco->prepare($sql);
         $comando->execute(array($this->id));

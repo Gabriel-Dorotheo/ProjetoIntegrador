@@ -9,10 +9,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     //Definir os valores da propriedade
     $u->nome = $_POST['nome'];
-    $u->sobrenome =  $_POST['sobrenome'];
-    $u->email =  $_POST['email'];
-    $u->usuario = $_POST['usuario'];
+    $u->usuario_email =  $_POST['usuario_email'];
+    $u->id_nivel =  $_POST['id_nivel'];
     $u->senha = $_POST['senha'];
+    $u->usuario_telefone = $_POST['usuario_telefone'];
 
     $u->Inserir();
     echo "Contato cadastrado com sucesso!";
