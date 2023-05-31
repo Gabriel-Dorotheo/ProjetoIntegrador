@@ -57,6 +57,7 @@ class Usuario{
     public function BuscarPorID(){
         
     }
+
 }
 
 
