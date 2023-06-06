@@ -43,7 +43,7 @@ $resultado = $usuario->Listar();
             <div class="col-6 mt-4 fs-4 d-flex justify-content-center">
                 <ul class="nav justify-content-center">
                     <li class="nav-item">
-                        <a class="nav-link text-white" aria-current="page" href="inicio.html">Início</a>
+                        <a class="nav-link text-white" aria-current="page" href="inicio.php">Início</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link link-body-emphasis" href="usuario.php">Usuários</a>

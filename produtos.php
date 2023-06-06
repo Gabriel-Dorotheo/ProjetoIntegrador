@@ -47,7 +47,7 @@ $resultado = $usuario->Listar();
             <div class="col-6 mt-4 fs-4 d-flex justify-content-center">
                 <ul class="nav justify-content-center">
                     <li class="nav-item">
-                        <a class="nav-link text-white" aria-current="page" href="inicio.html">Início</a>
+                        <a class="nav-link text-white" aria-current="page" href="inicio.php">Início</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link text-white" href="usuario.php">Usuários</a>
@@ -71,10 +71,8 @@ $resultado = $usuario->Listar();
                     </ul>
                 </div>
                 <!-- botão tema -->
-                <div class="col">
-                    <div class="button">
-                        <div class="ball"></div>
-                    </div>
+                <div class="button">
+                    <div class="ball"></div>
                 </div>
             </div>
         </div>
@@ -91,7 +89,9 @@ $resultado = $usuario->Listar();
                     <!-- botões de adicionar -->
                     <div class="row">
                         <div class="col p-3 mt-5 mb-0 d-flex justify-content-end me-5">
-                            <button type="button" class="btn btn-success btn-sm me-3" data-bs-toggle="modal" data-bs-target="#staticBackdrop" href="../forms/cadastrar_contato.php"><i class="bi bi-person-plus fs-5"></i></button>
+                            <button type="button" class="btn btn-success btn-sm me-3" data-bs-toggle="modal"
+                                data-bs-target="#staticBackdrop" href="../forms/cadastrar_contato.php"><i
+                                    class="bi bi-person-plus fs-5"></i></button>
                         </div>
                     </div>
 
@@ -131,9 +131,16 @@ $resultado = $usuario->Listar();
                                                     <?= $usuario['usuario_telefone'] ?>
                                                 </td>
                                                 <td>
-                                                    <button type="submit" class="btn btn-primary btn-sm fs-5 me-3" data-bs-toggle="modal" data-bs-target="#editar" data-bs-nome="<?= $usuario['nome']; ?>" data-bs-email="<?= $usuario['usuario_email']; ?>" data-bs-nivel="<?= $usuario['id_nivel']; ?>" data-bs-telefone="<?= $usuario['usuario_telefone']; ?>"><i class="bi bi-pencil-square"></i></button>
+                                                    <button type="submit" class="btn btn-primary btn-sm fs-5 me-3"
+                                                        data-bs-toggle="modal" data-bs-target="#editar"
+                                                        data-bs-nome="<?= $usuario['nome']; ?>"
+                                                        data-bs-email="<?= $usuario['usuario_email']; ?>"
+                                                        data-bs-nivel="<?= $usuario['id_nivel']; ?>"
+                                                        data-bs-telefone="<?= $usuario['usuario_telefone']; ?>"><i
+                                                            class="bi bi-pencil-square"></i></button>
 
-                                                    <a href="forms/deletar.php?id=<?= $usuario['id'] ?>"><button type="submit" class="btn btn-danger btn-sm fs-5">
+                                                    <a href="forms/deletar.php?id=<?= $usuario['id'] ?>"><button
+                                                            type="submit" class="btn btn-danger btn-sm fs-5">
                                                             <i class="bi bi-trash3"></i></button></a>
                                                 </td>
                                             </tr>
@@ -164,12 +171,12 @@ $resultado = $usuario->Listar();
 
 
     <!-- Modal -->
-    <div class="modal fade posicaoModal" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false"
-        tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+        aria-labelledby="staticBackdropLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content bg-light bg-gradient">
                 <div class="modal-header">
-                    <h1 class="modal-title fs-5" id="staticBackdropLabel">Novo Usuário</h1>
+                    <h1 class="modal-title fs-5" id="staticBackdropLabel">Adicionar Produto</h1>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body mt-3">
@@ -180,24 +187,25 @@ $resultado = $usuario->Listar();
                             <input type="text" class="form-control" name="nome" id="nome">
                         </div>
                         <div class="col-md-6">
-                            <label for="sobrenome" class="form-label">Sobrenome</label>
-                            <input type="text" class="form-control" name="sobrenome" id="sobrenome">
+                            <label for="classe" class="form-label">Classe Terapêutica</label>
+                            <select class="custom-select" style=" height: 38px; width: 220px; ">
+                                <option selected>Selecione uma opção</option>
+                                <option value="">Opção 1</option>
+                                <option value="">Opção 2</option>
+                                <option value="">Opção 3</option>
+                            </select>
                         </div>
                         <div class="col-12">
-                            <label for="email" class="form-label">Email</label>
-                            <input type="email" class="form-control" name="email" id="email" placeholder="">
+                            <label for="nota" class="form-label">Nota Fiscal</label>
+                            <input type="text" class="form-control" name="nota" id="nota" placeholder="">
                         </div>
                         <div class="col-12">
-                            <label for="inputAddress2" class="form-label">Usuário</label>
-                            <input type="text" class="form-control" name="usuario" id="inputAddress2" placeholder="">
+                            <label for="descricao" class="form-label">Descrição</label>
+                            <input type="text" class="form-control" name="descricao" id="descricao" placeholder="">
                         </div>
                         <div class="col-md-12">
-                            <label for="senha" class="form-label">Senha</label>
-                            <input type="password" class="form-control" name="senha" id="senha">
-                        </div>
-                        <div class="col-md-12">
-                            <label for="repetirSenha" class="form-label">Repetir Senha</label>
-                            <input type="password" class="form-control" name="repetirSenha" id="repetirSenha">
+                            <label for="tipo" class="form-label">Tipo</label>
+                            <input type="text" class="form-control" name="tipo" id="tipo">
                         </div>
                         <div>
                             <input type="submit" class="btn btn-primary" value="Criar">
@@ -209,8 +217,8 @@ $resultado = $usuario->Listar();
         </div>
     </div>
 
-    
-    
+
+
     <!-- Bootstrap -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
@@ -224,7 +232,7 @@ $resultado = $usuario->Listar();
     <!-- Sweet Alert  -->
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
-    
+
     <script src="script/script.js"></script>
 </body>
 

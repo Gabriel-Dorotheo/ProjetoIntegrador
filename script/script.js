@@ -3,7 +3,6 @@ document.querySelector('.ball').addEventListener('click', (e) => {
     document.body.classList.toggle('tema2');
 });
 
-
 $("#btnMudar1").click(function () {
     $(".avisos").fadeIn();
     $(".grafico").hide();
@@ -38,3 +37,4 @@ if (exampleModal) {
         // modalTitle.textContent = `New message to ${Nome}`
     })
 }
+

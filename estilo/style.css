@@ -38,17 +38,15 @@ body {
 .tema2 {
     background-image: linear-gradient( 180deg,  rgba(24,138,141,1) 11.2%, rgba(96,221,142,1) 91.1% );
 }
-
-
 .animar {
     /* Estilo da animação */
     animation: slideInLeft;
     /* tempo que irá levar para que ela seja executada. */
     animation-duration: 2s;
 }
-
 .posicaoModal {
     width: 0 auto;
+    top: 180px;
 }
 .sombra-texto {
     text-shadow: 4px 4px 4px rgba(110, 110, 110, 0.72);
@@ -65,9 +63,6 @@ body {
 .letra:hover{
     transform: translateY(-10px);
     color: rgb(224, 224, 224);
-}
-.posicaoModal {
-    top: 180px;
 }
 .sombra-texto {
     text-shadow: 4px 4px 4px rgba(110, 110, 110, 0.72);
