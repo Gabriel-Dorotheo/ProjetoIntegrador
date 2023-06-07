@@ -1,8 +1,7 @@
 <?php
-require_once('classes/Usuario.class.php');
-$usuario = new Usuario;
-$resultado = $usuario->Listar();
-
+require_once('classes/Produtos.class.php');
+$produtos = new Produtos;
+$resultado = $produtos->Listar();
 ?>
 
 
@@ -71,9 +70,12 @@ $resultado = $usuario->Listar();
                     </ul>
                 </div>
                 <!-- botão tema -->
-                <div class="button">
-                    <div class="ball"></div>
+                <div class="col">
+                    <div class="button">
+                        <div class="ball"></div>
+                    </div>
                 </div>
+
             </div>
         </div>
 
@@ -88,10 +90,10 @@ $resultado = $usuario->Listar();
 
                     <!-- botões de adicionar -->
                     <div class="row">
-                        <div class="col p-3 mt-5 mb-0 d-flex justify-content-end me-5">
-                            <button type="button" class="btn btn-success btn-sm me-3" data-bs-toggle="modal"
-                                data-bs-target="#staticBackdrop" href="../forms/cadastrar_contato.php"><i
-                                    class="bi bi-person-plus fs-5"></i></button>
+                        <div class="col p-3 mt-3 d-flex justify-content-end me-5">
+                            <button type="button" class="btn btn-success" data-bs-toggle="modal"
+                                data-bs-target="#staticBackdrop" href="../actions/cadastrar_produto.php"><i
+                                    class="bi bi-person-plus fs-5"></i> Adicionar Produto</button>
                         </div>
                     </div>
 
@@ -105,47 +107,42 @@ $resultado = $usuario->Listar();
                                         <tr>
                                             <th scope="col">#</th>
                                             <th scope="col">Nome</th>
-                                            <th scope="col">Email</th>
-                                            <th scope="col">Nível</th>
-                                            <th scope="col">Telefone</th>
+                                            <th scope="col">Classificação</th>
+                                            <th scope="col">Nota Fiscal</th>
+                                            <th scope="col">Tipo</th>
                                             <th scope="col">Editar</th>
                                         </tr>
                                     </thead>
                                     <tbody class="table-group-divider">
-                                        <?php foreach ($resultado as $usuario) { ?>
-
+                                        <?php foreach ($resultado as $produto) { ?>
                                             <tr>
                                                 <td>
-                                                    <?= $usuario['id'] ?>
+                                                    <?= $produto['id'] ?>
                                                 </td>
                                                 <td>
-                                                    <?= $usuario['nome'] ?>
+                                                    <?= $produto['nome'] ?>
                                                 </td>
                                                 <td>
-                                                    <?= $usuario['usuario_email'] ?>
+                                                    <?= $produto['tipo_classificacao'] ?>
                                                 </td>
                                                 <td>
-                                                    <?= $usuario['id_nivel'] ?>
+                                                    <?= $produto['nota_fiscal'] ?>
                                                 </td>
                                                 <td>
-                                                    <?= $usuario['usuario_telefone'] ?>
+                                                    <?= $produto['tipo_classe_terapeutica'] ?>
                                                 </td>
                                                 <td>
-                                                    <button type="submit" class="btn btn-primary btn-sm fs-5 me-3"
-                                                        data-bs-toggle="modal" data-bs-target="#editar"
-                                                        data-bs-nome="<?= $usuario['nome']; ?>"
-                                                        data-bs-email="<?= $usuario['usuario_email']; ?>"
-                                                        data-bs-nivel="<?= $usuario['id_nivel']; ?>"
-                                                        data-bs-telefone="<?= $usuario['usuario_telefone']; ?>"><i
-                                                            class="bi bi-pencil-square"></i></button>
+                                                <button type="submit" class="btn btn-primary btn-sm fs-5 me-3"><i
+                                                        class="bi bi-pencil-square"></i></button>
 
-                                                    <a href="forms/deletar.php?id=<?= $usuario['id'] ?>"><button
-                                                            type="submit" class="btn btn-danger btn-sm fs-5">
-                                                            <i class="bi bi-trash3"></i></button></a>
+                                                <a href="actions/deletar_produto.php?id=<?= $produto['id'] ?>"><button type="submit"
+                                                        class="btn btn-danger btn-sm fs-5">
+                                                        <i class="bi bi-trash3"></i></button></a>
                                                 </td>
                                             </tr>
-                                        <?php } ?>
 
+
+                                        <?php } ?>
                                     </tbody>
                                 </table>
                             </div>
@@ -180,35 +177,41 @@ $resultado = $usuario->Listar();
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body mt-3">
-                    <form class="row g-3" action="actions/cadastrar_contato.php" method="POST">
+                    <form class="row g-3" action="actions/cadastrar_produto.php" method="POST">
 
-                        <div class="col-md-6">
+                        <div class="col-12">
                             <label for="nome" class="form-label">Nome</label>
                             <input type="text" class="form-control" name="nome" id="nome">
                         </div>
                         <div class="col-md-6">
-                            <label for="classe" class="form-label">Classe Terapêutica</label>
-                            <select class="custom-select" style=" height: 38px; width: 220px; ">
-                                <option selected>Selecione uma opção</option>
-                                <option value="">Opção 1</option>
-                                <option value="">Opção 2</option>
-                                <option value="">Opção 3</option>
+                            <label for="id_classificacao" class="form-label">Tarja</label><br>
+                            <select name="id_classificacao" id="id_classificacao" style="width: 200px; ">
+                                <option selected>Defina uma tarja</option>
+                                <option value="1">Vermelha (Sem restrição médica)</option>
                             </select>
+                            <button type="button" class="btn btn-sm btn-warning mt-3 fw-semibold">Adicionar
+                                classe</button>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="id_tipo" class="form-label">Classe Terapêutica</label><br>
+                            <select name="id_tipo" id="id_tipo" style="width: 200px; ">
+                                <option selected>Defina uma classe</option>
+                                <option value="1">Antibióticos</option>
+                                <option value="2">Anticoagulantes</option>
+                            </select>
+                            <button type="button" class="btn btn-sm btn-warning mt-3 fw-semibold">Adicionar
+                                tarja</button>
                         </div>
                         <div class="col-12">
-                            <label for="nota" class="form-label">Nota Fiscal</label>
-                            <input type="text" class="form-control" name="nota" id="nota" placeholder="">
+                            <label for="nota_fiscal" class="form-label">Nota Fiscal</label>
+                            <input type="text" class="form-control" name="nota_fiscal" id="nota_fiscal" placeholder="">
                         </div>
                         <div class="col-12">
-                            <label for="descricao" class="form-label">Descrição</label>
-                            <input type="text" class="form-control" name="descricao" id="descricao" placeholder="">
-                        </div>
-                        <div class="col-md-12">
-                            <label for="tipo" class="form-label">Tipo</label>
-                            <input type="text" class="form-control" name="tipo" id="tipo">
+                            <label for="descricao" class="form-label">Descrição</label><br>
+                            <textarea name="descricao" id="descricao" cols="60"></textarea>
                         </div>
                         <div>
-                            <input type="submit" class="btn btn-primary" value="Criar">
+                            <input type="submit" class="btn btn-success" value="Adicionar">
                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
                         </div>
                     </form>

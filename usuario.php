@@ -121,7 +121,7 @@ $resultado = $usuario->Listar();
                                                     <?= $usuario['usuario_email'] ?>
                                                 </td>
                                                 <td>
-                                                    <?= $usuario['id_nivel'] ?>
+                                                    <?= $usuario['nivel_usuario'] ?>
                                                 </td>
                                                 <td>
                                                     <?= $usuario['usuario_telefone'] ?>

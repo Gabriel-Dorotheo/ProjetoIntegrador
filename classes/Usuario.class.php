@@ -27,7 +27,7 @@ class Usuario{
 
     public function Listar(){
         $banco = Banco::conectar();
-        $sql = "SELECT * FROM usuario";
+        $sql = "SELECT * FROM view_usuarios";
         $comando = $banco->prepare($sql);
         $comando->execute();
         // "Salvar" o resultado da consulta (tabela) na $resultado
