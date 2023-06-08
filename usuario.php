@@ -135,7 +135,7 @@ $resultado = $usuario->Listar();
                                                         data-bs-telefone="<?= $usuario['usuario_telefone']; ?>"><i
                                                             class="bi bi-pencil-square"></i></button>
 
-                                                    <a href="actions/deletar.php?id=<?= $usuario['id'] ?>"><button
+                                                    <a href="actions/deletar_usuario.php?id=<?= $usuario['id'] ?>"><button
                                                             type="submit" class="btn btn-danger btn-sm fs-5">
                                                             <i class="bi bi-trash3"></i></button></a>
                                                 </td>
