@@ -2,7 +2,7 @@ document.querySelector('.ball').addEventListener('click', (e) => {
     e.target.classList.toggle('ball-move');
     document.body.classList.toggle('tema2');
 });
-
+//alterar conteudos (avisos, graficos)
 $("#btnMudar1").click(function () {
     $(".avisos").fadeIn();
     $(".grafico").hide();
@@ -15,6 +15,12 @@ $("#btnMudar2").click(function () {
 $(document).ready(function() {
     $('#usuario_telefone').mask('(00) 0 0000-0000');
     $('#edtTelefone').mask('(00) 0 0000-0000');
+});
+
+//mask contato fornecedor
+$(document).ready(function() {
+    $('#id_telefone').mask('(00) 0 0000-0000');
+    $('#cnpj').mask('00.000.000/0000-00', {reverse: true});;
 });
 
 const exampleModal = document.getElementById('editar');
@@ -37,4 +43,37 @@ if (exampleModal) {
         // modalTitle.textContent = `New message to ${Nome}`
     })
 }
+//alteração das tabelas de suas respectivas classes terapeuticas
+$("#btnTrocar1").click(function () {
+    $(".antibioticos").fadeIn();
+    $(".probioticos").hide();
+    $(".antialergicos").hide();
+})
+$("#btnTrocar2").click(function () {
+    $(".probioticos").fadeIn();
+    $(".antibioticos").hide();
+    $(".antialergicos").hide();
+})
+$("#btnTrocar3").click(function () {
+    $(".antialergicos").fadeIn();
+    $(".antibioticos").hide();
+    $(".probioticos").hide();
+})
 
+
+
+$("#gerenciar").click(function(){
+    $(".gerenciarTabela").fadeIn();
+    $(".adicionarProduto").hide();
+    $(".fornecedores").hide();
+})
+$("#adicionarPr").click(function(){
+    $(".adicionarProduto").fadeIn();
+    $(".gerenciarTabela").hide();
+    $(".fornecedores").hide();
+})
+$("#fornecedor").click(function(){
+    $(".fornecedores").fadeIn();
+    $(".gerenciarTabela").hide();
+    $(".adicionarProduto").hide();
+})

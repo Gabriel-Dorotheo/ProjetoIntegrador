@@ -8,7 +8,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     // Definir os valores das suas propriedades:
     $u->nome = $_POST['nome'];
     $u->id_classificacao = $_POST['id_classificacao'];
-    $u->nota_fiscal = $_POST['nota_fiscal'];
+    $u->id_fornecedor = $_POST['id_fornecedor'];
     $u->descricao = $_POST['descricao'];
     $u->id_tipo = $_POST['id_tipo'];
 

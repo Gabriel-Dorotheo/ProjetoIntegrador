@@ -2,11 +2,7 @@
 require_once('classes/Usuario.class.php');
 $usuario = new Usuario;
 $resultado = $usuario->Listar();
-
 ?>
-
-
-
 <!doctype html>
 <html lang="en">
 
@@ -307,24 +303,5 @@ $resultado = $usuario->Listar();
 
     <!-- Meu Javascript -->
     <script src="script/script.js"></script>
-
-    <script>
-        $("#btnTrocar1").click(function () {
-            $(".antibioticos").fadeIn();
-            $(".probioticos").hide();
-            $(".antialergicos").hide();
-        })
-        $("#btnTrocar2").click(function () {
-            $(".probioticos").fadeIn();
-            $(".antibioticos").hide();
-            $(".antialergicos").hide();
-        })
-        $("#btnTrocar3").click(function () {
-            $(".antialergicos").fadeIn();
-            $(".antibioticos").hide();
-            $(".probioticos").hide();
-        })
-
-    </script>
 
 </html>
