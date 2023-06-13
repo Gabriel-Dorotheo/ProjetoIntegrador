@@ -2,15 +2,18 @@
 
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: #2980B9;
+    background: #2C3E50;
     /* fallback for old browsers */
-    background: -webkit-linear-gradient(to top, #FFFFFF, #6DD5FA, #2980B9);
+    background: -webkit-linear-gradient(to bottom, #4CA1AF, #2C3E50);
     /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to top, #FFFFFF, #6DD5FA, #2980B9);
+    background: linear-gradient(to bottom, #4CA1AF, #2C3E50);
     /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+
+
 }
 
-.button{
+.button {
     top: 15px;
     position: relative;
     width: 40px;
@@ -21,7 +24,8 @@ body {
     background-color: white;
 
 }
-.ball{
+
+.ball {
     position: absolute;
     top: 0;
     left: 0;
@@ -31,39 +35,52 @@ body {
     background-color: black;
     transition: left 1.2s;
 }
-.ball-move{
+
+.ball-move {
     left: calc(100% - 20px);
 }
 
 .tema2 {
-    background-image: linear-gradient( 180deg,  rgba(24,138,141,1) 11.2%, rgba(96,221,142,1) 91.1% );
+    background: #2c3e50;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to bottom, #3498db, #2c3e50);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to bottom, #3498db, #2c3e50);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
+
 .animar {
     /* Estilo da animação */
     animation: slideInLeft;
     /* tempo que irá levar para que ela seja executada. */
     animation-duration: 2s;
 }
+
 .posicaoModal {
     width: 0 auto;
     top: 180px;
 }
+
 .sombra-texto {
     text-shadow: 4px 4px 4px rgba(110, 110, 110, 0.72);
 }
-.grafico{
+
+.grafico {
     display: none;
 }
-.letra{
+
+.letra {
     transition: .8s;
     transform: translateX(0);
     cursor: pointer;
     color: #fff;
 }
-.letra:hover{
+
+.letra:hover {
     transform: translateY(-10px);
     color: rgb(224, 224, 224);
 }
+
 .sombra-texto {
     text-shadow: 4px 4px 4px rgba(110, 110, 110, 0.72);
 }

@@ -2,11 +2,7 @@
 require_once('classes/Usuario.class.php');
 $usuario = new Usuario;
 $resultado = $usuario->Listar();
-
 ?>
-
-
-
 <!doctype html>
 <html lang="en">
 
@@ -163,7 +159,7 @@ $resultado = $usuario->Listar();
                                     <!-- Conteudo Item 1 -->
                                     <div class="antibioticos">
                                         <div class="card card-body">
-                                            <div class="h2 text-center mb-5 mt-3">Classe Terapêutica</div>
+                                            <div class="h2 text-center mb-5 mt-3">Antibióticos</div>
                                             <div class="table-responsive ms-5 me-5">
                                                 <table class="table">
                                                     <thead>
@@ -200,9 +196,9 @@ $resultado = $usuario->Listar();
                                         </div>
                                     </div>
                                     <!-- Conteudo Item 2  -->
-                                    <div class="probioticos">
+                                    <div class="probioticos" style="display: none">
                                         <div class="card card-body">
-                                            <div class="h2 text-center mb-5 mt-3">Classe Terapêutica</div>
+                                            <div class="h2 text-center mb-5 mt-3">Probióticos</div>
                                             <div class="table-responsive ms-5 me-5">
                                                 <table class="table">
                                                     <thead>
@@ -239,9 +235,9 @@ $resultado = $usuario->Listar();
                                         </div>
                                     </div>
                                     <!--Conteudo Item 3  -->
-                                    <div class="antialergicos">
+                                    <div class="antialergicos" style="display: none">
                                         <div class="card card-body">
-                                            <div class="h2 text-center mb-5 mt-3">Classe Terapêutica</div>
+                                            <div class="h2 text-center mb-5 mt-3">Antialérgicos</div>
                                             <div class="table-responsive ms-5 me-5">
                                                 <table class="table">
                                                     <thead>
@@ -307,24 +303,5 @@ $resultado = $usuario->Listar();
 
     <!-- Meu Javascript -->
     <script src="script/script.js"></script>
-
-    <script>
-        $("#btnTrocar1").click(function () {
-            $(".antibioticos").fadeIn();
-            $(".probioticos").hide();
-            $(".antialergicos").hide();
-        })
-        $("#btnTrocar2").click(function () {
-            $(".probioticos").fadeIn();
-            $(".antibioticos").hide();
-            $(".antialergicos").hide();
-        })
-        $("#btnTrocar3").click(function () {
-            $(".antialergicos").fadeIn();
-            $(".antibioticos").hide();
-            $(".probioticos").hide();
-        })
-
-    </script>
 
 </html>

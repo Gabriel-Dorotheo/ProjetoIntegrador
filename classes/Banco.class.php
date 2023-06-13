@@ -2,7 +2,7 @@
  
 class Banco
 {
-    private static $dbNome = 'pharma';
+    private static $dbNome = 'pharma2';
     private static $dbHost = 'localhost';
     private static $dbUsuario = 'root';
     private static $dbSenha = '';
