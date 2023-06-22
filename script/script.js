@@ -11,7 +11,7 @@ $("#btnMudar2").click(function () {
     $(".grafico").fadeIn();
     $(".avisos").hide();
 })
-
+//mascara da página usuário
 $(document).ready(function() {
     $('#usuario_telefone').mask('(00) 0 0000-0000');
     $('#edtTelefone').mask('(00) 0 0000-0000');
@@ -34,7 +34,6 @@ if (exampleModal) {
         const id_nivel = button.getAttribute('data-bs-nivel');
         const usuario_telefone = button.getAttribute('data-bs-telefone');
 
-
         exampleModal.querySelector('#edtNome').value = nome;
         exampleModal.querySelector('#edtEmail').value = usuario_email;
         exampleModal.querySelector('#edtNivel').value = id_nivel;
@@ -43,6 +42,7 @@ if (exampleModal) {
         // modalTitle.textContent = `New message to ${Nome}`
     })
 }
+
 //alteração das tabelas de suas respectivas classes terapeuticas
 $("#btnTrocar1").click(function () {
     $(".antibioticos").fadeIn();
@@ -61,7 +61,7 @@ $("#btnTrocar3").click(function () {
 })
 
 
-
+//menu lateral da página de produtos de produtos
 $("#gerenciar").click(function(){
     $(".gerenciarTabela").fadeIn();
     $(".adicionarProduto").hide();
