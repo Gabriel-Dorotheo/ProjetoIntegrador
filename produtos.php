@@ -100,7 +100,6 @@ $listarClasse = $classeTerapeutica->Listar();
                         <div class="ball"></div>
                     </div>
                 </div>
-
             </div>
         </div>
 
@@ -152,6 +151,7 @@ $listarClasse = $classeTerapeutica->Listar();
                         <!-- Formulário Classe Terapêutica e Tarja -->
                         <div class="tarja col 10 mb-5" style="display:none">
                             <?php require_once('formularios/form_cadastrar_classe_terapeutica.php') ?>
+                            <?php require_once('tabelas/tabela_classesTerapeuticas_tarjas.php') ?>
                         </div>
                     </div>
 
@@ -159,8 +159,8 @@ $listarClasse = $classeTerapeutica->Listar();
                 <!-- rodapé -->
                 <div class="row">
                     <div class="col">
-                        <div class="bg-black text-white text-center p-3">
-                            &copy; Pharma Flow - 2023.
+                        <div class="text-white text-center p-3 fs-5">
+                             <p>Pharma Flow - 2023</p>
                         </div>
                     </div>
                 </div>

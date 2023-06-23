@@ -12,8 +12,7 @@ $resultado = $usuario->Listar();
     <title>Início | Pharma Flow</title>
 
     <!-- Bootstrap -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
 
     <!-- Animate CSS -->
@@ -79,13 +78,11 @@ $resultado = $usuario->Listar();
                 <div class="container mt-5 mb-5 border rounded-2 shadow bg-body-secondary rounded">
                     <div class="row">
                         <div class="col p-4 fs-5 mt-5 d-flex justify-content-evenly">
-                            <button type="button" class="btn btn-danger btn-lg" id="btnMudar1"><i
-                                    class="bi bi-bell-fill"></i>
+                            <button type="button" class="btn btn-danger btn-lg" id="btnMudar1"><i class="bi bi-bell-fill"></i>
                                 Avisos
                             </button>
 
-                            <button type="button" class="btn btn-info btn-lg" id="btnMudar2"><i
-                                    class="bi bi-bar-chart-fill"></i>
+                            <button type="button" class="btn btn-info btn-lg" id="btnMudar2"><i class="bi bi-bar-chart-fill"></i>
                                 Gráficos
                             </button>
                         </div>
@@ -143,12 +140,9 @@ $resultado = $usuario->Listar();
                         <div class="grafico">
                             <div class="row">
                                 <div class="col d-flex flex-wrap justify-content-evenly m-3">
-                                    <button class="border-0 mb-3 bg-transparent text-start"
-                                        id="btnTrocar1">Antibióticos</button>
-                                    <button class="border-0 mb-3 bg-transparent text-start"
-                                        id="btnTrocar2">Probióticos</button>
-                                    <button class="border-0 mb-3 bg-transparent text-start"
-                                        id="btnTrocar3">Antialérgicos</button>
+                                    <button class="border-0 mb-3 bg-transparent text-start" id="btnTrocar1">Antibióticos</button>
+                                    <button class="border-0 mb-3 bg-transparent text-start" id="btnTrocar2">Probióticos</button>
+                                    <button class="border-0 mb-3 bg-transparent text-start" id="btnTrocar3">Antialérgicos</button>
                                     <button class="border-0 mb-3 bg-transparent text-start">Antidepressivos</button>
                                     <button class="border-0 mb-3 bg-transparent text-start">Anti-inflamatórios</button>
                                 </div>
@@ -180,11 +174,8 @@ $resultado = $usuario->Listar();
                                                                     <?= $usuario['nome'] ?>
                                                                 </td>
                                                                 <td>
-                                                                    <div class="progress" role="progressbar"
-                                                                        aria-label="success example" aria-valuenow="100"
-                                                                        aria-valuemin="0" aria-valuemax="100">
-                                                                        <div class="progress-bar bg-success"
-                                                                            style="width: 100%">100%</div>
+                                                                    <div class="progress" role="progressbar" aria-label="success example" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">
+                                                                        <div class="progress-bar bg-success" style="width: 100%">100%</div>
                                                                     </div>
                                                                 </td>
                                                             </tr>
@@ -219,11 +210,8 @@ $resultado = $usuario->Listar();
                                                                     <?= $usuario['nome'] ?>
                                                                 </td>
                                                                 <td>
-                                                                    <div class="progress" role="progressbar"
-                                                                        aria-label="primary example" aria-valuenow="100"
-                                                                        aria-valuemin="0" aria-valuemax="100">
-                                                                        <div class="progress-bar bg-primary"
-                                                                            style="width: 100%">100%</div>
+                                                                    <div class="progress" role="progressbar" aria-label="primary example" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">
+                                                                        <div class="progress-bar bg-primary" style="width: 100%">100%</div>
                                                                     </div>
                                                                 </td>
                                                             </tr>
@@ -258,11 +246,8 @@ $resultado = $usuario->Listar();
                                                                     <?= $usuario['nome'] ?>
                                                                 </td>
                                                                 <td>
-                                                                    <div class="progress" role="progressbar"
-                                                                        aria-label="danger example" aria-valuenow="100"
-                                                                        aria-valuemin="0" aria-valuemax="100">
-                                                                        <div class="progress-bar bg-danger"
-                                                                            style="width: 100%">100%</div>
+                                                                    <div class="progress" role="progressbar" aria-label="danger example" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">
+                                                                        <div class="progress-bar bg-danger" style="width: 100%">100%</div>
                                                                     </div>
                                                                 </td>
                                                             </tr>
@@ -280,26 +265,21 @@ $resultado = $usuario->Listar();
                 </div>
             </div>
         </div>
-            <!-- rodapé -->
-    <div class="row">
-        <div class="col">
-            <div class="bg-black text-white text-center p-3">
-                &copy; Pharma Flow - 2023.
+        <!-- rodapé -->
+        <div class="row">
+            <div class="col">
+                <div class="text-white text-center p-3 fs-5">
+                    <p>Pharma Flow - 2023</p>
+                </div>
             </div>
         </div>
     </div>
 
-    </div>
-
     <!-- Bootstrap -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
-        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
 
     <!-- Jquery -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"
-        integrity="sha512-pumBsjNRGGqkPzKHndZMaAG+bir374sORyzM3uulLV14lN5LyykqNk8eEeUlUkB3U0M4FApyaHraT65ihJhDpQ=="
-        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js" integrity="sha512-pumBsjNRGGqkPzKHndZMaAG+bir374sORyzM3uulLV14lN5LyykqNk8eEeUlUkB3U0M4FApyaHraT65ihJhDpQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
     <!-- Meu Javascript -->
     <script src="script/script.js"></script>

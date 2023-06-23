@@ -64,25 +64,20 @@ $("#btnTrocar3").click(function () {
 //menu lateral da página de produtos de produtos
 $("#gerenciar").click(function(){
     $(".gerenciarTabela").fadeIn();
-    $(".adicionarProduto").hide();
-    $(".fornecedores").hide();
-    $(".tarja").hide();
-})
+    $(".adicionarProduto, .fornecedores, .tarja").hide();
+});
+
 $("#adicionarPr").click(function(){
     $(".adicionarProduto").fadeIn();
-    $(".gerenciarTabela").hide();
-    $(".fornecedores").hide();
-    $(".tarja").hide();
-})
+    $(".gerenciarTabela, .fornecedores, .tarja").hide();
+});
+
 $("#fornecedor").click(function(){
     $(".fornecedores").fadeIn();
-    $(".gerenciarTabela").hide();
-    $(".adicionarProduto").hide();
-    $(".tarja").hide();
-})
+    $(".gerenciarTabela, .adicionarProduto, .tarja").hide();
+});
+
 $("#classe_tarja").click(function(){
     $(".tarja").fadeIn();
-    $(".fornecedores").hide();
-    $(".gerenciarTabela").hide();
-    $(".adicionarProduto").hide();
-})
+    $(".fornecedores, .gerenciarTabela, .adicionarProduto").hide();
+});

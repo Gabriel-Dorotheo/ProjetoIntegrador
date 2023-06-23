@@ -15,8 +15,7 @@ $resultado = $usuario->Listar();
     <title>Início | Pharma Flow</title>
 
     <!-- Bootstrap -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
 
     <!-- Animate CSS -->
@@ -86,9 +85,7 @@ $resultado = $usuario->Listar();
                     <!-- botões de adicionar -->
                     <div class="row">
                         <div class="col p-3 mt-3 d-flex justify-content-end me-5">
-                            <button type="button" class="btn btn-success" data-bs-toggle="modal"
-                            data-bs-target="#staticBackdrop" href="../actions/cadastrar_contato.php"><i
-                            class="bi bi-person-plus fs-5"></i> Adicionar Usuário</button>
+                            <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#staticBackdrop" href="../actions/cadastrar_contato.php"><i class="bi bi-person-plus fs-5"></i> Adicionar Usuário</button>
                         </div>
                     </div>
 
@@ -106,8 +103,8 @@ $resultado = $usuario->Listar();
         <!-- rodapé -->
         <div class="row">
             <div class="col">
-                <div class="rodape bg-black text-white text-center p-3">
-                    &copy; Pharma Flow - 2023.
+                <div class="text-white text-center p-3 fs-5">
+                    <p>Pharma Flow - 2023</p>
                 </div>
             </div>
         </div>
@@ -118,8 +115,7 @@ $resultado = $usuario->Listar();
 
     <!-- edt = editar -->
     <!-- Modal -->
-    <div class="modal fade" id="editar" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
-        aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal fade" id="editar" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
@@ -135,8 +131,7 @@ $resultado = $usuario->Listar();
                         </div>
                         <div class="col-6">
                             <label for="usuario_telefone" class="form-label">Telefone</label>
-                            <input type="tel" class="form-control" name="usuario_telefone" id="edtTelefone"
-                                placeholder="" required>
+                            <input type="tel" class="form-control" name="usuario_telefone" id="edtTelefone" placeholder="" required>
                         </div>
                         <div class="col-12">
                             <label for="id_nivel" class="form-label">Nível de acesso</label>
@@ -164,8 +159,7 @@ $resultado = $usuario->Listar();
 
 
     <!-- Modal cadastrar -->
-    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
-        aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content bg-light bg-gradient">
                 <div class="modal-header">
@@ -181,8 +175,7 @@ $resultado = $usuario->Listar();
                         </div>
                         <div class="col-6">
                             <label for="usuario_telefone" class="form-label">Telefone</label>
-                            <input type="tel" class="form-control" name="usuario_telefone" id="usuario_telefone"
-                                placeholder="" required>
+                            <input type="tel" class="form-control" name="usuario_telefone" id="usuario_telefone" placeholder="" required>
                         </div>
                         <div class="col-12">
                             <label for="id_nivel" class="form-label">Nível de acesso</label>
@@ -214,19 +207,13 @@ $resultado = $usuario->Listar();
 
 
     <!-- Bootstrap -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
-        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
 
     <!-- Jquery -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"
-        integrity="sha512-pumBsjNRGGqkPzKHndZMaAG+bir374sORyzM3uulLV14lN5LyykqNk8eEeUlUkB3U0M4FApyaHraT65ihJhDpQ=="
-        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js" integrity="sha512-pumBsjNRGGqkPzKHndZMaAG+bir374sORyzM3uulLV14lN5LyykqNk8eEeUlUkB3U0M4FApyaHraT65ihJhDpQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
     <!-- Jquery Mask -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/0.9.0/jquery.mask.min.js"
-        integrity="sha512-oJCa6FS2+zO3EitUSj+xeiEN9UTr+AjqlBZO58OPadb2RfqwxHpjTU8ckIC8F4nKvom7iru2s8Jwdo+Z8zm0Vg=="
-        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/0.9.0/jquery.mask.min.js" integrity="sha512-oJCa6FS2+zO3EitUSj+xeiEN9UTr+AjqlBZO58OPadb2RfqwxHpjTU8ckIC8F4nKvom7iru2s8Jwdo+Z8zm0Vg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
     <!-- Sweet Alert  -->
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
