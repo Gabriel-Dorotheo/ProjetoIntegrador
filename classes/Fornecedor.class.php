@@ -6,19 +6,17 @@ class Fornecedor
     public $nome;
     public $razao_social;
     public $cnpj;
-    public $id_telefone;
-    public $id_email;
 
     public function Cadastrar()
     {
-        $sql = "INSERT INTO fornecedor(nome, razao_social, cnpj, id_telefone, id_email) VALUE(?,?,?,?,?)";
+        $sql = "INSERT INTO fornecedor(nome, razao_social, cnpj) VALUE(?,?,?)";
         //Trabalhar com o banco:
         //Conectando:
         $banco = Banco::conectar();
         //Transformar a string em comando sql:
         $comando = $banco->prepare($sql);
         //Executar e substituit os corngas (?):
-        $comando->execute(array($this->nome, $this->razao_social, $this->cnpj, $this->id_telefone, $this->id_email));
+        $comando->execute(array($this->nome, $this->razao_social, $this->cnpj));
         //Desconectar do banco:
         Banco::desconectar();
     }
@@ -54,10 +52,10 @@ class Fornecedor
 
     public function Atualizar(){
         $banco = Banco::conectar();
-        $sql = "UPDATE fornecedor SET nome = ?, razao_social = ?, cnpj=?, id_telefone=?, id_email=? WHERE id=?";
+        $sql = "UPDATE fornecedor SET nome = ?, razao_social = ?, cnpj=? WHERE id=?";
         $banco->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         $comando = $banco->prepare($sql);
-        $comando->execute(array($this->nome,$this->razao_social,$this->cnpj,$this->id_telefone,$this->id_email));
+        $comando->execute(array($this->nome,$this->razao_social,$this->cnpj));
         Banco::desconectar();
         // Retornar quantidade de linhas apagadas:
         return $comando->rowCount();

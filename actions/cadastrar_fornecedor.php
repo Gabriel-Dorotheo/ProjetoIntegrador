@@ -9,8 +9,6 @@
         $u->nome = $_POST['nome'];
         $u->razao_social = $_POST['razao_social'];
         $u->cnpj = $_POST['cnpj'];
-        $u->id_telefone = $_POST['id_telefone'];
-        $u->id_email = $_POST['id_email'];
 
         $u->Cadastrar();
         // echo "cadastrado com sucesso!";

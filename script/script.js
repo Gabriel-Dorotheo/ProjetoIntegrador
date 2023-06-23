@@ -66,14 +66,23 @@ $("#gerenciar").click(function(){
     $(".gerenciarTabela").fadeIn();
     $(".adicionarProduto").hide();
     $(".fornecedores").hide();
+    $(".tarja").hide();
 })
 $("#adicionarPr").click(function(){
     $(".adicionarProduto").fadeIn();
     $(".gerenciarTabela").hide();
     $(".fornecedores").hide();
+    $(".tarja").hide();
 })
 $("#fornecedor").click(function(){
     $(".fornecedores").fadeIn();
+    $(".gerenciarTabela").hide();
+    $(".adicionarProduto").hide();
+    $(".tarja").hide();
+})
+$("#classe_tarja").click(function(){
+    $(".tarja").fadeIn();
+    $(".fornecedores").hide();
     $(".gerenciarTabela").hide();
     $(".adicionarProduto").hide();
 })
