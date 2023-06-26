@@ -5,8 +5,11 @@ class Produtos
 {
     public $id;
     public $nome;
-    public $id_classificacao;
     public $nota_fiscal;
+    public $tipo_classificacao;
+    public $tipo_classe_terapeutica;
+    public $nome_fornecedor;
+    public $id_classificacao;
     public $id_fornecedor;
     public $descricao;
     public $id_tipo;
@@ -60,10 +63,10 @@ class Produtos
     public function Atualizar()
     {
         $banco = Banco::conectar();
-        $sql = "UPDATE produtos SET nome = ?, id_classificacao = ?, nota_fiscal=?, id_fornecedor=?, descricao=?, id_tipo=? WHERE id=?";
+        $sql = "UPDATE produtos SET nome = ?, id_classificacao = ?, id_fornecedor=?, descricao=?, id_tipo=? WHERE id=?";
         $banco->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         $comando = $banco->prepare($sql);
-        $comando->execute(array($this->nome, $this->id_classificacao, $this->nota_fiscal, $this->id_fornecedor, $this->descricao, $this->id_tipo));
+        $comando->execute(array($this->nome, $this->id_classificacao, $this->id_fornecedor, $this->id_tipo));
         Banco::desconectar();
         // Retornar quantidade de linhas apagadas:
         return $comando->rowCount();
@@ -98,7 +101,7 @@ class Produtos
 
     public function ListarPag(){
         $banco = Banco::conectar();
-        $sql = "SELECT * FROM produtos LIMIT :inicio,:fim";
+        $sql = "SELECT * FROM view_produtos LIMIT :inicio,:fim";
         $comando = $banco->prepare($sql);
         $comando->bindParam(":inicio", $this->inicio);
         $comando->bindParam(":inicio", $this->inicio, PDO::PARAM_INT);
@@ -113,4 +116,24 @@ class Produtos
         return $resultado;
 
     }
+    public function ObterTarjas()
+    {
+        $banco = Banco::conectar();
+        $sql = "SELECT * FROM tarjas";
+        $comando = $banco->prepare($sql);
+        $comando->execute();
+        $resultado = $comando->fetchAll(PDO::FETCH_ASSOC);
+        Banco::desconectar();
+        return $resultado;
+    }
+    public function ObterClassesTerapeuticas()
+{
+    $banco = Banco::conectar();
+    $sql = "SELECT * FROM classes_terapeuticas";
+    $comando = $banco->prepare($sql);
+    $comando->execute();
+    $resultado = $comando->fetchAll(PDO::FETCH_ASSOC);
+    Banco::desconectar();
+    return $resultado;
+}
 }

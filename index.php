@@ -76,18 +76,23 @@
                         <div class="col-12">
                             <h1 class="h2 text-center text-black mt-5 mb-5">Pharma Flow <i
                                     class="bi bi-capsule-pill"></i></h1>
-                            <div class="mb-3">
-                                <label for="exampleFormControlInput1" class="form-label fw-bold">Nome Usuário</label>
-                                <input type="email" class="form-control campos" id="exampleFormControlInput1"
-                                    placeholder="">
-                            </div>
 
-                            <label for="inputPassword5" class="form-label fw-bold">Senha</label>
-                            <input type="password" id="inputPassword5 bg-body-secondary" class="form-control campos"
-                                aria-labelledby="passwordHelpBlock">
+                            <form action="actions/logar.php" method="post">
 
-                            <button type="button" class="btn btn-primary text-white btn-lg mt-4 mb-5 botaohover"><a
-                                    href="inicio.php" class="text-white">Entrar</a></button>
+                                <div class="mb-3">
+                                    <label for="exampleFormControlInput1" class="form-label fw-bold">Nome
+                                        Usuário</label>
+                                    <input type="email" class="form-control campos" id="exampleFormControlInput1"
+                                        placeholder="" name="nome">
+                                </div>
+
+                                <label for="inputPassword5" class="form-label fw-bold">Senha</label>
+                                <input type="password" id="inputPassword5 bg-body-secondary" class="form-control campos"
+                                    aria-labelledby="passwordHelpBlock" name="senha">
+
+                                <input type="submit" class="btn btn-primary text-white btn-lg mt-4 mb-5 botaohover" value="Entrar">
+                                
+                            </form>
                         </div>
                     </div>
                 </div>

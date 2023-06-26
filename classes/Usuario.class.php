@@ -51,11 +51,40 @@ class Usuario{
     }
 
     public function Atualizar(){
+        $banco = Banco::conectar();
+        $sql = "UPDATE usuario SET nome = ?, usuario_email = ?, id_nivel=?, senha=?, usuario_telefone=? WHERE id=?";
+        $banco->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        $comando = $banco->prepare($sql);
+        $comando->execute(array($this->nome,$this->usuario_email,$this->id_nivel,$this->senha,$this->usuario_telefone));
+        Banco::desconectar();
+        // Retornar quantidade de linhas apagadas:
+        return $comando->rowCount();
         
     }
 
     public function BuscarPorID(){
-        
+        $banco = Banco::conectar();
+        $sql = "SELECT * FROM usuario WHERE id = ?";
+        $comando = $banco->prepare($sql);
+        $comando->execute(array($this->id));
+        // "Salvar" o resultado da consulta (tabela) na $resultado
+        $resultado = $comando->fetchAll(PDO::FETCH_ASSOC);
+  
+        Banco::desconectar();
+  
+        return $resultado;
+    }
+
+    public function Logar(){
+        $banco = Banco::conectar();
+        $sql = "SELECT * FROM usuario WHERE usuario_email = ? AND senha = ?";
+        $cmd = $banco->prepare($sql);
+        $hashSenha = hash('md5', $this->senha);
+        $cmd->execute(array($this->usuario_email, $hashSenha));
+        // "Salvar" o resultado da consulta (tabela) na $resultado
+        $resultado = $cmd->fetchAll(PDO::FETCH_ASSOC);
+        Banco::desconectar();
+        return $resultado;
     }
 
 }

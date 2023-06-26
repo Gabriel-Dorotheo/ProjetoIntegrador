@@ -15,7 +15,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $u->Cadastrar();
     // echo "cadastrado com sucesso!";
     // Redirecionar o jovem de volta:
-    header('Location: ../produtos.php');
+    header('Location: ../produtos.php?msg=3');
     exit();
 } else {
     echo "erro";

@@ -16,6 +16,12 @@
                             <tr>
                                 <th scope="row"><?= $class['id'] ?></th>
                                 <td scope="row"><?= $class['tipo'] ?></td>
+                                <td>
+                                    <button type="submit" class="btn btn-primary btn-sm fs-5 me-3"><i class="bi bi-pencil-square"></i></button>
+
+                                    <button type="submit" class="btn btn-danger btn-sm fs-5">
+                                        <i class="bi bi-trash3"></i></button></a>
+                                </td>
                             </tr>
                         </tbody>
                     <?php } ?>
@@ -29,6 +35,7 @@
                         <tr>
                             <th scope="col">#</th>
                             <th scope="col">Tipo</th>
+                            <th scope="col">Editar</th>
                         </tr>
                     </thead>
                     <?php foreach ($tipo as $tarja) { ?>
@@ -36,6 +43,12 @@
                             <tr>
                                 <th scope="row"><?= $tarja['id'] ?></th>
                                 <td scope="row"><?= $tarja['tipo'] ?></td>
+                                <td>
+                                    <button type="submit" class="btn btn-primary btn-sm fs-5 me-3"><i class="bi bi-pencil-square"></i></button>
+
+                                    <button type="submit" class="btn btn-danger btn-sm fs-5">
+                                        <i class="bi bi-trash3"></i></button></a>
+                                </td>
                             </tr>
                         </tbody>
                     <?php } ?>

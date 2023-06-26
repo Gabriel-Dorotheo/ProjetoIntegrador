@@ -6,7 +6,7 @@
     </div>
     <div class="col-md-8 mx-auto">
         <label for="id_classificacao" class="form-label fw-bolder">Tarja</label><br>
-        <select class="form-select" name="id_classificacao" id="id_classificacao" style="min-width: 200px; ">
+        <select class="form-select" name="id_classificacao" id="id_classificacao" style="min-width: 200px; " required>
             <option selected>Defina uma tarja</option>
             <?php foreach($valor as $listarClassificacao) { ?>
             <option value="<?= $listarClassificacao['id'] ?>"><?= $listarClassificacao['tipo'] ?></option>
@@ -28,7 +28,7 @@
         <label for="id_fornecedor" class="form-label fw-bolder">Fornecedor</label><br>
         <select class="form-select" name="id_fornecedor" id="id_fornecedor" style="min-width: 200px;">
             <option selected>Defina um fornecedor</option>
-            <?php foreach($resultado as $nomeFornecedor) { ?>
+            <?php foreach($nm_fornecedor as $nomeFornecedor) { ?>
             <option value="<?= $nomeFornecedor['id'] ?>"><?= $nomeFornecedor['nome'] ?></option>
             <?php } ?>
         </select>

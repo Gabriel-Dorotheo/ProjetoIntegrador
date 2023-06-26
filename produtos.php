@@ -19,7 +19,7 @@ $tabela = $p->ListarPag();
 
 require_once('classes/Fornecedor.class.php');
 $fornecedor = new Fornecedor;
-$resultado = $fornecedor->Listar();
+$nm_fornecedor = $fornecedor->Listar();
 
 require_once('classes/Classificacao.class.php');
 $classificacao = new Classificacao();
@@ -53,7 +53,7 @@ $listarClasse = $classeTerapeutica->Listar();
 
 <body>
 
-    <div class="container-fluid overflow-hidden m-0 p-0">
+    <div class="container-fluid overflow-hidden m-0 p-0" style="min-height: 100vh;">
 
 
         <!-- Linha da logo do site -->
@@ -61,9 +61,8 @@ $listarClasse = $classeTerapeutica->Listar();
         <div class="row bg-transparent">
             <!-- Coluna da logo -->
             <div class="col-3 text-center">
-                <logo class="animar fs-1 d-inline-flex mt-1 mb-2">
-                    <div class="letra">Pharma Flow</div>
-
+                <logo class="fs-1 d-inline-flex mt-1 mb-2">
+                    <div class="letra"><a href="inicio.php">Pharma Flow</div>
                 </logo>
 
             </div>
@@ -79,6 +78,9 @@ $listarClasse = $classeTerapeutica->Listar();
                     <li class="nav-item">
                         <a class="nav-link link-body-emphasis" href="produtos.php">Produtos</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="estoque.php">Estoque</a>
+                    </li>
                 </ul>
             </div>
 
@@ -91,7 +93,7 @@ $listarClasse = $classeTerapeutica->Listar();
                     <ul class="dropdown-menu">
                         <li><a class="dropdown-item" href="#">Configurações</a></li>
                         <li><a class="dropdown-item" href="#">Ajuda</a></li>
-                        <li><a class="dropdown-item" href="index.html">Sair</a></li>
+                        <li><a class="dropdown-item" href="actions/sair.php">Sair</a></li>
                     </ul>
                 </div>
                 <!-- botão tema -->
@@ -165,8 +167,63 @@ $listarClasse = $classeTerapeutica->Listar();
                     </div>
                 </div>
             </div>
-
         </div>
+
+        <!-- edt = editar -->
+    <!-- Modal -->
+    <div class="modal fade" id="editar" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="staticBackdropLabel">Editar</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form class="row g-3" action="actions/editar_produto.php" method="POST">
+
+                        <div class="col-md-6">
+                            <label for="nome" class="form-label">Nome</label>
+                            <input type="text" class="form-control" name="nome" id="edtNome" required autofocus>
+                        </div>
+                        <div class="col-12">
+                            <label for="tipo_classificacao" class="form-label">Classificação</label>
+                            <div class="input-group mb-3">
+                                <select class="custom-select" id="edtClassificacao" name="tipo_classificacao">
+                                <?php foreach ($valor as $produto) { ?>    
+                                <option><?= $produto['tipo'] ?></option>
+                                <?php } ?>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <label for="tipo" class="form-label">Tipo</label>
+                            <div class="input-group mb-3">
+                                <select class="custom-select" id="edtTipo" name="tipo">
+                                <?php foreach ($listarClasse as $produto) { ?>    
+                                <option><?= $produto['tipo'] ?></option>
+                                <?php } ?>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <label for="nome_fornecedor" class="form-label">Fornecedor</label>
+                            <div class="input-group mb-3">
+                                <select class="custom-select" id="edtFornecedor" name="nome_fornecedor">
+                                <?php foreach ($nm_fornecedor as $produto) { ?>    
+                                <option><?= $produto['nome'] ?></option>
+                                <?php } ?>
+                                </select>
+                            </div>
+                        </div>
+                        <div>
+                            <input type="submit" class="btn btn-primary" value="Salvar">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
 
         <!-- Bootstrap -->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
@@ -180,6 +237,6 @@ $listarClasse = $classeTerapeutica->Listar();
 
 
         <script src="script/script.js"></script>
+        <?php require_once('alertas.php'); ?>
 </body>
-
 </html>

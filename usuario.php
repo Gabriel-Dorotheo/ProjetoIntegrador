@@ -9,6 +9,8 @@ $resultado = $usuario->Listar();
 <!doctype html>
 <html lang="pt-br">
 
+
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -25,7 +27,8 @@ $resultado = $usuario->Listar();
 
 <body>
 
-    <div class="container-fluid overflow-hidden m-0 p-0">
+    
+    <div class="container-fluid overflow-hidden m-0 p-0" style="min-height: 100vh;">
 
 
         <!-- Linha da logo do site -->
@@ -33,8 +36,9 @@ $resultado = $usuario->Listar();
         <div class="row bg-transparent">
             <!-- Coluna da logo -->
             <div class="col-3 text-center d-None-none">
-                <logo class="animar fs-1 d-inline-flex mt-1 mb-2">
-                    <div class="letra">Pharma Flow</div>
+                <logo class="fs-1 d-inline-flex mt-1 mb-2">
+                    <div class="letra" ><a href="inicio.php">Pharma Flow</a></div>
+
                 </logo>
 
             </div>
@@ -50,6 +54,9 @@ $resultado = $usuario->Listar();
                     <li class="nav-item">
                         <a class="nav-link text-white" href="produtos.php">Produtos</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="estoque.php">Estoque</a>
+                    </li>
                 </ul>
             </div>
 
@@ -62,7 +69,7 @@ $resultado = $usuario->Listar();
                     <ul class="dropdown-menu">
                         <li><a class="dropdown-item" href="#">Configurações</a></li>
                         <li><a class="dropdown-item" href="#">Ajuda</a></li>
-                        <li><a class="dropdown-item" href="index.html">Sair</a></li>
+                        <li><a class="dropdown-item" href="actions/sair.php">Sair</a></li>
                     </ul>
                 </div>
                 <!-- botão tema -->
@@ -204,7 +211,14 @@ $resultado = $usuario->Listar();
             </div>
         </div>
     </div>
-
+<!-- Botão back to top -->
+<button
+        type="button"
+        class="btn btn-danger btn-floating btn-lg"
+        id="btn-back-to-top"
+        >
+  <i class="bi bi-arrow-up-circle"></i>
+</button>    
 
     <!-- Bootstrap -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
@@ -219,6 +233,7 @@ $resultado = $usuario->Listar();
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
     <script src="script/script.js"></script>
+    <?php require_once('alertas.php'); ?>
 </body>
 
 </html>

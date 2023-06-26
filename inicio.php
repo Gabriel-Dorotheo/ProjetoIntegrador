@@ -26,6 +26,7 @@ $resultado = $usuario->Listar();
     <div class="container-fluid overflow-x-hidden p-0 m-0 ">
 
         <!-- Linha da logo do site -->
+        
 
         <div class="row bg-transparent">
             <!-- Coluna da logo -->
@@ -46,6 +47,9 @@ $resultado = $usuario->Listar();
                     <li class="nav-item">
                         <a class="nav-link text-white" href="produtos.php">Produtos</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="estoque.php">Estoque</a>
+                    </li>
                 </ul>
             </div>
 
@@ -58,7 +62,7 @@ $resultado = $usuario->Listar();
                     <ul class="dropdown-menu">
                         <li><a class="dropdown-item" href="#">Configurações</a></li>
                         <li><a class="dropdown-item" href="#">Ajuda</a></li>
-                        <li><a class="dropdown-item" href="index.html">Sair</a></li>
+                        <li><a class="dropdown-item" href="actions/sair.php">Sair</a></li>
                     </ul>
                 </div>
                 <!-- botão tema -->
