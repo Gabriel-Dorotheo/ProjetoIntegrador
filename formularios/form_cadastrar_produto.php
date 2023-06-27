@@ -1,6 +1,6 @@
 <form class="row g-3" action="actions/cadastrar_produto.php" method="POST">
     <div class="h2 text-center mt-5">Cadastrar Produto</div>
-    <div class="col-8 mx-auto">
+    <div class="col-md-8 mx-auto">
         <label for="nome" class="form-label fw-bolder">Nome</label>
         <input type="text" class="form-control" name="nome" id="nome" required>
     </div>
@@ -33,7 +33,7 @@
             <?php } ?>
         </select>
     </div>
-    <div class="col-8 mx-auto">
+    <div class="col-md-8 mx-auto">
         <label for="descricao" class="form-label fw-bolder">Descrição</label><br>
         <textarea name="descricao" id="descricao" rows="2" cols="60"></textarea><br>
         <input type="submit" class="btn btn-success fw-semibold mt-5" value="Adicionar">

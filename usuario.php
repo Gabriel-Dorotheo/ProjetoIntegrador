@@ -35,15 +35,25 @@ $resultado = $usuario->Listar();
 
         <div class="row bg-transparent">
             <!-- Coluna da logo -->
-            <div class="col-3 text-center d-None-none">
-                <logo class="fs-1 d-inline-flex mt-1 mb-2">
-                    <div class="letra" ><a href="inicio.php">Pharma Flow</a></div>
-
+            <div class="col-md-3 text-center d-flex justify-content-between">
+                <logo class="mt-4 mx-auto mb-2">
+                   <a href="inicio.php"><img src="img/MicrosoftTeams-image.png" alt="PharmaLogo" style="max-width: 150px;"></a> 
                 </logo>
 
+                <!-- botão de sair responsivo -->
+                <div class="dropdown mt-4 me-5 d-md-none d-xxl-none d-sm-block">
+                    <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <i class="bi bi-person-circle fs-4"></i>
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">Configurações</a></li>
+                        <li><a class="dropdown-item" href="#">Ajuda</a></li>
+                        <li><a class="dropdown-item" href="actions/sair.php">Sair</a></li>
+                    </ul>
+                </div>
             </div>
 
-            <div class="col-6 mt-4 fs-4 d-flex justify-content-center">
+            <div class="col-md-6 mt-4 fs-4 d-flex justify-content-center">
                 <ul class="nav justify-content-center">
                     <li class="nav-item">
                         <a class="nav-link text-white" aria-current="page" href="inicio.php">Início</a>
@@ -61,7 +71,7 @@ $resultado = $usuario->Listar();
             </div>
 
             <!-- Coluna do icone de menu -->
-            <div class="col-2 d-flex justify-content-between mt-4">
+            <div class="col-2 d-flex justify-content-between mt-4 d-md-block d-none d-sm-none">
                 <div class="dropdown">
                     <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                         <i class="bi bi-person-circle fs-4"></i>
@@ -73,11 +83,11 @@ $resultado = $usuario->Listar();
                     </ul>
                 </div>
                 <!-- botão tema -->
-                <div class="col">
+                <!-- <div class="col">
                     <div class="button">
                         <div class="ball"></div>
                     </div>
-                </div>
+                </div> -->
             </div>
         </div>
 
