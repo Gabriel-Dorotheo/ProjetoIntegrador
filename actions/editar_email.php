@@ -18,7 +18,7 @@ if($p->Atualizar() == 1){
     echo "Falha ao modificar.";
 }
 }else{
-    echo "A página deve ser carregada por POST.<br>";
+    echo "Erro <br>";
     echo "<a href=\"../admin/painel.php\">Voltar</a>";
 }
 

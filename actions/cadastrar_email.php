@@ -2,7 +2,7 @@
 // Verificar se a página está sendo carregada por POST:
     if($_SERVER['REQUEST_METHOD'] == 'POST'){
         // Importar a classe:
-        require_once('../Classes/Email.class.php');
+        require_once('../classes/Email.class.php');
         // Instanciar um obj do tipo contato:
         $u = new Email();
         // Definir os valores das suas propriedades:
@@ -20,12 +20,12 @@
         header('Location: ../usuario.php');
         exit();
         }catch(PDOException $e){
-            header('Location: ../forms/cadastrar_contato?erro=2');
+            header('Location: ../formularios/cadastrar_contato?erro=2');
             exit();
         
         }
     }else{
-        echo "Essa página deve ser carregada por POST!";
+        echo "Erro";
     }
 
 ?>

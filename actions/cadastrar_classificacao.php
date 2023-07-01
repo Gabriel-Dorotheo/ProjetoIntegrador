@@ -18,6 +18,6 @@ header('Location: ../produtos.php');
 exit();
 
 }else{
-    echo "Essa página deve ser carregada por POST!";
+    echo "Erro";
 }
 ?>

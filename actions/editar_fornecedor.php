@@ -17,7 +17,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         echo "Falha ao modificar.";
     }
 } else {
-    echo "A página deve ser carregada por POST.<br>";
+    echo "Erro <br>";
     //Redirecionar o usuario para angum lugar
     echo "<a href=\"../.php\">Voltar</a>";
 }

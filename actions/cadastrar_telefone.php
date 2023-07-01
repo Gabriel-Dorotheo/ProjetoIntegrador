@@ -2,7 +2,7 @@
 // Verificar se a página está sendo carregada por POST:
     if($_SERVER['REQUEST_METHOD'] == 'POST'){
         // Importar a classe:
-        require_once('../Classes/Telefone.class.php');
+        require_once('../classes/Telefone.class.php');
         // Instanciar um obj:
         $u = new Telefone();
         // Definir os valores das suas propriedades:
@@ -20,12 +20,12 @@
         header('Location: ../usuario.php');
         exit();
         }catch(PDOException $e){
-            header('Location: ../forms/cadastrar_contato?erro=2');
+            header('Location: ../formularios/cadastrar_contato?erro=2');
             exit();
         
         }
     }else{
-        echo "Essa página deve ser carregada por POST!";
+        echo "Erro";
     }
 
 ?>

@@ -2,19 +2,14 @@
 // Verificar se a página está sendo carregada por POST:
     if($_SERVER['REQUEST_METHOD'] == 'POST'){
         // Importar a classe:
-        require_once('../classes/Lote.class.php');
+        require_once('../classes/Nota_fiscal.class.php');
         // Instanciar um obj do tipo contato:
-        $u = new Lote();
+        $u = new Nota_fiscal();
         // Definir os valores das suas propriedades:
-        $u->cod_lote = $_POST['cod_lote'];
-        $u->id_produto = $_POST['id_produto'];
+        $u->nota_fiscal = $_POST['nota_fiscal'];
         $u->id_fornecedor = $_POST['id_fornecedor'];
-        $u->validade = $_POST['validade'];
-        $u->quantidade = $_POST['quantidade'];
-        $u->observacao = $_POST['observacao'];
-
-
-
+        $u->id_lote = $_POST['id_lote'];
+        $u->id_produto = $_POST['id_produto'];
 
         try{
         $u->Cadastrar();

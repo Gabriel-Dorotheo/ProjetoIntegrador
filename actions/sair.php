@@ -8,6 +8,6 @@ setcookie(session_name(),'',0,'/');
 session_regenerate_id(true);
 
 // Redireciona para o arquivo login e exiba uma mensagem:
-header("Location: ../index.php?");
+header("Location: ../index.php");
 
 ?>

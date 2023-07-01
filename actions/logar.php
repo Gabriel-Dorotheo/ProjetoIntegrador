@@ -16,13 +16,13 @@ if(count($resultado) == 1){
     $_SESSION['dados'] = $resultado[0];
 
     // Redirecionar:
-    header("Location: ../inicio.php?");
+    header("Location: ../inicio.php");
     exit();
 
 }else{
 
     // echo "Usuario ou senha inválidos!";
-    header('Location: ../index.php?erro=0');
+    header('Location: ../index.php?errouser=0');
     exit();
 }
 

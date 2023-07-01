@@ -20,5 +20,5 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     header('Location: ../usuario.php');
     exit();
 }else{
-    echo "Essa página deve ser carregada por POST!";
+    echo "Erro";
 }
