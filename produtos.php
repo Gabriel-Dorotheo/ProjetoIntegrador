@@ -5,7 +5,7 @@ $p = new Produtos();
 // Numero total de registros no banco de dados 
 $totalRegistros = $p->ObterQtdRegistro()[0]['qtd'];
 // Numero de registros exibidos por pagina 
-$registrosPorPagina = 4;
+$registrosPorPagina = 5;
 // Calcula o numero total de paginas 
 $totalPaginas = ceil($totalRegistros / $registrosPorPagina);
 // Obtem o numero da pagina atual 

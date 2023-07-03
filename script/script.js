@@ -103,3 +103,8 @@ function backToTop() {
   document.body.scrollTop = 0;
   document.documentElement.scrollTop = 0;
 }
+
+// Configura o intervalo para trocar os slides a cada 5 segundos
+$(document).ready(function() {
+    $('#carouselExampleSlidesOnly').carousel();
+});

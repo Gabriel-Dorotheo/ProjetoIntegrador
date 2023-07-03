@@ -55,7 +55,7 @@
 </head>
 
 <body class="fundo overflow-y-hidden">
-    <div id="carouselExampleSlidesOnly" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="6000" style="min-height: 100vh;">
+    <div id="carouselExampleSlidesOnly" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="5000" style="min-height: 100vh;">
         <div class="carousel-inner">
             <div class="carousel-item active">
                 <img src="img/img3.webp" class="imag" style="opacity: 0.3; max-height:100vh;">
@@ -100,13 +100,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
-
-    <script>
-        // Configura o intervalo para trocar os slides a cada 5 segundos
-        $(document).ready(function() {
-            $('#carouselExampleSlidesOnly').carousel();
-        });
-    </script>
 </body>
 
 </html>
