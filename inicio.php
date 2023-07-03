@@ -19,81 +19,26 @@ $resultado = $usuario->Listar();
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
     <!-- Meu CSS -->
     <link rel="stylesheet" href="estilo/style.css">
+    <link rel="shortcut icon" href="img/pilulas.png" type="image/x-icon">
 </head>
 
 <body>
 
-    <div class="container-fluid overflow-x-hidden p-0 m-0 ">
-
-        <!-- Linha da logo do site -->
-
+    <div class="container-fluid overflow-x-hidden p-0 m-0" style="min-height: 100vh;">
 
         <div class="row bg-transparent">
-            <!-- Coluna da logo -->
-            <div class="col-md-3 text-center d-flex justify-content-between">
-                <logo class="mt-4 mx-auto mb-2">
-                   <a href="inicio.php"><img src="img/MicrosoftTeams-image.png" alt="PharmaLogo" style="max-width: 150px;"></a> 
-                </logo>
-
-                <!-- botão de sair responsivo -->
-                <div class="dropdown mt-4 me-5 d-md-none d-xxl-none d-sm-block">
-                    <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        <i class="bi bi-person-circle fs-4"></i>
-                    </button>
-                    <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="#">Configurações</a></li>
-                        <li><a class="dropdown-item" href="#">Ajuda</a></li>
-                        <li><a class="dropdown-item" href="actions/sair.php">Sair</a></li>
-                    </ul>
-                </div>
+            <div class="col">
+                <?php require_once('components/menu.php'); ?>
             </div>
-
-            <div class="col-md-6 mt-4 fs-4 d-flex justify-content-center">
-                <ul class="nav justify-content-center">
-                    <li class="nav-item">
-                        <a class="nav-link link-body-emphasis" aria-current="page" href="inicio.php">Início</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-white" href="usuario.php">Usuários</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-white" href="produtos.php">Produtos</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-white" href="estoque.php">Estoque</a>
-                    </li>
-                </ul>
-            </div>
-
-            <!-- Coluna do icone de menu -->
-            <div class="col-2 d-flex justify-content-between mt-4 d-md-block d-none d-sm-none">
-                <div class="dropdown">
-                    <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        <i class="bi bi-person-circle fs-4"></i>
-                    </button>
-                    <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="#">Configurações</a></li>
-                        <li><a class="dropdown-item" href="#">Ajuda</a></li>
-                        <li><a class="dropdown-item" href="actions/sair.php">Sair</a></li>
-                    </ul>
-                </div>
-                <!-- botão tema -->
-                <!-- <div class="col">
-                    <div class="button">
-                        <div class="ball"></div>
-                    </div>
-                </div> -->
-            </div>
-        </div>
 
 
         <!-- Menu -->
-        <div class="row">
+        <div class="row mx-auto">
             <div class="col">
-                <div class="h1 text-center text-white m-5 sombra-texto">Início</div>
-                <div class="container mt-5 mb-5 border rounded-2 shadow bg-body-secondary rounded">
+                <div class="h1 text-center text-white m-4 sombra-texto">Início</div>
+                <div class="container mt-5 mb-5 border rounded-2 shadow bg-body-secondary rounded mx-auto">
                     <div class="row">
-                        <div class="col p-4 fs-5 mt-5 d-flex justify-content-evenly">
+                        <div class="col fs-5 mt-5 d-flex justify-content-evenly">
                             <button type="button" class="btn btn-danger btn-lg" id="btnMudar1"><i class="bi bi-bell-fill"></i>
                                 Avisos
                             </button>
@@ -282,13 +227,7 @@ $resultado = $usuario->Listar();
             </div>
         </div>
         <!-- rodapé -->
-        <div class="row">
-            <div class="col">
-                <div class="text-white text-center p-3 fs-5">
-                    <p>Pharma Flow - 2023</p>
-                </div>
-            </div>
-        </div>
+        <?php require_once('components/rodape.php') ?>
     </div>
 
     <!-- Bootstrap -->
@@ -296,8 +235,4 @@ $resultado = $usuario->Listar();
 
     <!-- Jquery -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js" integrity="sha512-pumBsjNRGGqkPzKHndZMaAG+bir374sORyzM3uulLV14lN5LyykqNk8eEeUlUkB3U0M4FApyaHraT65ihJhDpQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-
-    <!-- Meu Javascript -->
-    <script src="script/script.js"></script>
-
 </html>

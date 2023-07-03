@@ -31,8 +31,12 @@
                     <td>
                         <button type="submit" class="btn btn-primary btn-sm fs-5 me-3" data-bs-toggle="modal" data-bs-target="#editar" data-bs-nome="<?= $produto['nome']; ?>" data-bs-classificacao="<?= $produto['tipo_classificacao']; ?>" data-bs-fornecedor="<?= $produto['nome_fornecedor']; ?>" data-bs-tipo="<?= $produto['tipo_classe_terapeutica']; ?>"><i class="bi bi-pencil-square"></i></button>
 
-                        <a href="../actions/deletar.php?id=<?=$produto['id'];?>" onclick="confirmar(<?= $produto['id']; ?>)"><button type="submit" class="btn btn-danger btn-sm fs-5">
-                                <i class="bi bi-trash3"></i></button></a>
+                        <a href="actions/deletar.php?id=<?= $produto['id']; ?>" onclick="confirmar(<?= $produto['id']; ?>); return false;">
+                            <button type="submit" class="btn btn-danger btn-sm fs-5">
+                                <i class="bi bi-trash3"></i>
+                            </button>
+                        </a>
+
                     </td>
                 </tr>
 

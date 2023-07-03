@@ -8,11 +8,7 @@ body {
     /* Chrome 10-25, Safari 5.1-6 */
     background: linear-gradient(to bottom, #4CA1AF, #2C3E50);
     /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-
-
-
 }
-
 .button {
     top: 15px;
     position: relative;
@@ -22,7 +18,6 @@ body {
     box-shadow: 0 0 2.5px 0 #39a2db59;
     cursor: pointer;
     background-color: white;
-
 }
 
 .ball {
@@ -41,11 +36,11 @@ body {
 }
 
 .tema2 {
-    background: #2c3e50;
+    background: #2C3E50;
     /* fallback for old browsers */
-    background: -webkit-linear-gradient(to bottom, #3498db, #2c3e50);
+    background: -webkit-linear-gradient(to bottom, #4CA1AF, #2C3E50);
     /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to bottom, #3498db, #2c3e50);
+    background: linear-gradient(to bottom, #4CA1AF, #2C3E50);
     /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
@@ -91,3 +86,4 @@ body {
     right: 20px;
     display: none;
   }
+  

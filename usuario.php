@@ -2,7 +2,6 @@
 require_once('classes/Usuario.class.php');
 $usuario = new Usuario;
 $resultado = $usuario->Listar();
-
 ?>
 
 
@@ -14,7 +13,7 @@ $resultado = $usuario->Listar();
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Início | Pharma Flow</title>
+    <title>Contas | Pharma Flow</title>
 
     <!-- Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
@@ -23,6 +22,7 @@ $resultado = $usuario->Listar();
     <!-- Animate CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
     <link rel="stylesheet" href="estilo/style.css">
+    <link rel="shortcut icon" href="img/pilulas.png" type="image/x-icon">
 </head>
 
 <body>
@@ -30,64 +30,9 @@ $resultado = $usuario->Listar();
     
     <div class="container-fluid overflow-hidden m-0 p-0" style="min-height: 100vh;">
 
-
-        <!-- Linha da logo do site -->
-
         <div class="row bg-transparent">
-            <!-- Coluna da logo -->
-            <div class="col-md-3 text-center d-flex justify-content-between">
-                <logo class="mt-4 mx-auto mb-2">
-                   <a href="inicio.php"><img src="img/MicrosoftTeams-image.png" alt="PharmaLogo" style="max-width: 150px;"></a> 
-                </logo>
-
-                <!-- botão de sair responsivo -->
-                <div class="dropdown mt-4 me-5 d-md-none d-xxl-none d-sm-block">
-                    <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        <i class="bi bi-person-circle fs-4"></i>
-                    </button>
-                    <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="#">Configurações</a></li>
-                        <li><a class="dropdown-item" href="#">Ajuda</a></li>
-                        <li><a class="dropdown-item" href="actions/sair.php">Sair</a></li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="col-md-6 mt-4 fs-4 d-flex justify-content-center">
-                <ul class="nav justify-content-center">
-                    <li class="nav-item">
-                        <a class="nav-link text-white" aria-current="page" href="inicio.php">Início</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link link-body-emphasis" href="usuario.php">Usuários</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-white" href="produtos.php">Produtos</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-white" href="estoque.php">Estoque</a>
-                    </li>
-                </ul>
-            </div>
-
-            <!-- Coluna do icone de menu -->
-            <div class="col-2 d-flex justify-content-between mt-4 d-md-block d-none d-sm-none">
-                <div class="dropdown">
-                    <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        <i class="bi bi-person-circle fs-4"></i>
-                    </button>
-                    <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="#">Configurações</a></li>
-                        <li><a class="dropdown-item" href="#">Ajuda</a></li>
-                        <li><a class="dropdown-item" href="actions/sair.php">Sair</a></li>
-                    </ul>
-                </div>
-                <!-- botão tema -->
-                <!-- <div class="col">
-                    <div class="button">
-                        <div class="ball"></div>
-                    </div>
-                </div> -->
+            <div class="col">
+                <?php require_once('components/menu.php'); ?>
             </div>
         </div>
 
@@ -95,7 +40,7 @@ $resultado = $usuario->Listar();
             <div class="col">
                 <!-- titulo -->
                 <div class="titulo text-center m-5 sombra-texto text-white">
-                    <h1 class="h1">Gerenciamento de contas</h1>
+                    <h1 class="text-center text-white m-4 sombra-texto">Gerenciamento de contas</h1>
                 </div>
 
                 <div class="container mt-5 mb-5 border border-0 rounded-2 shadow bg-body-secondary">
@@ -118,13 +63,7 @@ $resultado = $usuario->Listar();
 
 
         <!-- rodapé -->
-        <div class="row">
-            <div class="col">
-                <div class="text-white text-center p-3 fs-5">
-                    <p>Pharma Flow - 2023</p>
-                </div>
-            </div>
-        </div>
+        <?php require_once('components/rodape.php') ?>
     </div>
 
 
@@ -224,7 +163,7 @@ $resultado = $usuario->Listar();
 <!-- Botão back to top -->
 <button
         type="button"
-        class="btn btn-danger btn-floating btn-lg"
+        class="btn btn-primary btn-floating btn-lg"
         id="btn-back-to-top"
         >
   <i class="bi bi-arrow-up-circle"></i>

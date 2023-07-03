@@ -4,9 +4,10 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Bootstrap demo</title>
+    <title>Log In - Pharma Flow</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <link rel="shortcut icon" href="img/pilulas.png" type="image/x-icon">
     <style>
         .fundo {
             background: #2980B9;
@@ -43,54 +44,69 @@
             box-shadow: 0px 5px 12px -2px rgba(158, 158, 158, 1);
             transition: .7s;
         }
+
+        .imag {
+            width: 100%;
+            min-height: 100vh;
+        }
+
+
     </style>
 </head>
 
 <body class="fundo overflow-y-hidden">
-    <div id="carouselExampleSlidesOnly" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="5000" style="min-height: 100vh;" >
+    <div id="carouselExampleSlidesOnly" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="6000" style="min-height: 100vh;">
         <div class="carousel-inner">
             <div class="carousel-item active">
-                <img src="img/pexels-pietro-jeng-360622.jpg" class="img-fluid d-flex mx-auto"style="opacity: 0.4; max-height:100vh; transition: .8s">
+                <img src="img/img3.webp" class="imag" style="opacity: 0.3; max-height:100vh;">
             </div>
             <div class="carousel-item">
-                <img src="img/pexels-pixabay-159211.jpg" style="opacity: 0.4; max-height:100vh; transition: .8s">
+                <img src="img/pexels-pixabay-159211.jpg" class="imag" style="opacity: 0.3; max-height:100vh;">
             </div>
             <div class="carousel-item">
-                <img src="img/pexels-pixabay-161688.jpg" style="opacity: 0.4; max-height:100vh; transition: .8s">
+                <img src="img/pexels-freestocksorg-143654.jpg" class="imag" style="opacity: 0.3; max-height:100vh;">
             </div>
         </div>
+    </div>
 
+    <div class="row">
+        <div class="col rounded-3">
+            <div class="container bg-white mx-auto d-flex justify-content-center rounded border-rounded-3 sombra" style="z-index: 1; min-width: 400px; max-width:400px; position:absolute; top:50%; left:50%; transform: translate(-50%,-50%);">
+                <div class="row">
+                    <div class="col-md-12">
+                        <img src="img/MicrosoftTeams-image.png" alt="" class="mt-5 mb-4" style="max-width: 150px; margin-left:58px;">
+                        <form action="actions/logar.php" method="post">
+                            <div class="mb-3">
+                                <label for="nome" class="form-label fw-bold">Email
+                                </label>
+                                <input type="email" class="form-control campos" id="nome" name="nome" style="min-width: 300px;">
+                            </div>
 
-        <div class="row">
-            <div class="col rounded-3">
-                <div class="container bg-white mx-auto d-flex justify-content-center rounded border-rounded-3 sombra" style="z-index: 2; min-width: 400px; max-width:400px; position:absolute; top:50%; left:50%; transform: translate(-50%,-50%);">
-                    <div class="row">
-                        <div class="col-md-12">
-                            <img src="img/MicrosoftTeams-image.png" alt="" class="mt-5 mb-5" style="max-width: 150px; margin-left:58px;">
-                            <form action="actions/logar.php" method="post">
-                                <div class="mb-3">
-                                    <label for="nome" class="form-label fw-bold">Nome
-                                        Usuário
-                                    </label>
-                                    <input type="email" class="form-control campos" id="nome" name="nome" style="min-width: 300px;">
-                                </div>
-
-                                <div class="mb-3">
-                                    <label for="senha" class="form-label fw-bold">Senha
-                                    </label>
-                                    <input type="password" id="senha" class="form-control campos" name="senha" style="min-width: 300px;">
-                                </div>
-                                <div class="d-grid gap-2 col-6 mx-auto">
-                                    <input type="submit" class="btn btn-primary text-white mt-4 mb-5 botaohover" value="Entrar">
-                                </div>
-                            </form>
-                        </div>
+                            <div class="mb-3">
+                                <label for="senha" class="form-label fw-bold">Senha
+                                </label>
+                                <input type="password" id="senha" class="form-control campos" name="senha" style="min-width: 300px;">
+                            </div>
+                            <div class="d-grid gap-2 col-6 mx-auto">
+                                <input type="submit" class="btn btn-primary text-white mt-4 mb-5 botaohover" value="Entrar">
+                            </div>
+                        </form>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+
+    <script>
+        // Configura o intervalo para trocar os slides a cada 5 segundos
+        $(document).ready(function() {
+            $('#carouselExampleSlidesOnly').carousel();
+        });
+    </script>
 </body>
 
 </html>

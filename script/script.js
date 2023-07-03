@@ -1,7 +1,3 @@
-// document.querySelector('.ball').addEventListener('click', (e) => {
-//     e.target.classList.toggle('ball-move');
-//     document.body.classList.toggle('tema2');
-// });
 //alterar conteudos (avisos, graficos)
 $("#btnMudar1").click(function () {
     $(".avisos").fadeIn();
