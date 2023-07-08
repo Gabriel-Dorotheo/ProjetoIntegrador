@@ -23,6 +23,7 @@ if(count($resultado) == 1){
 
     // echo "Usuario ou senha inválidos!";
     header('Location: ../index.php?errouser=0');
+    
     exit();
 }
 

@@ -1,9 +1,12 @@
 <nav class="navbar bg-transparent mt-4">
-    <div class="container-fluid">
+    <div class="container">
 
         <button class="navbar-toggler bg-light me-3" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
+        <logo class="ms-5">
+            <a href="inicio.php"><img src="img/MicrosoftTeams-image.png" alt="PharmaLogo" style="max-width: 180px;"></a>
+        </logo>
         <div class="offcanvas offcanvas-start tema2" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
             <div class="offcanvas-header">
                 <h5 class="offcanvas-title text-white" id="offcanvasNavbarLabel">Menu</h5>
@@ -39,8 +42,5 @@
                 </ul>
             </div>
         </div>
-        <logo class="ms-5">
-            <a href="inicio.php"><img src="img/MicrosoftTeams-image.png" alt="PharmaLogo" style="max-width: 180px;"></a>
-        </logo>
     </div>
 </nav>
