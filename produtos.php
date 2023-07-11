@@ -5,7 +5,7 @@ $p = new Produtos();
 // Numero total de registros no banco de dados 
 $totalRegistros = $p->ObterQtdRegistro()[0]['qtd'];
 // Numero de registros exibidos por pagina 
-$registrosPorPagina = 5;
+$registrosPorPagina = 10;
 // Calcula o numero total de paginas 
 $totalPaginas = ceil($totalRegistros / $registrosPorPagina);
 // Obtem o numero da pagina atual 
@@ -74,12 +74,11 @@ $listarClasse = $classeTerapeutica->Listar();
                     <!-- Conteúdo da tabela -->
                     <div class="row">
                         <!-- Menu Lateral -->
-                        <div class="col-md-2 mb-3">
-                            <div class="list-group mt-5 d-flex justify-content-center">
-                                <button type="button" class="btn btn-primary fw-semibold mb-3 mt-3" id="gerenciar">Gerenciar
+                        <div class="col-md-2">
+                            <div class="list-group mt-5">
+                                <button type="button" class="btn btn-sm btn-primary fw-semibold mb-3 mt-3" id="gerenciar">Gerenciar
                                     Produtos</button>
-                                <div class="dropdown-center">
-                                    <button class="btn btn-success dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <button class="btn btn-sm btn-success dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                                         <i class="bi bi-plus-circle"></i> Adicionar
                                     </button>
                                     <ul class="dropdown-menu">
@@ -87,7 +86,6 @@ $listarClasse = $classeTerapeutica->Listar();
                                         <li><a class="dropdown-item" href="#" id="fornecedor">Fornecedor</a></li>
                                         <li><a class="dropdown-item" href="#" id="classe_tarja">Classe Terapêutica / Tarja</a></li>
                                     </ul>
-                                </div>
                             </div>
                         </div>
                         <!-- Tabela de produtos -->

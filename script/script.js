@@ -34,8 +34,6 @@ if (exampleModal) {
         exampleModal.querySelector('#edtEmail').value = usuario_email;
         exampleModal.querySelector('#edtNivel').value = id_nivel;
         exampleModal.querySelector('#edtTelefone').value = usuario_telefone;
-
-        // modalTitle.textContent = `New message to ${Nome}`
     })
 }
 
