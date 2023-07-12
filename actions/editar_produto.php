@@ -15,13 +15,13 @@ if (isset($_GET['id'])) {
 
         //Colocar por onde ira mandar o usuario após a att
 
-        header('Location: ../produto.php');
-        exit();
+        header('Location: ../produtos.php');
+        
     } else {
        echo "Falha ao modificar.";
     }
 } else {
     echo "Erro <br>";
     //Redirecionar o usuario para angum lugar
-    echo "<a href=\"../.php\">Voltar</a>";
+    echo "<a href=\"../produtos.php\">Voltar</a>";
 }
