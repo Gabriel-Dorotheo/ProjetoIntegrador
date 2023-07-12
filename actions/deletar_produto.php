@@ -1,5 +1,4 @@
 <?php 
-
 if(isset($_GET['id'])){
     require_once("../classes/Produtos.class.php");
     $p = new Produtos();

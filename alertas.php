@@ -23,8 +23,13 @@ $errouser = [
 
 $alertaproduto = [
     "ALERTA!"
-]
-
+];
+$alertaFornecedor = [
+    "ALERTA"
+];
+$alertaConta = [
+    "ALERTA"
+];
 ?>
 
 
@@ -53,6 +58,22 @@ $alertaproduto = [
         // alert('Você clicou em apagar '+id);
         swal({
                 title: "Atenção",
+                text: "Tem certeza que deseja remover este fornecedor?",
+                icon: "warning",
+                buttons: ["Não", "Sim"],
+                dangerMode: true,
+            })
+            .then((willDelete) => {
+                if (willDelete) {
+                    // Redirecionar para o apagar:
+                    window.location.href = "actions/deletar_fornecedor.php?id=" + id;
+                }
+            });
+    }
+    function confirmarProduto(id) {
+        // alert('Você clicou em apagar '+id);
+        swal({
+                title: "Atenção",
                 text: "Tem certeza que deseja apagar este produto?",
                 icon: "warning",
                 buttons: ["Não", "Sim"],
@@ -62,6 +83,54 @@ $alertaproduto = [
                 if (willDelete) {
                     // Redirecionar para o apagar:
                     window.location.href = "actions/deletar_produto.php?id=" + id;
+                }
+            });
+    }
+    function confirmarConta(id) {
+        // alert('Você clicou em apagar '+id);
+        swal({
+                title: "Atenção",
+                text: "Tem certeza que deseja apagar esta conta?",
+                icon: "warning",
+                buttons: ["Não", "Sim"],
+                dangerMode: true,
+            })
+            .then((willDelete) => {
+                if (willDelete) {
+                    // Redirecionar para o apagar:
+                    window.location.href = "actions/deletar_usuario.php?id=" + id;
+                }
+            });
+    }
+    function confirmarTarja(id) {
+        // alert('Você clicou em apagar '+id);
+        swal({
+                title: "Atenção",
+                text: "Tem certeza que deseja apagar esta tarja?",
+                icon: "warning",
+                buttons: ["Não", "Sim"],
+                dangerMode: true,
+            })
+            .then((willDelete) => {
+                if (willDelete) {
+                    // Redirecionar para o apagar:
+                    window.location.href = "actions/deletar_usuario.php?id=" + id;
+                }
+            });
+    }
+    function confirmarClasse(id) {
+        // alert('Você clicou em apagar '+id);
+        swal({
+                title: "Atenção",
+                text: "Tem certeza que deseja apagar esta classe?",
+                icon: "warning",
+                buttons: ["Não", "Sim"],
+                dangerMode: true,
+            })
+            .then((willDelete) => {
+                if (willDelete) {
+                    // Redirecionar para o apagar:
+                    window.location.href = "actions/deletar_usuario.php?id=" + id;
                 }
             });
     }

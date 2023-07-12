@@ -35,4 +35,16 @@ class Classe_terapeutica
 
         return $resultado;
     }
+
+    public function Deletar()
+    {
+        $banco = Banco::conectar();
+        $sql = "DELETE FROM classe_terapeutica WHERE id = ?";
+        $banco->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        $comando = $banco->prepare($sql);
+        $comando->execute(array($this->id));
+        Banco::desconectar();
+        // Retornar quantidade de linhas apagadas:
+        return $comando->rowCount();
+    }
 }

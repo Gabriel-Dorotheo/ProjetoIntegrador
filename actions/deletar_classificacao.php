@@ -1,7 +1,7 @@
 <?php 
 if(isset($_GET['id'])){
-    require_once("../classes/Fornecedor.class.php");
-    $f = new Fornecedor();
+    require_once("../classes/Classificacao.class.php");
+    $f = new Classificacao();
     $f->id = $_GET['id'];
     
     if ($f->Deletar() == 1){

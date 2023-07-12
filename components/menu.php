@@ -31,10 +31,7 @@
             <div class="container-fluid mb-5">
                 <ul class="navbar-nav ms-3">
                     <li class="nav-item">
-                        <a href="" class="nav-link fw-semibold text-white"><i class="bi bi-gear-fill"></i> Configurações</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="" class="nav-link fw-semibold text-white"><i class="bi bi-info-square"></i> Ajuda</a>
+                        <a href="ajuda.php" class="nav-link fw-semibold text-white"><i class="bi bi-info-square"></i> Ajuda</a>
                     </li>
                     <li class="nav-item">
                         <a href="actions/sair.php" class="nav-link fw-semibold text-white"><i class="bi bi-box-arrow-right"></i> Sair</a>

@@ -18,6 +18,17 @@ class Classificacao{
         Banco::desconectar();
 
     }
+    public function Deletar(){
+        $banco = Banco::conectar();
+        $sql = "DELETE FROM classificacao WHERE id = ?";
+        $banco->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        $comando = $banco->prepare($sql);
+        $comando->execute(array($this->id));
+        Banco::desconectar();
+        // Retornar quantidade de linhas apagadas:
+        return $comando->rowCount();
+    }
+
     public function Listar(){
         //Copiei do listar
    
@@ -33,10 +44,12 @@ class Classificacao{
      
             return $resultado;
         }
-           
-        
-
     }
+
+    
+    
+    
+    
 
 
 

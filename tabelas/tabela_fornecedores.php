@@ -1,7 +1,7 @@
 <div class="container fornecedores overflow-hidden" style="display: none;">
     <div class="row">
         <div class="col mx-auto">
-            <h1 class="h1 text-center">Fornecedores</h1>
+            <h1 class="h1 text-center mb-5">Fornecedores</h1>
             <div class="table-responsive ms-5 me-5">
                 <table class="table">
                     <thead class="text-center">
@@ -30,9 +30,11 @@
                                         <i class="bi bi-pencil-square"></i>
                                     </button>
 
-                                    <button type="submit" class="btn btn-danger btn-sm fs-5 mb-2">
-                                        <i class="bi bi-trash3"></i>
-                                    </button>
+                                    <a href="actions/deletar_fornecedor.php?id=<?= $f['id'] ?>" onclick="confirmar(<?= $f['id']; ?>); return false;">
+                                        <button type="submit" class="btn btn-danger btn-sm fs-5 mb-2">
+                                            <i class="bi bi-trash3"></i>
+                                        </button>
+                                    </a>
                                 </td>
                             </tr>
                         </tbody>

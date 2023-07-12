@@ -1,11 +1,12 @@
 <?php
 require_once('classes/Produtos.class.php');
-$p = new Produtos();
+
 // $tabela = $p->ListarTudo();
 // Numero total de registros no banco de dados 
+$p = new Produtos();
 $totalRegistros = $p->ObterQtdRegistro()[0]['qtd'];
 // Numero de registros exibidos por pagina 
-$registrosPorPagina = 10;
+$registrosPorPagina = 5;
 // Calcula o numero total de paginas 
 $totalPaginas = ceil($totalRegistros / $registrosPorPagina);
 // Obtem o numero da pagina atual 
@@ -134,7 +135,7 @@ $listarClasse = $classeTerapeutica->Listar();
 
                         <div class="col-md-6">
                             <label for="nome" class="form-label">Nome</label>
-                            <input type="text" class="form-control" name="nome" id="edtNome" required autofocus>
+                            <input value="<?=$produto["nome"] ?>" type="text" class="form-control" name="nome" id="edtNome">
                         </div>
                         <div class="col-12">
                             <label for="tipo_classificacao" class="form-label">Classificação</label>
@@ -167,6 +168,7 @@ $listarClasse = $classeTerapeutica->Listar();
                             </div>
                         </div>
                         <div>
+                            <input value="<?=$produto["id"] ?>" type="hidden" name="id" id="id">
                             <input type="submit" class="btn btn-primary" value="Salvar">
                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
                         </div>

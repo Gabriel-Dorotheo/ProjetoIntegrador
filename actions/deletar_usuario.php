@@ -1,6 +1,4 @@
 <?php 
-
-
 if(isset($_GET['id'])){
     require_once("../classes/Usuario.class.php");
     
@@ -10,7 +8,7 @@ if(isset($_GET['id'])){
     
     if ($c->Deletar() == 1){
             
-        header("Location: ../usuario.php");
+        header("Location: ../usuario.php?alertaConta=0");
         exit();
         
     }else{

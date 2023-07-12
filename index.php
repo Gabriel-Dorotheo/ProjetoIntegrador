@@ -66,10 +66,13 @@
             <div class="carousel-item">
                 <img src="img/pexels-freestocksorg-143654.jpg" class="imag" style="opacity: 0.3; max-height:100vh;">
             </div>
+            <div class="carousel-item">
+                <img src="img/img" class="imag" style="opacity: 0.3; max-height:100vh;">
+            </div>
         </div>
     </div>
 
-    <div class="row">
+    <div class="row ">
         <div class="col rounded-3">
             <div class="container bg-white mx-auto d-flex justify-content-center rounded border-rounded-3 sombra" style="z-index: 1; min-width: 400px; max-width:400px; position:absolute; top:50%; left:50%; transform: translate(-50%,-50%);">
                 <div class="row">

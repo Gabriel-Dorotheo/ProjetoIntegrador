@@ -1,4 +1,4 @@
-<div class="table-responsive ms-5 me-5">
+<div class="table-responsive me-5">
     <table class="table">
         <thead>
             <tr>
@@ -32,10 +32,8 @@
                     <td>
                         <button type="submit" class="btn btn-primary btn-sm fs-5 me-3" data-bs-toggle="modal" data-bs-target="#editar" data-bs-nome="<?= $usuario['nome']; ?>" data-bs-email="<?= $usuario['usuario_email']; ?>" data-bs-nivel="<?= $usuario['id_nivel']; ?>" data-bs-telefone="<?= $usuario['usuario_telefone']; ?>"><i class="bi bi-pencil-square"></i></button>
 
-                        <a href="actions/deletar_usuario.php?id=<?= $usuario['id'] ?>" onclick="confirmarConta(<?= $usuario['id']; ?>); return false;">
-                        <button type="submit" class="btn btn-danger btn-sm fs-5">
-                                <i class="bi bi-trash3"></i>
-                        </button></a>
+                        <a href="actions/deletar_usuario.php?id=<?= $usuario['id'] ?>"><button type="submit" class="btn btn-danger btn-sm fs-5">
+                                <i class="bi bi-trash3"></i></button></a>
                     </td>
                 </tr>
             <?php } ?>
@@ -43,4 +41,3 @@
         </tbody>
     </table>
 </div>
-<?php require_once('alertas.php'); ?>

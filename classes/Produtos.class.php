@@ -63,10 +63,10 @@ class Produtos
     public function Atualizar()
     {
         $banco = Banco::conectar();
-        $sql = "UPDATE produtos SET nome = ?, id_classificacao = ?, id_fornecedor=?, descricao=?, id_tipo=? WHERE id=?";
+        $sql = "UPDATE produtos SET nome = ?, id_classificacao = ?, id_fornecedor=?, descricao=?, id_tipo=?, nota_fiscal=? WHERE id=?";
         $banco->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         $comando = $banco->prepare($sql);
-        $comando->execute(array($this->nome, $this->id_classificacao, $this->id_fornecedor, $this->id_tipo));
+        $comando->execute(array($this->nome, $this->id_classificacao, $this->id_fornecedor, $this->descricao, $this->id_tipo, $this->nota_fiscal, $this->id));
         Banco::desconectar();
         // Retornar quantidade de linhas apagadas:
         return $comando->rowCount();
