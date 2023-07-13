@@ -6,7 +6,7 @@
                 <table class="table">
                     <thead class="text-center">
                         <tr>
-                            <th scope="col">#</th>
+
                             <th scope="col">Código</th>
                             <th scope="col">Validade</th>
                             <th scope="col">Quantidade</th>                       
@@ -16,7 +16,7 @@
                     <tbody class="text-center">
                         <?php foreach ($lote as $l) { ?>
                             <tr>
-                                <th scope="row"><?= $l['id'] ?></th>
+
                                 <td><?= $l['codigo'] ?></td>
                                 <td><?= $l['validade'] ?></td>
                                 <td><?= $l['quantidade'] ?></td>                                

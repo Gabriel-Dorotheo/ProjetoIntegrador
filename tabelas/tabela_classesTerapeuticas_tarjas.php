@@ -7,7 +7,6 @@
                 <table class="table">
                     <thead class="text-center">
                         <tr>
-                            <th scope="col">#</th>
                             <th scope="col">Tipo</th>
                             <th scope="col">Editar</th>
                         </tr>
@@ -15,7 +14,6 @@
                     <?php foreach ($resultado as $class) { ?>
                         <tbody class="text-center">
                             <tr>
-                                <th scope="row"><?= $class['id'] ?></th>
                                 <td scope="row"><?= $class['tipo'] ?></td>
                                 <td>
                                     <button type="submit" class="btn btn-primary btn-sm fs-5 mb-2" data-bs-toggle="modal" data-bs-target="#editarClasse" data-bs-id="<?= $class['id']; ?>" data-bs-tipo="<?= $class['tipo']; ?>">                                      
@@ -34,7 +32,6 @@
                 <table class="table">
                     <thead class="text-center">
                         <tr>
-                            <th scope="col">#</th>
                             <th scope="col">Tipo</th>
                             <th scope="col">Editar</th>
                         </tr>
@@ -42,7 +39,6 @@
                     <?php foreach ($tipo as $tarja) { ?>
                         <tbody class="text-center">
                             <tr>
-                                <th scope="row"><?= $tarja['id'] ?></th>
                                 <td scope="row"><?= $tarja['tipo'] ?></td>
                                 <td>
                                     <button type="submit" class="btn btn-primary btn-sm fs-5" data-bs-toggle="modal" data-bs-target="#editarTarja" data-bs-idTarja="<?= $tarja['id']; ?>" data-bs-tarja="<?= $tarja['tipo']; ?>"><i class="bi bi-pencil-square"></i></button>

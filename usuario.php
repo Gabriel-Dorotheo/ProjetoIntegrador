@@ -50,8 +50,8 @@ $resultado = $usuario->Listar();
                     <!-- botões de adicionar -->
                     <div class="row">
                         <div class="col p-3 mt-3 d-flex justify-content-end me-5">
-                            <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#staticBackdrop" href="../actions/cadastrar_contato.php"><i class="bi bi-person-plus fs-5"></i> Adicionar Usuário</button>
-                        </div>
+                         
+                                <a href="#"><i class="bi bi-person-plus fs-2" data-bs-toggle="modal" data-bs-target="#staticBackdrop" href="../actions/cadastrar_contato.php" style="cursor: pointer";></i></a>
                     </div>
 
                     <!-- tabela usuario -->

@@ -32,190 +32,191 @@ $resultado = $usuario->Listar();
             </div>
 
 
-        <!-- Menu -->
-        <div class="row mx-auto">
-            <div class="col">
-                <div class="h1 text-center text-white m-4 sombra-texto">Início</div>
-                <div class="container mt-5 mb-5 border rounded-2 shadow bg-body-secondary rounded mx-auto">
-                    <div class="row">
-                        <div class="col fs-5 mt-5 d-flex justify-content-evenly">
-                            <button type="button" class="btn btn-danger btn-lg" id="btnMudar1"><i class="bi bi-bell-fill"></i>
-                                Avisos
-                            </button>
+            <!-- Menu -->
+            <div class="row mx-auto">
+                <div class="col">
+                    <div class="h1 text-center text-white m-4 sombra-texto">Início</div>
+                    <div class="container mt-5 mb-5 border rounded-2 shadow bg-body-secondary rounded mx-auto">
+                        <div class="row">
+                            <div class="col fs-5 mt-5 d-flex justify-content-evenly">
+                                <button type="button" class="btn btn-danger btn-lg" id="btnMudar1" disabled><i class="bi bi-bell-fill"></i>
+                                    Avisos
+                                </button>
 
-                            <button type="button" class="btn btn-info btn-lg" id="btnMudar2"><i class="bi bi-bar-chart-fill"></i>
-                                Gráficos
-                            </button>
-                        </div>
-                    </div>
-
-                    <div class="row">
-                        <div class="col">
-                            <!-- Informações do item Avisos -->
-                            <div class="avisos m-5 p-0 fs-5">
-                                <p>
-                                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptatum, nihil
-                                    earum
-                                    odit
-                                    necessitatibus, fugiat temporibus quo nemo eos rem aut sapiente. Necessitatibus
-                                    dolorum
-                                    facilis accusantium! Impedit nemo tenetur quas tempore?
-                                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aliquid porro sequi
-                                    nobis
-                                    dicta, quia eos aut quae unde sed aperiam quas esse obcaecati nulla cumque!
-                                    Commodi
-                                    facilis fugiat modi quos!
-                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum corrupti
-                                    tempore
-                                    nostrum aspernatur distinctio quis? Eligendi aperiam itaque nisi officiis totam
-                                    minus
-                                    autem, quia fuga molestias. Sit laboriosam eius cumque.
-                                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Libero asperiores
-                                    tempore
-                                    possimus nobis neque, cum corporis vitae. Rerum, quod ab? Nulla temporibus illum
-                                    sapiente repellat sequi sunt aut reprehenderit laudantium.
-                                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptatum, nihil
-                                    earum
-                                    odit
-                                    necessitatibus, fugiat temporibus quo nemo eos rem aut sapiente. Necessitatibus
-                                    dolorum
-                                    facilis accusantium! Impedit nemo tenetur quas tempore?
-                                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aliquid porro sequi
-                                    nobis
-                                    dicta, quia eos aut quae unde sed aperiam quas esse obcaecati nulla cumque!
-                                    Commodi
-                                    facilis fugiat modi quos!
-                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum corrupti
-                                    tempore
-                                    nostrum aspernatur distinctio quis? Eligendi aperiam itaque nisi officiis totam
-                                    minus
-                                    autem, quia fuga molestias. Sit laboriosam eius cumque.
-                                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Libero asperiores
-                                    tempore
-                                    possimus nobis neque, cum corporis vitae. Rerum, quod ab? Nulla temporibus illum
-                                    sapiente repellat sequi sunt aut reprehenderit laudantium.
-                                </p>
+                                <button type="button" class="btn btn-info btn-lg" id="btnMudar2" disabled><i class="bi bi-bar-chart-fill"></i>
+                                    Gráficos
+                                </button>
                             </div>
                         </div>
-                        <!-- Tabela de cada classe terapêuticas -->
-                        <div class="grafico">
-                            <div class="row">
-                                <div class="col d-flex flex-wrap justify-content-evenly m-3">
-                                    <button class="border-0 mb-3 bg-transparent text-start" id="btnTrocar1">Antibióticos</button>
-                                    <button class="border-0 mb-3 bg-transparent text-start" id="btnTrocar2">Probióticos</button>
-                                    <button class="border-0 mb-3 bg-transparent text-start" id="btnTrocar3">Antialérgicos</button>
-                                    <button class="border-0 mb-3 bg-transparent text-start">Antidepressivos</button>
-                                    <button class="border-0 mb-3 bg-transparent text-start">Anti-inflamatórios</button>
+
+                        <div class="row">
+                            <div class="col">
+                                <!-- Informações do item Avisos -->
+                                <div class="avisos m-5 p-0 fs-5">
+                                    <p>
+                                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptatum, nihil
+                                        earum
+                                        odit
+                                        necessitatibus, fugiat temporibus quo nemo eos rem aut sapiente. Necessitatibus
+                                        dolorum
+                                        facilis accusantium! Impedit nemo tenetur quas tempore?
+                                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aliquid porro sequi
+                                        nobis
+                                        dicta, quia eos aut quae unde sed aperiam quas esse obcaecati nulla cumque!
+                                        Commodi
+                                        facilis fugiat modi quos!
+                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum corrupti
+                                        tempore
+                                        nostrum aspernatur distinctio quis? Eligendi aperiam itaque nisi officiis totam
+                                        minus
+                                        autem, quia fuga molestias. Sit laboriosam eius cumque.
+                                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Libero asperiores
+                                        tempore
+                                        possimus nobis neque, cum corporis vitae. Rerum, quod ab? Nulla temporibus illum
+                                        sapiente repellat sequi sunt aut reprehenderit laudantium.
+                                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptatum, nihil
+                                        earum
+                                        odit
+                                        necessitatibus, fugiat temporibus quo nemo eos rem aut sapiente. Necessitatibus
+                                        dolorum
+                                        facilis accusantium! Impedit nemo tenetur quas tempore?
+                                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aliquid porro sequi
+                                        nobis
+                                        dicta, quia eos aut quae unde sed aperiam quas esse obcaecati nulla cumque!
+                                        Commodi
+                                        facilis fugiat modi quos!
+                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum corrupti
+                                        tempore
+                                        nostrum aspernatur distinctio quis? Eligendi aperiam itaque nisi officiis totam
+                                        minus
+                                        autem, quia fuga molestias. Sit laboriosam eius cumque.
+                                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Libero asperiores
+                                        tempore
+                                        possimus nobis neque, cum corporis vitae. Rerum, quod ab? Nulla temporibus illum
+                                        sapiente repellat sequi sunt aut reprehenderit laudantium.
+                                    </p>
                                 </div>
                             </div>
-                            <!-- Linha e Coluna que serão exibidas as tabelas -->
-                            <div class="row">
-                                <div class="col ms-5 mb-5 me-5">
-                                    <!-- Conteudo Item 1 -->
-                                    <div class="antibioticos">
-                                        <div class="card card-body">
-                                            <div class="h2 text-center mb-5 mt-3">Antibióticos</div>
-                                            <div class="table-responsive ms-5 me-5">
-                                                <table class="table">
-                                                    <thead>
-                                                        <tr>
-                                                            <th scope="col">#</th>
-                                                            <th scope="col">Nome</th>
-                                                            <th scope="col">Quantidade</th>
-                                                        </tr>
-                                                    </thead>
-                                                    <tbody class="table-group-divider">
-                                                        <?php foreach ($resultado as $usuario) { ?>
-
+                            <!-- Tabela de cada classe terapêuticas -->
+                            <div class="grafico">
+                                <div class="row">
+                                    <div class="col d-flex flex-wrap justify-content-evenly m-3">
+                                        <button class="border-0 mb-3 bg-transparent text-start" id="btnTrocar1">Antibióticos</button>
+                                        <button class="border-0 mb-3 bg-transparent text-start" id="btnTrocar2">Probióticos</button>
+                                        <button class="border-0 mb-3 bg-transparent text-start" id="btnTrocar3">Antialérgicos</button>
+                                        <button class="border-0 mb-3 bg-transparent text-start">Antidepressivos</button>
+                                        <button class="border-0 mb-3 bg-transparent text-start">Anti-inflamatórios</button>
+                                    </div>
+                                </div>
+                                <!-- Linha e Coluna que serão exibidas as tabelas -->
+                                <div class="row">
+                                    <div class="col ms-5 mb-5 me-5">
+                                        <!-- Conteudo Item 1 -->
+                                        <div class="antibioticos">
+                                            <div class="card card-body">
+                                                <div class="h2 text-center mb-5 mt-3">Antibióticos</div>
+                                                <div class="table-responsive ms-5 me-5">
+                                                    <table class="table">
+                                                        <thead>
                                                             <tr>
-                                                                <td>
-                                                                    <?= $usuario['id'] ?>
-                                                                </td>
-                                                                <td>
-                                                                    <?= $usuario['nome'] ?>
-                                                                </td>
-                                                                <td>
-                                                                    <div class="progress" role="progressbar" aria-label="success example" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">
-                                                                        <div class="progress-bar bg-success" style="width: 100%">100%</div>
-                                                                    </div>
-                                                                </td>
+                                                                <th scope="col">#</th>
+                                                                <th scope="col">Nome</th>
+                                                                <th scope="col">Quantidade</th>
                                                             </tr>
-                                                        <?php } ?>
+                                                        </thead>
+                                                        <tbody class="table-group-divider">
+                                                            <?php foreach ($resultado as $usuario) { ?>
 
-                                                    </tbody>
-                                                </table>
+                                                                <tr>
+                                                                    <td>
+                                                                        <?= $usuario['id'] ?>
+                                                                    </td>
+                                                                    <td>
+                                                                        <?= $usuario['nome'] ?>
+                                                                    </td>
+                                                                    <td>
+                                                                        <div class="progress" role="progressbar" aria-label="success example" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">
+                                                                            <div class="progress-bar bg-success" style="width: 100%">100%</div>
+                                                                        </div>
+                                                                    </td>
+                                                                </tr>
+                                                            <?php } ?>
+
+                                                        </tbody>
+                                                    </table>
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
-                                    <!-- Conteudo Item 2  -->
-                                    <div class="probioticos" style="display: none">
-                                        <div class="card card-body">
-                                            <div class="h2 text-center mb-5 mt-3">Probióticos</div>
-                                            <div class="table-responsive ms-5 me-5">
-                                                <table class="table">
-                                                    <thead>
-                                                        <tr>
-                                                            <th scope="col">#</th>
-                                                            <th scope="col">Nome</th>
-                                                            <th scope="col">Quantidade</th>
-                                                        </tr>
-                                                    </thead>
-                                                    <tbody class="table-group-divider">
-                                                        <?php foreach ($resultado as $usuario) { ?>
-
+                                        <!-- Conteudo Item 2  -->
+                                        <div class="probioticos" style="display: none">
+                                            <div class="card card-body">
+                                                <div class="h2 text-center mb-5 mt-3">Probióticos</div>
+                                                <div class="table-responsive ms-5 me-5">
+                                                    <table class="table">
+                                                        <thead>
                                                             <tr>
-                                                                <td>
-                                                                    <?= $usuario['id'] ?>
-                                                                </td>
-                                                                <td>
-                                                                    <?= $usuario['nome'] ?>
-                                                                </td>
-                                                                <td>
-                                                                    <div class="progress" role="progressbar" aria-label="primary example" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">
-                                                                        <div class="progress-bar bg-primary" style="width: 100%">100%</div>
-                                                                    </div>
-                                                                </td>
+                                                                <th scope="col">#</th>
+                                                                <th scope="col">Nome</th>
+                                                                <th scope="col">Quantidade</th>
                                                             </tr>
-                                                        <?php } ?>
+                                                        </thead>
+                                                        <tbody class="table-group-divider">
+                                                            <?php foreach ($resultado as $usuario) { ?>
 
-                                                    </tbody>
-                                                </table>
+                                                                <tr>
+                                                                    <td>
+                                                                        <?= $usuario['id'] ?>
+                                                                    </td>
+                                                                    <td>
+                                                                        <?= $usuario['nome'] ?>
+                                                                    </td>
+                                                                    <td>
+                                                                        <div class="progress" role="progressbar" aria-label="primary example" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">
+                                                                            <div class="progress-bar bg-primary" style="width: 100%">100%</div>
+                                                                        </div>
+                                                                    </td>
+                                                                </tr>
+                                                            <?php } ?>
+
+                                                        </tbody>
+                                                    </table>
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
-                                    <!--Conteudo Item 3  -->
-                                    <div class="antialergicos" style="display: none">
-                                        <div class="card card-body">
-                                            <div class="h2 text-center mb-5 mt-3">Antialérgicos</div>
-                                            <div class="table-responsive ms-5 me-5">
-                                                <table class="table">
-                                                    <thead>
-                                                        <tr>
-                                                            <th scope="col">#</th>
-                                                            <th scope="col">Nome</th>
-                                                            <th scope="col">Quantidade</th>
-                                                        </tr>
-                                                    </thead>
-                                                    <tbody class="table-group-divider">
-                                                        <?php foreach ($resultado as $usuario) { ?>
-
+                                        <!--Conteudo Item 3  -->
+                                        <div class="antialergicos" style="display: none">
+                                            <div class="card card-body">
+                                                <div class="h2 text-center mb-5 mt-3">Antialérgicos</div>
+                                                <div class="table-responsive ms-5 me-5">
+                                                    <table class="table">
+                                                        <thead>
                                                             <tr>
-                                                                <td>
-                                                                    <?= $usuario['id'] ?>
-                                                                </td>
-                                                                <td>
-                                                                    <?= $usuario['nome'] ?>
-                                                                </td>
-                                                                <td>
-                                                                    <div class="progress" role="progressbar" aria-label="danger example" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">
-                                                                        <div class="progress-bar bg-danger" style="width: 100%">100%</div>
-                                                                    </div>
-                                                                </td>
+                                                                <th scope="col">#</th>
+                                                                <th scope="col">Nome</th>
+                                                                <th scope="col">Quantidade</th>
                                                             </tr>
-                                                        <?php } ?>
+                                                        </thead>
+                                                        <tbody class="table-group-divider">
+                                                            <?php foreach ($resultado as $usuario) { ?>
 
-                                                    </tbody>
-                                                </table>
+                                                                <tr>
+                                                                    <td>
+                                                                        <?= $usuario['id'] ?>
+                                                                    </td>
+                                                                    <td>
+                                                                        <?= $usuario['nome'] ?>
+                                                                    </td>
+                                                                    <td>
+                                                                        <div class="progress" role="progressbar" aria-label="danger example" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">
+                                                                            <div class="progress-bar bg-danger" style="width: 100%">100%</div>
+                                                                        </div>
+                                                                    </td>
+                                                                </tr>
+                                                            <?php } ?>
+
+                                                        </tbody>
+                                                    </table>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
@@ -225,15 +226,15 @@ $resultado = $usuario->Listar();
                     </div>
                 </div>
             </div>
+            <!-- rodapé -->
+            <?php require_once('components/rodape.php') ?>
         </div>
-        <!-- rodapé -->
-        <?php require_once('components/rodape.php') ?>
-    </div>
-                                                            
-    <!-- Bootstrap -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
 
-    <!-- Jquery -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js" integrity="sha512-pumBsjNRGGqkPzKHndZMaAG+bir374sORyzM3uulLV14lN5LyykqNk8eEeUlUkB3U0M4FApyaHraT65ihJhDpQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="script/script.js"></script>
+        <!-- Bootstrap -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+
+        <!-- Jquery -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js" integrity="sha512-pumBsjNRGGqkPzKHndZMaAG+bir374sORyzM3uulLV14lN5LyykqNk8eEeUlUkB3U0M4FApyaHraT65ihJhDpQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <script src="script/script.js"></script>
+
 </html>

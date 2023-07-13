@@ -127,7 +127,6 @@ $("#lote").click(function(){
     $(".gerenciarTabela, .fornecedores, .adicionarProduto, .tarja").hide();
 });
 
-
 //botao back to top
 let mybutton = document.getElementById("btn-back-to-top");
 

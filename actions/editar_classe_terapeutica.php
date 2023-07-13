@@ -8,11 +8,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $c->tipo = $_POST['nome'];
 
     if ($c->Atualizar() == 1) {
-
         //Colocar por onde ira mandar o usuario após a att
-
         header('Location: ../produtos.php?msg=8');
-        
     } else {
        echo "Falha ao modificar.";
        var_dump($_POST);

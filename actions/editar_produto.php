@@ -9,19 +9,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $u->id_classificacao = $_POST['id_classificacao'];
     $u->id_fornecedor = $_POST['id_fornecedor'];
     $u->id_tipo = $_POST['id_tipo'];
-  
-
-
-    if ($u->Atualizar() == 1) {
-
-        //Colocar por onde ira mandar o usuario após a att
-
-        header('Location: ../produtos.php?msg=5');
-        
-    } else {
-       echo "Falha ao modificar.";
-       var_dump($_POST);
-    }
+    $u->Atualizar();
+    header('Location: ../produtos.php?msg=5');
 } else {
     echo "Erro <br>";
     //Redirecionar o usuario para angum lugar

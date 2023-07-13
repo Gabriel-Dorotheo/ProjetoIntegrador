@@ -6,7 +6,6 @@
                 <table class="table">
                     <thead class="text-center">
                         <tr>
-                            <th scope="col">#</th>
                             <th scope="col">Nome</th>
                             <th scope="col">Razão Social</th>
                             <th scope="col">CNPJ</th>
@@ -19,7 +18,6 @@
                     <?php foreach ($nm_fornecedor as $f) { ?>
                         <tbody class="text-center">
                             <tr>
-                                <th scope="row"><?= $f['id'] ?></th>
                                 <td><?= $f['nome'] ?></td>
                                 <td><?= $f['razao_social'] ?></td>
                                 <td><?= $f['cnpj'] ?></td>
@@ -33,7 +31,7 @@
                                 </button>
                                     <a href="actions/deletar_fornecedor.php?id=<?= $f['id'] ?>" onclick="confirmar(<?= $f['id']; ?>); return false;">
                                         <button type="submit" class="btn btn-danger btn-sm fs-5 me-3 mb-2">
-                                            <i class="bi bi-trash3"></i>
+                                            <i class="bi bi-trash3 fs-4"></i>
                                         </button>
                                     </a>
                                 </td>

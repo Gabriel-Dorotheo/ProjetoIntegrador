@@ -4,11 +4,10 @@ $lstUser = $listarUsuario->Listar();
 
 ?>
 
-<div class="table-responsive ms-5 me-5">
+<div class="table-responsive ms-5">
     <table class="table">
         <thead>
             <tr>
-                <th scope="col">#</th>
                 <th scope="col">Nome</th>
                 <th scope="col">Email</th>
                 <th scope="col">Nível</th>
@@ -19,9 +18,6 @@ $lstUser = $listarUsuario->Listar();
         <?php foreach ($lstUser as $usuario) { ?>
             <tbody class="table-group">
                 <tr>
-                    <td>
-                        <?= $usuario['id'] ?>
-                    </td>
                     <td>
                         <?= $usuario['nome'] ?>
                     </td>
@@ -35,14 +31,11 @@ $lstUser = $listarUsuario->Listar();
                         <?= $usuario['usuario_telefone'] ?>
                     </td>
                     <td>
-                        <button type="submit" class="btn btn-primary btn-sm fs-5 me-3" data-bs-toggle="modal" data-bs-target="#editarUser" data-bs-idUser="<?= $usuario['id'] ?>" data-bs-nome="<?= $usuario['nome'] ?>" data-bs-fone="<?= $usuario['usuario_telefone'] ?>" data-bs-email="<?= $usuario['usuario_email']?>" data-bs-nivel="<?= $usuario['id_nivel'] ?>" data-bs-senha="<?= $usuario['senha'] ?>">
-                            <i class="bi bi-pencil-square"></i>
-                        </button>
+                        <a href="#"><i class="bi bi-pencil-square fs-4 me-3" data-bs-toggle="modal" data-bs-target="#editarUser" data-bs-idUser="<?= $usuario['id'] ?>" data-bs-nome="<?= $usuario['nome'] ?>" data-bs-fone="<?= $usuario['usuario_telefone'] ?>" data-bs-email="<?= $usuario['usuario_email']?>" data-bs-nivel="<?= $usuario['id_nivel'] ?>" data-bs-senha="<?= $usuario['senha'] ?>" style="cursor: pointer;"></i></a>
 
                         <a href="actions/deletar_usuario.php?id=<?= $usuario['id'] ?>" onclick="confirmarConta(<?= $usuario['id']; ?>); return false;">
-                            <button type="submit" class="btn btn-danger btn-sm fs-5">
-                                <i class="bi bi-trash3"></i>
-                            </button>
+                                <i class="bi bi-trash3 fs-4"></i>
+
                         </a>
                     </td>
                 </tr>

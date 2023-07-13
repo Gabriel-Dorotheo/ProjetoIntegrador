@@ -79,18 +79,25 @@ $listarClasse = $classeTerapeutica->Listar();
                     <div class="row">
                         <!-- Menu Lateral -->
                         <div class="col-md-2">
-                            <div class="list-group mt-5">
-                                <button type="button" class="btn btn-sm btn-primary fw-semibold mb-3 mt-3" id="gerenciar">Gerenciar
-                                    Produtos</button>
-                                <button class="btn btn-sm btn-success dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                    <i class="bi bi-plus-circle"></i> Adicionar
-                                </button>
-                                <ul class="dropdown-menu">
-                                    <li><a class="dropdown-item" href="#" id="adicionarPr">Produto</a></li>
-                                    <li><a class="dropdown-item" href="#" id="fornecedor">Fornecedor</a></li>
-                                    <li><a class="dropdown-item" href="#" id="classe_tarja">Classe Terapêutica / Tarja</a></li>
-                                    <li><a class="dropdown-item" href="#" id="lote">Lote</a></li>
-                                </ul>
+                            <button class="btn btn-outline-secondary mt-5" type="button" data-bs-toggle="collapse" data-bs-target="#collapsePontos" aria-expanded="false" aria-controls="collapseExample">
+                            <i class="bi bi-three-dots-vertical"></i>
+                            </button>
+                            <div class="collapse" id="collapsePontos">
+                                <div class="list-group">
+                                    <button class="btn btn-sm btn-success dropdown-toggle mt-3" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                        Adicionar
+                                        <ul class="dropdown-menu">
+                                            <li><a class="dropdown-item" href="#" id="classe_tarja">Classe Terapêutica / Tarja</a></li>
+                                            <li><a class="dropdown-item" href="#" id="fornecedor">Fornecedor</a></li>
+                                            <li><a class="dropdown-item" href="#" id="lote">Lote</a></li>
+                                            <li><a class="dropdown-item" href="#" id="adicionarPr">Produto</a></li>                                          
+                                                                                        
+                                        </ul>
+                                    </button>
+                                    <button type="button" class="btn btn-sm btn-primary fw-semibold mb-3 mt-3" id="gerenciar">Gerenciar
+                                        Produtos</button>
+                                </div>
+
                             </div>
                         </div>
                         <!-- Tabela de produtos -->

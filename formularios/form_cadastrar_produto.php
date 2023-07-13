@@ -35,7 +35,7 @@
     </div>
     <div class="col-md-8 mx-auto">
         <label for="descricao" class="form-label fw-bolder">Descrição</label><br>
-        <textarea name="descricao" id="descricao" rows="2" cols="60"></textarea><br>
+        <textarea name="descricao" class="bg-white" id="descricao" rows="2" cols="34"></textarea><br>
         <input type="submit" class="btn btn-success fw-semibold mt-5" value="Adicionar">
     </div>
 </form>
