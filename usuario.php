@@ -21,13 +21,16 @@ $resultado = $usuario->Listar();
 
     <!-- Animate CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <!-- Meu CSS -->
     <link rel="stylesheet" href="estilo/style.css">
+    <!-- Javascript Data Table -->
+    <link href="https://unpkg.com/tabulator-tables/dist/css/tabulator.min.css" rel="stylesheet">
     <link rel="shortcut icon" href="img/pilulas.png" type="image/x-icon">
 </head>
 
 <body>
 
-    
+
     <div class="container-fluid overflow-hidden m-0 p-0" style="min-height: 100vh;">
 
         <div class="row bg-transparent">
@@ -40,7 +43,7 @@ $resultado = $usuario->Listar();
             <div class="col">
                 <!-- titulo -->
                 <div class="titulo text-center m-5 sombra-texto text-white">
-                    <h1 class="text-center text-white m-4 sombra-texto">Gerenciamento de contas</h1>
+                    <h1 class="text-center text-white m-4 sombra-texto">Gerenciamento de Conta</h1>
                 </div>
 
                 <div class="container mt-5 mb-5 border border-0 rounded-2 shadow bg-body-secondary">
@@ -64,53 +67,6 @@ $resultado = $usuario->Listar();
 
         <!-- rodapé -->
         <?php require_once('components/rodape.php') ?>
-    </div>
-
-
-    <!-- modal editar -->
-
-    <!-- edt = editar -->
-    <!-- Modal -->
-    <div class="modal fade" id="editar" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h1 class="modal-title fs-5" id="staticBackdropLabel">Editar</h1>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <form class="row g-3" action="actions/cadastrar_contato.php" method="POST">
-
-                        <div class="col-md-6">
-                            <label for="nome" class="form-label">Nome</label>
-                            <input type="text" class="form-control" name="nome" id="edtNome" required autofocus>
-                        </div>
-                        <div class="col-6">
-                            <label for="usuario_telefone" class="form-label">Telefone</label>
-                            <input type="tel" class="form-control" name="usuario_telefone" id="edtTelefone" placeholder="" required>
-                        </div>
-                        <div class="col-12">
-                            <label for="id_nivel" class="form-label">Nível de acesso</label>
-                            <div class="input-group mb-3">
-                                <select class="custom-select" id="edtNivel" name="id_nivel">
-                                    <option value="1">1 - Administrador</option>
-                                    <option value="2">2 - Moderador</option>
-                                    <option value="3">3 - Visitante</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="col-md-12">
-                            <label for="usuario_email" class="form-label">Email</label>
-                            <input type="email" class="form-control" name="usuario_email" id="edtEmail" required>
-                        </div>
-                        <div>
-                            <input type="submit" class="btn btn-primary" value="Salvar">
-                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
     </div>
 
 
@@ -160,14 +116,10 @@ $resultado = $usuario->Listar();
             </div>
         </div>
     </div>
-<!-- Botão back to top -->
-<button
-        type="button"
-        class="btn btn-primary btn-floating btn-lg"
-        id="btn-back-to-top"
-        >
-  <i class="bi bi-arrow-up-circle"></i>
-</button>    
+    <!-- Botão back to top -->
+    <button type="button" class="btn btn-primary btn-floating btn-lg" id="btn-back-to-top">
+        <i class="bi bi-arrow-up-circle"></i>
+    </button>
 
     <!-- Bootstrap -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>

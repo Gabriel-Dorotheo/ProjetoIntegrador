@@ -32,7 +32,7 @@ class Lote{
    //Copiei do listar
 
    $banco = Banco::conectar();
-       $sql = "SELECT * FROM lote";
+       $sql = "SELECT * FROM view_lote";
        $comando = $banco->prepare($sql);
 
        $comando->execute();

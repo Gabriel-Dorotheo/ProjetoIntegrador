@@ -11,8 +11,8 @@
              <table class="table">
                  <thead class="text-center">
                      <tr>
-                         <th scope="col">#</th>
                          <th scope="col">Código</th>
+                         <th scope="col">Produto</th>
                          <th scope="col">Validade (Ano/Mes/Dia)</th>
                          <th scope="col">Quantidade</th>
                          <th scope="col">Editar</th>
@@ -21,8 +21,8 @@
                  <?php foreach ($lote as $l) { ?>
                      <tbody class="text-center">
                          <tr>
-                             <th scope="row"><?= $l['id'] ?></th>
                              <th scope="row"><?= $l['cod_lote'] ?></th>
+                             <td><?= $l['produtos']?></td>
                              <td><?= $l['validade'] ?></td>
                              <td><?= $l['quantidade'] ?></td>
                              <td>

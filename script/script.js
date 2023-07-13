@@ -12,8 +12,7 @@ $(document).ready(function() {
     $('#usuario_telefone').mask('(00) 0 0000-0000');
     $('#edtTelefone').mask('(00) 0 0000-0000');
 });
-var dateControl = document.querySelector('input[type="date"]');
-dateControl.value = '01-06-2017';
+
 //mask contato fornecedor
 $(document).ready(function() {
     $('#id_telefone').mask('(00) 0 0000-0000');
@@ -26,13 +25,34 @@ if (exampleModal) {
         // Button that triggered the modal
         const button = event.relatedTarget
         // Extract info from data-bs-* attributes
-        const id = button.getAttribute('data-bs-id')
+        const id = button.getAttribute('data-bs-id');
         const nome = button.getAttribute('data-bs-nome');
         
         exampleModal.querySelector('#edtId').value = id;
         exampleModal.querySelector('#edtNome').value = nome;
 
     })
+}
+const modalUsuario = document.getElementById('editarUser');
+if (modalUsuario) {
+    modalUsuario.addEventListener('show.bs.modal', event => {
+        // Button that triggered the modal
+        const button = event.relatedTarget;
+        // Extract info from data-bs-* attributes
+        const id = button.getAttribute('data-bs-idUser');
+        const nome = button.getAttribute('data-bs-nome');
+        const email = button.getAttribute('data-bs-email');
+        const nivel = button.getAttribute('data-bs-nivel');
+        const senha = button.getAttribute('data-bs-senha');
+        const fone = button.getAttribute('data-bs-fone');
+        
+        modalUsuario.querySelector('#edtIdUser').value = id;
+        modalUsuario.querySelector('#edtNome').value = nome;
+        modalUsuario.querySelector('#edtEmailUser').value = email;
+        modalUsuario.querySelector('#edtNivelUser').value = nivel;
+        modalUsuario.querySelector('#edtSenhaUser').value = senha;
+        modalUsuario.querySelector('#edtFoneUser').value = fone;
+    });
 }
 const modalClasseTerapeutica = document.getElementById('editarClasse');
 if (modalClasseTerapeutica) {
@@ -104,7 +124,7 @@ $("#classe_tarja").click(function(){
 });
 $("#lote").click(function(){
     $(".lote").fadeIn();
-    $(".gerenciarTabela, .fornecedores, .adicionarProduto").hide();
+    $(".gerenciarTabela, .fornecedores, .adicionarProduto, .tarja").hide();
 });
 
 

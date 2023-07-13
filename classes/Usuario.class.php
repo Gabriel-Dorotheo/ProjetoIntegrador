@@ -52,14 +52,14 @@ class Usuario{
 
     public function Atualizar(){
         $banco = Banco::conectar();
-        $sql = "UPDATE usuario SET nome = ?, usuario_email = ?, id_nivel=?, senha=?, usuario_telefone=? WHERE id=?";
+        $sql = "UPDATE usuario SET nome = ?, usuario_email = ?, id_nivel= ?, senha= ?, usuario_telefone= ? WHERE id=?";
         $banco->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         $comando = $banco->prepare($sql);
-        $comando->execute(array($this->nome,$this->usuario_email,$this->id_nivel,$this->senha,$this->usuario_telefone));
+        $hashSenha = hash('MD5',$this->senha);
+        $comando->execute(array($this->nome, $this->usuario_email, $this->id_nivel,$hashSenha, $this->usuario_telefone, $this->id));
         Banco::desconectar();
-        // Retornar quantidade de linhas apagadas:
-        return $comando->rowCount();
-        
+        // Retornar quantidade de linhas atualizadas:
+        return $comando->rowCount();    
     }
 
     public function BuscarPorID(){

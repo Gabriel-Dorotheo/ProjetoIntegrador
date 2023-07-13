@@ -86,11 +86,6 @@
     </div>
 </div>
 
-<?php 
-$editarTarja = new Classificacao();
-$edtTarja = $editarTarja->Listar();
-?>
-
 <!-- Modal para editar classe tarja -->
 <div class="modal fade" id="editarTarja" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
     <div class="modal-dialog">

@@ -71,7 +71,7 @@ $listarClasse = $classeTerapeutica->Listar();
             <div class="col">
                 <!-- titulo -->
                 <div class="titulo text-center m-5 sombra-texto text-white">
-                    <h1 class="text-center text-white m-4 sombra-texto">Gerenciamento de Produtos</h1>
+                    <h1 class="text-center text-white m-4 sombra-texto">Gerenciamento de Produto</h1>
                 </div>
 
                 <div class="container mt-5 mb-5 border border-0 rounded-2 shadow bg-body-secondary">

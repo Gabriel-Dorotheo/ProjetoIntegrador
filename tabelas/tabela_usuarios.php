@@ -1,3 +1,9 @@
+<?php
+$listarUsuario = new Usuario();
+$lstUser = $listarUsuario->Listar();
+
+?>
+
 <div class="table-responsive ms-5 me-5">
     <table class="table">
         <thead>
@@ -10,9 +16,8 @@
                 <th scope="col">Editar</th>
             </tr>
         </thead>
-        <tbody class="table-group-divider">
-            <?php foreach ($resultado as $usuario) { ?>
-
+        <?php foreach ($lstUser as $usuario) { ?>
+            <tbody class="table-group">
                 <tr>
                     <td>
                         <?= $usuario['id'] ?>
@@ -30,17 +35,70 @@
                         <?= $usuario['usuario_telefone'] ?>
                     </td>
                     <td>
-                        <button type="submit" class="btn btn-primary btn-sm fs-5 me-3" data-bs-toggle="modal" data-bs-target="#editar" data-bs-nome="<?= $usuario['nome']; ?>" data-bs-email="<?= $usuario['usuario_email']; ?>" data-bs-nivel="<?= $usuario['id_nivel']; ?>" data-bs-telefone="<?= $usuario['usuario_telefone']; ?>"><i class="bi bi-pencil-square"></i></button>
+                        <button type="submit" class="btn btn-primary btn-sm fs-5 me-3" data-bs-toggle="modal" data-bs-target="#editarUser" data-bs-idUser="<?= $usuario['id'] ?>" data-bs-nome="<?= $usuario['nome'] ?>" data-bs-fone="<?= $usuario['usuario_telefone'] ?>" data-bs-email="<?= $usuario['usuario_email']?>" data-bs-nivel="<?= $usuario['id_nivel'] ?>" data-bs-senha="<?= $usuario['senha'] ?>">
+                            <i class="bi bi-pencil-square"></i>
+                        </button>
 
                         <a href="actions/deletar_usuario.php?id=<?= $usuario['id'] ?>" onclick="confirmarConta(<?= $usuario['id']; ?>); return false;">
-                        <button type="submit" class="btn btn-danger btn-sm fs-5">
+                            <button type="submit" class="btn btn-danger btn-sm fs-5">
                                 <i class="bi bi-trash3"></i>
-                        </button></a>
+                            </button>
+                        </a>
                     </td>
                 </tr>
-            <?php } ?>
-
-        </tbody>
+            </tbody>
+        <?php } ?>
     </table>
 </div>
 <?php require_once('alertas.php'); ?>
+<!-- modal editar -->
+<!-- edt = editar -->
+<div class="modal fade" id="editarUser" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="staticBackdropLabel">Editar</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form class="row g-3" action="actions/editar_usuario.php" method="POST">
+                    <div class="col-md-2">
+                        <label for="id" class="form-label">#</label>
+                        <input type="text" id="edtIdUser" class="form-control fw-semibold" name="id" id="edtIdUser" readonly>
+                    </div>
+                    <hr>
+                    <div class="col-md-6">
+                        <label for="nome" class="form-label">Nome</label>
+                        <input type="text" class="form-control" name="nome" id="edtNome" autofocus>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="usuario_telefone" class="form-label">Telefone</label>
+                        <input type="text" class="form-control" name="usuario_telefone" id="edtFoneUser">
+                    </div>
+                    <div class="col-md-6">
+                        <label for="usuario_email" class="form-label">Email</label>
+                        <input type="email" class="form-control" name="usuario_email" id="edtEmailUser">
+                    </div>
+                    <div class="col-md-6">
+                        <label for="senha" class="form-label">Senha</label>
+                        <input type="password" class="form-control" name="senha" id="edtSenhaUser">
+                    </div>
+                    <div class="col-md-6">
+                        <label for="edtNivelUser" class="form-label">Nível de acesso</label>
+                        <div class="input-group mb-3">
+                            <select class="custom-select" id="edtNivelUser" name="id_nivel">
+                                <option value="1">1 - Administrador</option>
+                                <option value="2">2 - Moderador</option>
+                                <option value="3">3 - Visitante</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div>
+                        <input type="submit" class="btn btn-primary" value="Salvar">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
