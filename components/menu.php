@@ -26,6 +26,7 @@
                     <li class="nav-item">
                         <a class="nav-link fw-semibold text-white" href="estoque.php"><i class="bi bi-boxes"></i> Estoque</a>
                     </li>
+                    
                 </ul>
             </div>
             <div class="container-fluid mb-5">

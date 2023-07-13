@@ -5,29 +5,27 @@ class Produtos
 {
     public $id;
     public $nome;
-    public $nota_fiscal;
-    public $tipo_classificacao;
-    public $tipo_classe_terapeutica;
-    public $nome_fornecedor;
     public $id_classificacao;
-    public $id_fornecedor;
+    public $nota_fiscal;
     public $descricao;
     public $id_tipo;
-
+    public $id_fornecedor;
+    
+    
 
     public int $inicio;
     public int $maximo;
 
     public function Cadastrar()
     {
-        $sql = "INSERT INTO produtos(nome, id_classificacao, id_fornecedor, descricao, id_tipo) VALUE(?,?,?,?,?)";
+        $sql = "INSERT INTO produtos(nome, id_classificacao, nota_fiscal, descricao, id_tipo, id_fornecedor) VALUE(?,?,?,?,?,?)";
         //Trabalhar com o banco:
         //Conectando:
         $banco = Banco::conectar();
         //Transformar a string em comando sql:
         $comando = $banco->prepare($sql);
         //Executar e substituit os corngas (?):
-        $comando->execute(array($this->nome, $this->id_classificacao, $this->id_fornecedor, $this->descricao, $this->id_tipo));
+        $comando->execute(array($this->nome, $this->id_classificacao, $this-> nota_fiscal, $this-> descricao, $this->id_tipo, $this->id_fornecedor));
         //Desconectar do banco:
         Banco::desconectar();
     }
@@ -63,10 +61,10 @@ class Produtos
     public function Atualizar()
     {
         $banco = Banco::conectar();
-        $sql = "UPDATE produtos SET nome = ?, id_classificacao = ?, id_fornecedor=?, descricao=?, id_tipo=?, nota_fiscal=? WHERE id=?";
+        $sql = "UPDATE produtos SET nome = ?, id_classificacao = ?, id_fornecedor = ?, id_tipo= ? WHERE id=?";
         $banco->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         $comando = $banco->prepare($sql);
-        $comando->execute(array($this->nome, $this->id_classificacao, $this->id_fornecedor, $this->descricao, $this->id_tipo, $this->nota_fiscal, $this->id));
+        $comando->execute(array($this->nome, $this->id_classificacao, $this->id_fornecedor, $this->id_tipo, $this->id));
         Banco::desconectar();
         // Retornar quantidade de linhas apagadas:
         return $comando->rowCount();
@@ -116,20 +114,24 @@ class Produtos
         return $resultado;
 
     }
-    public function ObterTarjas()
+
+    public function ObterClassificacao()
     {
         $banco = Banco::conectar();
-        $sql = "SELECT * FROM tarjas";
+        $sql = "SELECT * FROM classificacao";
         $comando = $banco->prepare($sql);
         $comando->execute();
         $resultado = $comando->fetchAll(PDO::FETCH_ASSOC);
         Banco::desconectar();
         return $resultado;
     }
-    public function ObterClassesTerapeuticas()
+
+
+
+    public function ObterClassesTerapeutica()
 {
     $banco = Banco::conectar();
-    $sql = "SELECT * FROM classes_terapeuticas";
+    $sql = "SELECT * FROM classe_terapeutica";
     $comando = $banco->prepare($sql);
     $comando->execute();
     $resultado = $comando->fetchAll(PDO::FETCH_ASSOC);

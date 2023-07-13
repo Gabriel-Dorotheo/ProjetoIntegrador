@@ -1,14 +1,17 @@
 <?php
 
-if (isset($_GET['id'])) {
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     require_once('../classes/Produtos.class.php');
 
     $u = new Produtos();
-    $u->id = $_GET['id'];
+    
     $u->nome = $_POST['nome'];
-    $u->tipo_classificacao = $_POST['tipo_classificacao'];
-    $u->nome_fornecedor = $_POST['nome_fornecedor'];
-    $u->tipo_classe_terapeutica = $_POST['tipo'];
+    $u->id_classificacao = $_POST['id_classificacao'];
+    $u->id_fornecedor = $_POST['id_fornecedor'];
+    //$u->descricao = $_POST['descricao'];
+    $u->id_tipo = $_POST['id_tipo'];
+    //$u->nota_fiscal = $_POST['nota_fiscal'];
+    $u->id = $_POST['id'];
 
 
     if ($u->Atualizar() == 1) {

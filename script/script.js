@@ -37,6 +37,7 @@ if (exampleModal) {
     })
 }
 
+
 //alteração das tabelas de suas respectivas classes terapeuticas
 $("#btnTrocar1").click(function () {
     $(".antibioticos").fadeIn();
@@ -75,6 +76,11 @@ $("#classe_tarja").click(function(){
     $(".tarja").fadeIn();
     $(".fornecedores, .gerenciarTabela, .adicionarProduto").hide();
 });
+$("#lote").click(function(){
+    $(".lote").fadeIn();
+    $(".gerenciarTabela, .fornecedores, .adicionarProduto").hide();
+});
+
 
 //botao back to top
 let mybutton = document.getElementById("btn-back-to-top");

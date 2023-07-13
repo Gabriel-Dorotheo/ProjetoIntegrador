@@ -17,6 +17,14 @@
         <div class="col-md-6">
             <label for="cnpj" class="form-label fw-bolder">CNPJ</label>
             <input type="text" class="form-control" name="cnpj" id="cnpj" placeholder="XX.XXX.XXX/0001-XX" required>
+        </div>
+        <div class="col-md-6">
+            <label for="email" class="form-label fw-bolder">E-mail</label>
+            <input type="text" class="form-control" name="email" id="email" placeholder="email@gmail.com" required>
+        </div>
+        <div class="col-md-6">
+            <label for="telefone" class="form-label fw-bolder">Telefone</label>
+            <input type="text" class="form-control" name="telefone" id="telefone" placeholder="(XX) XXXXX-XXXX " required>
             <input type="submit" class="btn btn-success fw-semibold mx-auto cadastrarFornecedor mt-3" id="continuar" value="Cadastrar" onclick="">
         </div>
 

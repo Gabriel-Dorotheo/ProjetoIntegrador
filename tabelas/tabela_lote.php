@@ -14,7 +14,7 @@
                         </tr>
                     </thead>
                     <tbody class="text-center">
-                        <?php foreach ($lote as $l) { ?>
+                        <?php foreach ($resultado as $lote) { ?>
                             <tr>
                                 <th scope="row"><?= $l['id'] ?></th>
                                 <td><?= $l['codigo'] ?></td>

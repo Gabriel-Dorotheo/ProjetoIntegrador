@@ -9,6 +9,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $u->nome = $_POST['nome'];
     $u->id_classificacao = $_POST['id_classificacao'];
     $u->id_fornecedor = $_POST['id_fornecedor'];
+    $u->nota_fiscal = $_POST['nota_fiscal'];
     $u->descricao = $_POST['descricao'];
     $u->id_tipo = $_POST['id_tipo'];
 

@@ -6,17 +6,36 @@ class Fornecedor
     public $nome;
     public $razao_social;
     public $cnpj;
+    public $id_email;
+    public $id_telefone;
+    public $email;
+    public $telefone;
+
+    public function ObterIDEmail(){
+
+        $sql = "SELECT MAX(id) from email;";
+        $banco = Banco::conectar();
+        //Transformar a string em comando sql:
+        $comando = $banco->prepare($sql);
+        $id_email = $comando->fetchAll(PDO::FETCH_ASSOC);
+        
+    } 
+    
+
+
+
+
 
     public function Cadastrar()
     {
-        $sql = "INSERT INTO fornecedor(nome, razao_social, cnpj) VALUE(?,?,?)";
+        $sql = "INSERT INTO fornecedor(nome, razao_social, cnpj, id_email, id_telefone) VALUE(?,?,?,?,?)";
         //Trabalhar com o banco:
         //Conectando:
         $banco = Banco::conectar();
         //Transformar a string em comando sql:
         $comando = $banco->prepare($sql);
         //Executar e substituit os corngas (?):
-        $comando->execute(array($this->nome, $this->razao_social, $this->cnpj));
+        $comando->execute(array($this->nome, $this->razao_social, $this->cnpj, $this->id_email, $this->id_telefone));
         //Desconectar do banco:
         Banco::desconectar();
     }
@@ -26,7 +45,7 @@ class Fornecedor
         //Copiei do listar
 
         $banco = Banco::conectar();
-        $sql = "SELECT * FROM fornecedor";
+        $sql = "SELECT * FROM view_fornecedor";
         $comando = $banco->prepare($sql);
 
         $comando->execute();
@@ -73,4 +92,7 @@ class Fornecedor
   
         return $resultado;
     }
+
+
+  
 }

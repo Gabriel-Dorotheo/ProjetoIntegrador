@@ -1,6 +1,7 @@
 <?php
 require_once('classes/Produtos.class.php');
 
+
 // $tabela = $p->ListarTudo();
 // Numero total de registros no banco de dados 
 $p = new Produtos();
@@ -86,6 +87,7 @@ $listarClasse = $classeTerapeutica->Listar();
                                         <li><a class="dropdown-item" href="#" id="adicionarPr">Produto</a></li>
                                         <li><a class="dropdown-item" href="#" id="fornecedor">Fornecedor</a></li>
                                         <li><a class="dropdown-item" href="#" id="classe_tarja">Classe Terapêutica / Tarja</a></li>
+                                        <li><a class="dropdown-item" href="#" id="lote">Lote</a></li>
                                     </ul>
                             </div>
                         </div>
@@ -111,6 +113,12 @@ $listarClasse = $classeTerapeutica->Listar();
                             <?php require_once('formularios/form_cadastrar_classe_terapeutica.php') ?>
                             <?php require_once('tabelas/tabela_classesTerapeuticas_tarjas.php') ?>
                         </div>
+                        <!-- Formulario Lote -->
+                        <div class="lote col-10 mb-5" style="display:none">
+                            <?php require_once('formularios/form_cadastrar_lote.php') ?>
+                            <?php require_once('tabelas/tabela_lote.php') ?>                            
+                        </div>
+                    
                     </div>
 
                 </div>
@@ -132,17 +140,20 @@ $listarClasse = $classeTerapeutica->Listar();
                 </div>
                 <div class="modal-body">
                     <form class="row g-3" action="actions/editar_produto.php" method="POST">
-
-                        <div class="col-md-6">
-                            <label for="nome" class="form-label">Nome</label>
+                    <div class="col-md-2">
+                            <label for="id" class="form-label">#</label>
+                            <input value="<?=$produto["id"] ?>" type="id" class="form-control" name="id" id="edtId">
+                        </div>
+                        <div class="col-md-12">
+                            <label for= "nome" class="form-label">Nome</label>
                             <input value="<?=$produto["nome"] ?>" type="text" class="form-control" name="nome" id="edtNome">
                         </div>
                         <div class="col-12">
                             <label for="tipo_classificacao" class="form-label">Classificação</label>
                             <div class="input-group mb-3">
-                                <select class="custom-select" id="edtClassificacao" name="tipo_classificacao">
+                                <select class="custom-select" id="edtClassificacao" name="id_classificacao">
                                     <?php foreach ($valor as $produto) { ?>
-                                        <option><?= $produto['tipo'] ?></option>
+                                        <option> <?=$produto["id"] ?> <?= $produto['tipo'] ?></option>
                                     <?php } ?>
                                 </select>
                             </div>
@@ -150,9 +161,9 @@ $listarClasse = $classeTerapeutica->Listar();
                         <div class="col-12">
                             <label for="tipo" class="form-label">Tipo</label>
                             <div class="input-group mb-3">
-                                <select class="custom-select" id="edtTipo" name="tipo">
+                                <select class="custom-select" id="edtTipo" name="id_tipo">
                                     <?php foreach ($listarClasse as $produto) { ?>
-                                        <option><?= $produto['tipo'] ?></option>
+                                        <option><?=$produto["id"] ?> <?= $produto['tipo'] ?></option>
                                     <?php } ?>
                                 </select>
                             </div>
@@ -160,15 +171,14 @@ $listarClasse = $classeTerapeutica->Listar();
                         <div class="col-12">
                             <label for="nome_fornecedor" class="form-label">Fornecedor</label>
                             <div class="input-group mb-3">
-                                <select class="custom-select" id="edtFornecedor" name="nome_fornecedor">
+                                <select class="custom-select" id="edtFornecedor" name="id_fornecedor">
                                     <?php foreach ($nm_fornecedor as $produto) { ?>
-                                        <option><?= $produto['nome'] ?></option>
+                                        <option> <?=$produto["id"] ?> <?= $produto['nome'] ?></option>
                                     <?php } ?>
                                 </select>
                             </div>
                         </div>
                         <div>
-                            <input value="<?=$produto["id"] ?>" type="hidden" name="id" id="id">
                             <input type="submit" class="btn btn-primary" value="Salvar">
                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
                         </div>

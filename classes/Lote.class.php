@@ -9,19 +9,20 @@ class Lote{
     public $validade;
     public $quantidade;
     public $observacao;
+    public $codigo;
 
 
 
 
  public function Cadastrar(){
-    $sql = "INSERT INTO lote(cod_lote, id_produto, id_fornecedor, validade, quantidade, observacao) VALUE(?,?,?,?,?,?)";
+    $sql = "INSERT INTO lote(cod_lote, id_produto, id_fornecedor, validade, quantidade, observacao) VALUE(?,?,?,?)";
     //Trabalhar com o banco:
     //Conectando:
     $banco = Banco :: conectar();
     //Transformar a string em comando sql:
     $comando = $banco->prepare($sql);
     //Executar e substituit os corngas (?):
-    $comando->execute(array($this->cod_lote, $this->id_produto, $this->id_fornecedor, $this->validade, $this->quantidade,$this->observacao));
+    $comando->execute(array($this->cod_lote,$this->id_produto, $this->id_fornecedor,$this->validade, $this->quantidade,$this->observacao));
     //Desconectar do banco:
     Banco::desconectar();
  }
@@ -31,7 +32,7 @@ class Lote{
    //Copiei do listar
 
    $banco = Banco::conectar();
-       $sql = "SELECT * FROM view_lote";
+       $sql = "SELECT * FROM lote";
        $comando = $banco->prepare($sql);
 
        $comando->execute();

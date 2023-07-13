@@ -17,17 +17,17 @@
                                 <th scope="row"><?= $class['id'] ?></th>
                                 <td scope="row"><?= $class['tipo'] ?></td>
                                 <td>
-                                <button type="submit" class="btn btn-primary btn-sm fs-5 mb-2">
-                                    <i class="bi bi-pencil-square"></i>
-                                </button>
+                                    <button type="submit" class="btn btn-primary btn-sm fs-5 mb-2" data-bs-toggle="modal" data-bs-target="#editar" data-bs-tipo="<?= $class['tipo']; ?>">
+                                        <i class="bi bi-pencil-square"></i>
+                                    </button>
 
-                                <button type="submit" class="btn btn-danger btn-sm fs-5 mb-2">
-                                    <i class="bi bi-trash3"></i>
-                                </button>
-                            </td>
+                                    <button type="submit" class="btn btn-danger btn-sm fs-5 mb-2">
+                                        <i class="bi bi-trash3"></i>
+                                    </button>
+                                </td>
                             </tr>
+                        <?php } ?>
                         </tbody>
-                    <?php } ?>
                 </table>
             </div>
             <!-- Tabela de Tarjas -->
