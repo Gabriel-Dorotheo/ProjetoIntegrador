@@ -15,7 +15,7 @@ class Lote{
 
 
  public function Cadastrar(){
-    $sql = "INSERT INTO lote(cod_lote, id_produto, id_fornecedor, validade, quantidade, observacao) VALUE(?,?,?,?)";
+    $sql = "INSERT INTO lote(cod_lote, id_produto, id_fornecedor, validade, quantidade, observacao) VALUE(?,?,?,?,?,?)";
     //Trabalhar com o banco:
     //Conectando:
     $banco = Banco :: conectar();

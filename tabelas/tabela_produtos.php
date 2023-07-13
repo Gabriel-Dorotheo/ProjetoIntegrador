@@ -2,7 +2,6 @@
     <table class="table">
         <thead>
             <tr>
-                <th scope="col">#</th>
                 <th scope="col">Nome</th>
                 <th scope="col">Classificação</th>
                 <th scope="col">Tipo</th>
@@ -13,9 +12,6 @@
         <tbody class="table-group-divider">
             <?php foreach ($tabela as $produto) { ?>
                 <tr>
-                    <td>
-                        <?= $produto['id'] ?>
-                    </td>
                     <td>
                         <?= $produto['nome'] ?>
                     </td>
@@ -29,7 +25,7 @@
                         <?= $produto['nome_fornecedor'] ?>
                     </td>
                     <td>
-                        <button type="submit" class="btn btn-primary btn-sm fs-5 mb-2" data-bs-toggle="modal" data-bs-target="#editar" data-bs-nome="<?= $produto['nome']; ?>" data-bs-classificacao="<?= $produto['tipo_classificacao']; ?>" data-bs-fornecedor="<?= $produto['nome_fornecedor']; ?>" data-bs-tipo="<?= $produto['tipo_classe_terapeutica']; ?>">
+                        <button type="submit" class="btn btn-primary btn-sm fs-5 mb-2" data-bs-toggle="modal" data-bs-target="#editar" data-bs-id="<?= $produto['id']; ?>" data-bs-nome="<?= $produto['nome']; ?>" data-bs-classe="<?= $produto['tipo_classificacao']; ?>" data-bs-fornecedor="<?= $produto['nome_fornecedor']; ?>" data-bs-tipo="<?= $produto['tipo_classe_terapeutica']; ?>">
                             <i class="bi bi-pencil-square"></i>
                         </button>
 
@@ -41,8 +37,6 @@
 
                     </td>
                 </tr>
-
-
             <?php } ?>
         </tbody>
     </table>

@@ -13,7 +13,7 @@ $p->tipo = $_POST['tipo'];
 
 $p->Cadastrar();
 
-header('Location: ../produtos.php');
+header('Location: ../produtos.php?msg=10');
 exit();
 
 }else{

@@ -7,6 +7,12 @@ $msg = [
     "Produto cadastrado com sucesso!",
     "Produto excluido com sucesso",
     "Produto atualizado com sucesso",
+    "Lote cadastrado com sucesso!",
+    "Lote excluido com sucesso!",
+    "Classe alterada com sucesso!",
+    "Tarja alterada com sucesso!",
+    "Classe cadastrada com sucesso!",
+    "Tarja cadastrada com sucesso!",
 ];
 
 $erro = [
@@ -131,6 +137,22 @@ $alertaConta = [
                 if (willDelete) {
                     // Redirecionar para o apagar:
                     window.location.href = "actions/deletar_usuario.php?id=" + id;
+                }
+            });
+    }
+    function confirmarLote(id) {
+        // alert('Você clicou em apagar '+id);
+        swal({
+                title: "Atenção",
+                text: "Tem certeza que deseja apagar este lote?",
+                icon: "warning",
+                buttons: ["Não", "Sim"],
+                dangerMode: true,
+            })
+            .then((willDelete) => {
+                if (willDelete) {
+                    // Redirecionar para o apagar:
+                    window.location.href = "actions/deletar_lote.php?id=" + id;
                 }
             });
     }

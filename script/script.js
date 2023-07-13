@@ -12,7 +12,8 @@ $(document).ready(function() {
     $('#usuario_telefone').mask('(00) 0 0000-0000');
     $('#edtTelefone').mask('(00) 0 0000-0000');
 });
-
+var dateControl = document.querySelector('input[type="date"]');
+dateControl.value = '01-06-2017';
 //mask contato fornecedor
 $(document).ready(function() {
     $('#id_telefone').mask('(00) 0 0000-0000');
@@ -25,15 +26,40 @@ if (exampleModal) {
         // Button that triggered the modal
         const button = event.relatedTarget
         // Extract info from data-bs-* attributes
+        const id = button.getAttribute('data-bs-id')
         const nome = button.getAttribute('data-bs-nome');
-        const usuario_email = button.getAttribute('data-bs-email');
-        const id_nivel = button.getAttribute('data-bs-nivel');
-        const usuario_telefone = button.getAttribute('data-bs-telefone');
-
+        
+        exampleModal.querySelector('#edtId').value = id;
         exampleModal.querySelector('#edtNome').value = nome;
-        exampleModal.querySelector('#edtEmail').value = usuario_email;
-        exampleModal.querySelector('#edtNivel').value = id_nivel;
-        exampleModal.querySelector('#edtTelefone').value = usuario_telefone;
+
+    })
+}
+const modalClasseTerapeutica = document.getElementById('editarClasse');
+if (modalClasseTerapeutica) {
+    modalClasseTerapeutica.addEventListener('show.bs.modal', event => {
+        // Button that triggered the modal
+        const button = event.relatedTarget
+        // Extract info from data-bs-* attributes
+        const id = button.getAttribute('data-bs-id')
+        const classe = button.getAttribute('data-bs-tipo');
+        
+        modalClasseTerapeutica.querySelector('#edtIdClasse').value = id;
+        modalClasseTerapeutica.querySelector('#edtClasse').value = classe;
+
+    })
+}
+const modalTarja = document.getElementById('editarTarja');
+if (modalTarja) {
+    modalTarja.addEventListener('show.bs.modal', event => {
+        // Button that triggered the modal
+        const button = event.relatedTarget
+        // Extract info from data-bs-* attributes
+        const id = button.getAttribute('data-bs-idTarja')
+        const tarja = button.getAttribute('data-bs-tarja');
+        
+        modalTarja.querySelector('#edtIdTarja').value = id;
+        modalTarja.querySelector('#edtTarja').value = tarja;
+
     })
 }
 
@@ -59,22 +85,22 @@ $("#btnTrocar3").click(function () {
 //menu lateral da página de produtos de produtos
 $("#gerenciar").click(function(){
     $(".gerenciarTabela").fadeIn();
-    $(".adicionarProduto, .fornecedores, .tarja").hide();
+    $(".adicionarProduto, .fornecedores, .tarja, .lote").hide();
 });
 
 $("#adicionarPr").click(function(){
     $(".adicionarProduto").fadeIn();
-    $(".gerenciarTabela, .fornecedores, .tarja").hide();
+    $(".gerenciarTabela, .fornecedores, .tarja, .lote").hide();
 });
 
 $("#fornecedor").click(function(){
     $(".fornecedores").fadeIn();
-    $(".gerenciarTabela, .adicionarProduto, .tarja").hide();
+    $(".gerenciarTabela, .adicionarProduto, .tarja, .lote").hide();
 });
 
 $("#classe_tarja").click(function(){
     $(".tarja").fadeIn();
-    $(".fornecedores, .gerenciarTabela, .adicionarProduto").hide();
+    $(".fornecedores, .gerenciarTabela, .adicionarProduto, .lote").hide();
 });
 $("#lote").click(function(){
     $(".lote").fadeIn();

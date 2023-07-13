@@ -16,23 +16,23 @@
 
                         </tr>
                     </thead>
-                    <tbody class="text-center">
-                        <?php foreach ($nm_fornecedor as $f) { ?>
+                    <?php foreach ($nm_fornecedor as $f) { ?>
+                        <tbody class="text-center">
                             <tr>
                                 <th scope="row"><?= $f['id'] ?></th>
                                 <td><?= $f['nome'] ?></td>
                                 <td><?= $f['razao_social'] ?></td>
                                 <td><?= $f['cnpj'] ?></td>
-                                <td><?= $f['email'] ?></td>
-                                <td><?= $f['telefone'] ?></td>
+                                <td><?= $f['id_email'] ?></td>
+                                <td><?= $f['id_telefone'] ?></td>
                                 <td>
 
-                                <button type="submit" class="btn btn-primary btn-sm fs-5 me-3">
+                                <button type="submit" class="btn btn-primary btn-sm fs-5 me-3 mb-2">
                                     <i class="bi bi-pencil-square">
                                     </i>
                                 </button>
                                     <a href="actions/deletar_fornecedor.php?id=<?= $f['id'] ?>" onclick="confirmar(<?= $f['id']; ?>); return false;">
-                                        <button type="submit" class="btn btn-danger btn-sm fs-5 mb-2">
+                                        <button type="submit" class="btn btn-danger btn-sm fs-5 me-3 mb-2">
                                             <i class="bi bi-trash3"></i>
                                         </button>
                                     </a>

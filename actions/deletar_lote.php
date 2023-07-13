@@ -1,14 +1,14 @@
 <?php 
 if(isset($_GET['id'])){
-    require_once("../classes/Usuario.class.php");
+    require_once("../classes/Lote.class.php");
     
-    $c = new Usuario();
+    $lot = new Lote();
     
-    $c->id = $_GET['id'];
+    $lot->id = $_GET['id'];
     
-    if ($c->Deletar() == 1){
+    if ($lot->Deletar() == 1){
             
-        header("Location: ../usuario.php");
+        header("Location: ../produtos.php?msg=7");
         exit();
         
     }else{

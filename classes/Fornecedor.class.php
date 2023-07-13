@@ -22,10 +22,6 @@ class Fornecedor
     } 
     
 
-
-
-
-
     public function Cadastrar()
     {
         $sql = "INSERT INTO fornecedor(nome, razao_social, cnpj, id_email, id_telefone) VALUE(?,?,?,?,?)";
@@ -45,7 +41,7 @@ class Fornecedor
         //Copiei do listar
 
         $banco = Banco::conectar();
-        $sql = "SELECT * FROM view_fornecedor";
+        $sql = "SELECT * FROM fornecedor";
         $comando = $banco->prepare($sql);
 
         $comando->execute();
@@ -96,3 +92,4 @@ class Fornecedor
 
   
 }
+?>

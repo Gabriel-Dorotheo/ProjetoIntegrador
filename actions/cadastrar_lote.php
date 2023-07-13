@@ -4,29 +4,21 @@
         // Importar a classe:
         require_once('../classes/Lote.class.php');
         // Instanciar um obj do tipo contato:
-        $u = new Lote();
+        $l = new Lote();
         // Definir os valores das suas propriedades:
-        $u->cod_lote = $_POST['cod_lote'];
-        $u->id_produto = $_POST['id_produto'];
-        $u->id_fornecedor = $_POST['id_fornecedor'];
-        $u->validade = $_POST['validade'];
-        $u->quantidade = $_POST['quantidade'];
-        $u->observacao = $_POST['observacao'];
+        $l->cod_lote = $_POST['cod_lote'];
+        $l->id_produto = $_POST['id_produto'];
+        $l->id_fornecedor = $_POST['id_fornecedor'];
+        $l->validade = $_POST['validade'];
+        $l->quantidade = $_POST['quantidade'];
+        $l->observacao = $_POST['observacao'];
 
 
-
-
-        try{
-        $u->Cadastrar();
+        $l->Cadastrar();
         // echo "cadastrado com sucesso!";
         // Redirecionar o jovem de volta:
-        header('Location: ../usuario.php');
+        header('Location: ../produtos.php?msg=6');
         exit();
-        }catch(PDOException $e){
-            header('Location: ../formularios/cadastrar_contato?erro=2');
-            exit();
-        
-        }
     }else{
         echo "Erro";
     }

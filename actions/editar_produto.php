@@ -4,24 +4,23 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     require_once('../classes/Produtos.class.php');
 
     $u = new Produtos();
-    
+    $u->id = $_POST['id'];
     $u->nome = $_POST['nome'];
     $u->id_classificacao = $_POST['id_classificacao'];
     $u->id_fornecedor = $_POST['id_fornecedor'];
-    //$u->descricao = $_POST['descricao'];
     $u->id_tipo = $_POST['id_tipo'];
-    //$u->nota_fiscal = $_POST['nota_fiscal'];
-    $u->id = $_POST['id'];
+  
 
 
     if ($u->Atualizar() == 1) {
 
         //Colocar por onde ira mandar o usuario após a att
 
-        header('Location: ../produtos.php');
+        header('Location: ../produtos.php?msg=5');
         
     } else {
        echo "Falha ao modificar.";
+       var_dump($_POST);
     }
 } else {
     echo "Erro <br>";

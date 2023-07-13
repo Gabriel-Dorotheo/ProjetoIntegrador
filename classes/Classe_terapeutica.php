@@ -47,4 +47,15 @@ class Classe_terapeutica
         // Retornar quantidade de linhas apagadas:
         return $comando->rowCount();
     }
+    public function Atualizar()
+    {
+        $banco = Banco::conectar();
+        $sql = "UPDATE classe_terapeutica SET tipo = ? WHERE id=?";
+        $banco->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        $comando = $banco->prepare($sql);
+        $comando->execute(array($this->tipo, $this->id));
+        Banco::desconectar();
+        // Retornar quantidade de linhas apagadas:
+        return $comando->rowCount();
+    }
 }

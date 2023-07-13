@@ -1,6 +1,8 @@
 <?php
 require_once('classes/Produtos.class.php');
 
+$pdt = new Produtos();
+$listProduto = $pdt->Listar();
 
 // $tabela = $p->ListarTudo();
 // Numero total de registros no banco de dados 
@@ -80,15 +82,15 @@ $listarClasse = $classeTerapeutica->Listar();
                             <div class="list-group mt-5">
                                 <button type="button" class="btn btn-sm btn-primary fw-semibold mb-3 mt-3" id="gerenciar">Gerenciar
                                     Produtos</button>
-                                    <button class="btn btn-sm btn-success dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                        <i class="bi bi-plus-circle"></i> Adicionar
-                                    </button>
-                                    <ul class="dropdown-menu">
-                                        <li><a class="dropdown-item" href="#" id="adicionarPr">Produto</a></li>
-                                        <li><a class="dropdown-item" href="#" id="fornecedor">Fornecedor</a></li>
-                                        <li><a class="dropdown-item" href="#" id="classe_tarja">Classe Terapêutica / Tarja</a></li>
-                                        <li><a class="dropdown-item" href="#" id="lote">Lote</a></li>
-                                    </ul>
+                                <button class="btn btn-sm btn-success dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <i class="bi bi-plus-circle"></i> Adicionar
+                                </button>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="#" id="adicionarPr">Produto</a></li>
+                                    <li><a class="dropdown-item" href="#" id="fornecedor">Fornecedor</a></li>
+                                    <li><a class="dropdown-item" href="#" id="classe_tarja">Classe Terapêutica / Tarja</a></li>
+                                    <li><a class="dropdown-item" href="#" id="lote">Lote</a></li>
+                                </ul>
                             </div>
                         </div>
                         <!-- Tabela de produtos -->
@@ -96,8 +98,6 @@ $listarClasse = $classeTerapeutica->Listar();
                             <!-- Tabela Gerenciamento de produtos -->
                             <?php require_once('tabelas/tabela_produtos.php') ?>
                         </div>
-
-
                         <!-- Formulário de produtos -->
                         <div class="adicionarProduto col-10 mb-5" style="display:none;">
                             <?php require_once('formularios/form_cadastrar_produto.php') ?>
@@ -116,13 +116,12 @@ $listarClasse = $classeTerapeutica->Listar();
                         <!-- Formulario Lote -->
                         <div class="lote col-10 mb-5" style="display:none">
                             <?php require_once('formularios/form_cadastrar_lote.php') ?>
-                            <?php require_once('tabelas/tabela_lote.php') ?>                            
+                            <?php require_once('tabelas/tabela_lote.php') ?>
                         </div>
-                    
+
                     </div>
 
                 </div>
-                <!-- rodapé -->
                 <!-- rodapé -->
                 <?php require_once('components/rodape.php') ?>
             </div>
@@ -140,20 +139,20 @@ $listarClasse = $classeTerapeutica->Listar();
                 </div>
                 <div class="modal-body">
                     <form class="row g-3" action="actions/editar_produto.php" method="POST">
-                    <div class="col-md-2">
+                        <div class="col-md-2">
                             <label for="id" class="form-label">#</label>
-                            <input value="<?=$produto["id"] ?>" type="id" class="form-control" name="id" id="edtId">
+                            <input value="text" type="text" class="form-control fw-semibold" name="id" id="edtId" readonly>
                         </div>
                         <div class="col-md-12">
-                            <label for= "nome" class="form-label">Nome</label>
-                            <input value="<?=$produto["nome"] ?>" type="text" class="form-control" name="nome" id="edtNome">
+                            <label for="nome" class="form-label">Nome</label>
+                            <input type="text" class="form-control" name="nome" id="edtNome">
                         </div>
                         <div class="col-12">
                             <label for="tipo_classificacao" class="form-label">Classificação</label>
                             <div class="input-group mb-3">
-                                <select class="custom-select" id="edtClassificacao" name="id_classificacao">
-                                    <?php foreach ($valor as $produto) { ?>
-                                        <option> <?=$produto["id"] ?> <?= $produto['tipo'] ?></option>
+                                <select class="custom-select" id="edtClasse" name="id_classificacao">
+                                    <?php foreach ($valor as $classifica) { ?>
+                                        <option> <?= $classifica["id"] ?> - <?= $classifica['tipo'] ?></option>
                                     <?php } ?>
                                 </select>
                             </div>
@@ -161,9 +160,9 @@ $listarClasse = $classeTerapeutica->Listar();
                         <div class="col-12">
                             <label for="tipo" class="form-label">Tipo</label>
                             <div class="input-group mb-3">
-                                <select class="custom-select" id="edtTipo" name="id_tipo">
-                                    <?php foreach ($listarClasse as $produto) { ?>
-                                        <option><?=$produto["id"] ?> <?= $produto['tipo'] ?></option>
+                                <select class="custom-select" id="edtTipo" name="id_tipo" required>
+                                    <?php foreach ($listarClasse as $tipo) { ?>
+                                        <option><?= $tipo["id"] ?> - <?= $tipo['tipo'] ?></option>
                                     <?php } ?>
                                 </select>
                             </div>
@@ -171,9 +170,9 @@ $listarClasse = $classeTerapeutica->Listar();
                         <div class="col-12">
                             <label for="nome_fornecedor" class="form-label">Fornecedor</label>
                             <div class="input-group mb-3">
-                                <select class="custom-select" id="edtFornecedor" name="id_fornecedor">
-                                    <?php foreach ($nm_fornecedor as $produto) { ?>
-                                        <option> <?=$produto["id"] ?> <?= $produto['nome'] ?></option>
+                                <select class="custom-select" value="id_fornecedor" id="edtFornecedor" name="id_fornecedor">
+                                    <?php foreach ($nm_fornecedor as $nm_forn) { ?>
+                                        <option> <?= $nm_forn["id"] ?> - <?= $nm_forn['nome'] ?></option>
                                     <?php } ?>
                                 </select>
                             </div>

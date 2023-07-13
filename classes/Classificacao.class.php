@@ -44,7 +44,20 @@ class Classificacao{
      
             return $resultado;
         }
+
+        
+    public function Atualizar()
+    {
+        $banco = Banco::conectar();
+        $sql = "UPDATE classificacao SET tipo = ? WHERE id=?";
+        $banco->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        $comando = $banco->prepare($sql);
+        $comando->execute(array($this->tipo, $this->id));
+        Banco::desconectar();
+        // Retornar quantidade de linhas apagadas:
+        return $comando->rowCount();
     }
+}
 
     
     
