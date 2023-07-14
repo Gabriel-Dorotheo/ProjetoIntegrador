@@ -25,8 +25,8 @@ $tipo = $t->Listar();
             <!-- Formulário de Classe Terapêutica -->
             <form action="actions/cadastrar_classe_terapeutica.php" method="POST">
                 <div class="col-md-12">
-                    <label for="tipo" class="form-label fw-bolder">Classe</label>
-                    <input type="text" class="form-control" name="tipo" id="tipo" placeholder="Classe Terapêutica" required>
+                    <label for="tipo" class="form-label fw-bolder">Classe Terapêutica</label>
+                    <input type="text" class="form-control" name="tipo" id="tipo" required>
                     <input type="submit" class="btn btn-success fw-semibold mt-3 mb-5 mx-auto" value="Adicionar">
                 </div>
             </form>

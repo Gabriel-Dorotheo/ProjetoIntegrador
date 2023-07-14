@@ -24,7 +24,7 @@
                         <a class="nav-link fw-semibold text-white" href="produtos.php"><i class="bi bi-prescription2"></i> Produtos</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link fw-semibold text-white" href="estoque.php"><i class="bi bi-boxes"></i> Estoque</a>
+                        <a class="nav-link fw-semibold text-white" href="#"><i class="bi bi-boxes"></i> Estoque</a>
                     </li>
                     
                 </ul>

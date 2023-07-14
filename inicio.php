@@ -7,9 +7,9 @@ if (!isset($_SESSION['dados'])) {
     exit();
 }
 
-require_once('classes/Usuario.class.php');
-$usuario = new Usuario;
-$resultado = $usuario->Listar();
+require_once('classes/Produtos.class.php');
+$produto = new Produtos;
+$resultado = $produto->Listar();
 ?>
 <!doctype html>
 <html lang="en">
@@ -133,14 +133,14 @@ $resultado = $usuario->Listar();
                                                             </tr>
                                                         </thead>
                                                         <tbody class="table-group-divider">
-                                                            <?php foreach ($resultado as $usuario) { ?>
+                                                            <?php foreach ($resultado as $produtos) { ?>
 
                                                                 <tr>
                                                                     <td>
-                                                                        <?= $usuario['id'] ?>
+                                                                        <?= $produtos['id'] ?>
                                                                     </td>
                                                                     <td>
-                                                                        <?= $usuario['nome'] ?>
+                                                                        <?= $produtos['nome'] ?>
                                                                     </td>
                                                                     <td>
                                                                         <div class="progress" role="progressbar" aria-label="success example" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">
@@ -169,14 +169,14 @@ $resultado = $usuario->Listar();
                                                             </tr>
                                                         </thead>
                                                         <tbody class="table-group-divider">
-                                                            <?php foreach ($resultado as $usuario) { ?>
+                                                            <?php foreach ($resultado as $produtos) { ?>
 
                                                                 <tr>
                                                                     <td>
-                                                                        <?= $usuario['id'] ?>
+                                                                        <?= $produtos['id'] ?>
                                                                     </td>
                                                                     <td>
-                                                                        <?= $usuario['nome'] ?>
+                                                                        <?= $produtos['nome'] ?>
                                                                     </td>
                                                                     <td>
                                                                         <div class="progress" role="progressbar" aria-label="primary example" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">
@@ -205,14 +205,14 @@ $resultado = $usuario->Listar();
                                                             </tr>
                                                         </thead>
                                                         <tbody class="table-group-divider">
-                                                            <?php foreach ($resultado as $usuario) { ?>
+                                                            <?php foreach ($resultado as $produtos) { ?>
 
                                                                 <tr>
                                                                     <td>
-                                                                        <?= $usuario['id'] ?>
+                                                                        <?= $produtos['id'] ?>
                                                                     </td>
                                                                     <td>
-                                                                        <?= $usuario['nome'] ?>
+                                                                        <?= $produtos['nome'] ?>
                                                                     </td>
                                                                     <td>
                                                                         <div class="progress" role="progressbar" aria-label="danger example" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">

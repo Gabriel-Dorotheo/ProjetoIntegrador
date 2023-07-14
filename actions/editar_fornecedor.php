@@ -12,7 +12,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'and isset($_SESSION['dados'])) {
         $u->telefone = $_POST['telefone'];
         $u->Atualizar();
         //O usuario é redirecionado para a página anterior
-        header('Location: ../produtos.php');
+        header('Location: ../produtos.php?msg=14');
 } else {
     echo "Erro <br>";
     //Redirecionar o usuario para angum lugar

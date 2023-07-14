@@ -19,6 +19,9 @@ $msg = [
     "Tarja alterada com sucesso!",
     "Classe cadastrada com sucesso!",
     "Tarja cadastrada com sucesso!",
+    "Lote atualizado com sucesso!",
+    "Usuário e/ou senha inválidos!.",
+    "Fornecedor atualizado com sucesso!."
 ];
 
 $erro = [

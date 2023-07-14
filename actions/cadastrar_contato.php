@@ -19,7 +19,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $u->Inserir();
     echo "Contato cadastrado com sucesso!";
     //redireciona o jovem de volta à agenda;
-    header('Location: ../usuario.php');
+    header('Location: ../usuario.php?msg=0');
     exit();
 }else{
     echo "Erro";

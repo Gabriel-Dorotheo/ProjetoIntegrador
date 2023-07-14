@@ -16,14 +16,10 @@ $p->quantidade = $_POST['quantidade'];
 
 if($p->Atualizar() == 1){
 
-    header('Location: ../produtos.php');
-}else{
-    echo "Falha ao modificar.";
-}
+    header('Location: ../produtos.php?msg=12');
 }else{
     echo "Erro <br>";
     echo "<a href=\"../admin/painel.php\">Voltar</a>";
 }
 
-
-?>
+}

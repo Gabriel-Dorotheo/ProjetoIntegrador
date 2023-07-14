@@ -57,22 +57,22 @@ $resultado = $usuario->Listar();
             <div class="row center">
               <div class="col">
                 <!-- Informações do item Avisos -->
-                <div class="avisos m-5 p-0 fs-5">
+                <div class="m-5 p-0 fs-5">
                   <h3>Como Cadastrar Classes e Tarjas</h3>
                   <img src="img/Cadastrarclasse.png" alt="TutorialClasseETarja">
                 </div>
-                <br>
-                <div class="avisos m-5 p-0 fs-5">
+                  <hr>
+                <div class="m-5 p-0 fs-5">
                   <h3>Como cadastrar um Fornecedor</h3>
                   <img src="img/cadastroFornecedor.png" alt="TutorialFornecedor">
                 </div>
-                <br>
-                <div class="avisos m-5 p-0 fs-5">
+                <hr>
+                <div class="m-5 p-0 fs-5">
                   <h3>Como cadastrar um Lote</h3>
                   <img src="img/cadastrarLote.png" alt="TutorialLote">
                 </div>
-                <br>
-                <div class="avisos m-5 p-0 fs-5">
+                <hr>
+                <div class="m-5 p-0 fs-5">
                   <h3>Como cadastrar um Produto</h3>
                   <img src="img/cadastrarProduto.png" alt="TutorialFornecedor">
                 </div>

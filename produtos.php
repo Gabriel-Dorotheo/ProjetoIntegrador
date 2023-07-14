@@ -90,7 +90,7 @@ $listarClasse = $classeTerapeutica->Listar();
                         <!-- Menu Lateral -->
                         <div class="col-md-2">
                             <button class="btn btn-outline-secondary mt-5" type="button" data-bs-toggle="collapse" data-bs-target="#collapsePontos" aria-expanded="false" aria-controls="collapseExample">
-                                <i class="bi bi-three-dots-vertical"></i>
+                                <i class="bi bi-three-dots-vertical"> Menu</i>
                             </button>
                             <div class="collapse" id="collapsePontos">
                                 <div class="list-group">

@@ -1,18 +1,14 @@
 <?php 
-session_start();
-if($_SERVER['REQUEST_METHOD'] == 'POST' and isset($_SESSION['dados'])){
+
 if(isset($_GET['id'])){
     require_once("../classes/Fornecedor.class.php");
     $f = new Fornecedor();
     $f->id = $_GET['id'];
     
-    if ($f->Deletar() == 1){
+    $f->Deletar();
         header("Location: ../produtos.php?alertaFornecedor=0");
         exit();
         
-    }else{
-        echo "ID não encontrado!";
-    }
 } else{
     echo "Defina o ID do item a ser apagado!";
-}}
+}

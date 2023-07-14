@@ -21,8 +21,7 @@ if(count($resultado) == 1){
 
 }else{
     // echo "Usuario ou senha inválidos!";
-    header('Location: ../index.php');
-
+    header('Location: ../index.php?msg=13');
     exit();
 }
 

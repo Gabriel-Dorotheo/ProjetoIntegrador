@@ -24,22 +24,10 @@
                                 <td><?= $f['email'] ?></td>
                                 <td><?= $f['telefone'] ?></td>
                                 <td>
-
-                                    <button type="submit" class="btn btn-primary btn-sm fs-5 me-3 mb-2" data-bs-toggle="modal" data-bs-target="#editarFornecedor" 
-                                    data-bs-idFornecedor="<?= $f['id'] ?>"
-                                    data-bs-nomeFornecedor="<?= $f['nome']?>"
-                                    data-bs-emailFornecedor="<?= $f['email'] ?>"
-                                    data-bs-telefoneFornecedor="<?= $f['telefone'] ?>"
-                                    data-bs-razaoFornecedor="<?= $f['razao_social'] ?>"
-                                    data-bs-cnpjFornecedor="<?= $f['cnpj']?>";>
-                                        
-                                     <i class="bi bi-pencil-square"></i>
-
-                                    </button>
-                                    <a href="actions/deletar_fornecedor.php?id=<?= $f['id'] ?>" onclick="confirmar(<?= $f['id']; ?>); return false;">
-                                        <button type="submit" class="btn btn-danger btn-sm fs-5 me-3 mb-2">
-                                            <i class="bi bi-trash3 fs-4"></i>
-                                        </button>
+                                    <a href="#"><i class="bi bi-pencil-square me-3 mb-2 fs-4" data-bs-toggle="modal" data-bs-target="#editarFornecedor" data-bs-idFornecedor="<?= $f['id'] ?>" data-bs-nomeFornecedor="<?= $f['nome'] ?>" data-bs-emailFornecedor="<?= $f['email'] ?>" data-bs-telefoneFornecedor="<?= $f['telefone'] ?>" data-bs-razaoFornecedor="<?= $f['razao_social'] ?>" data-bs-cnpjFornecedor="<?= $f['cnpj'] ?>" ;></i>
+                                    </a>
+                                    <a href="#">
+                                        <i class="bi bi-trash3 fs-4 me-3 mb-2"></i>
                                     </a>
                                 </td>
                             </tr>
