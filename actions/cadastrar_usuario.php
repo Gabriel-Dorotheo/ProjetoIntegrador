@@ -1,4 +1,6 @@
 <?php
+session_start();
+if($_SERVER['REQUEST_METHOD'] == 'POST' and isset($_SESSION['dados'])){
 //importar a classe Contato.class.php
 require_once('../classes/Usuario.class.php');
 
@@ -21,4 +23,4 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     exit();
 }else{
     echo "Erro";
-}
+}}

@@ -11,12 +11,14 @@ $("#btnMudar2").click(function () {
 $(document).ready(function() {
     $('#usuario_telefone').mask('(00) 0 0000-0000');
     $('#edtTelefone').mask('(00) 0 0000-0000');
+    $('.fone').mask('(00) 0 0000-0000');
 });
 
 //mask contato fornecedor
 $(document).ready(function() {
     $('#id_telefone').mask('(00) 0 0000-0000');
-    $('#cnpj').mask('00.000.000/0000-00', {reverse: true});;
+    $('#cnpj').mask('00.000.000/0000-00', {reverse: true});
+    $('.cnp').mask('00.000.000/0000-00', {reverse: true});
 });
 
 const exampleModal = document.getElementById('editar');
@@ -54,6 +56,29 @@ if (modalUsuario) {
         modalUsuario.querySelector('#edtFoneUser').value = fone;
     });
 }
+
+const modalFornecedor = document.getElementById('editarFornecedor');
+if (modalFornecedor) {
+    modalFornecedor.addEventListener('show.bs.modal', event => {
+        // Button that triggered the modal
+        const button = event.relatedTarget;
+        // Extract info from data-bs-* attributes
+        const id = button.getAttribute('data-bs-idFornecedor');
+        const nome = button.getAttribute('data-bs-nomeFornecedor');
+        const razao = button.getAttribute('data-bs-razaoFornecedor');
+        const cnpj = button.getAttribute('data-bs-cnpjFornecedor');
+        const telefone = button.getAttribute('data-bs-telefoneFornecedor');
+        const email = button.getAttribute('data-bs-emailFornecedor');
+        
+        modalFornecedor.querySelector('#edtIdFornecedor').value = id;
+        modalFornecedor.querySelector('#edtNomeFornecedor').value = nome;
+        modalFornecedor.querySelector('#edtRazaoFornecedor').value = razao;
+        modalFornecedor.querySelector('#edtCnpjFornecedor').value = cnpj;
+        modalFornecedor.querySelector('#edtTelefoneFornecedor').value = telefone;
+        modalFornecedor.querySelector('#edtEmailFornecedor').value = email;
+    });
+}
+
 const modalClasseTerapeutica = document.getElementById('editarClasse');
 if (modalClasseTerapeutica) {
     modalClasseTerapeutica.addEventListener('show.bs.modal', event => {
@@ -79,6 +104,26 @@ if (modalTarja) {
         
         modalTarja.querySelector('#edtIdTarja').value = id;
         modalTarja.querySelector('#edtTarja').value = tarja;
+
+    })
+}
+const modalLote = document.getElementById('editarLote');
+if (modalLote) {
+    modalLote.addEventListener('show.bs.modal', event => {
+        // Button that triggered the modal
+        const button = event.relatedTarget
+        // Extract info from data-bs-* attributes
+        const id = button.getAttribute('data-bs-id')
+        const codigo = button.getAttribute('data-bs-cod');
+        const produto = button.getAttribute('data-bs-produto');
+        const validade = button.getAttribute('data-bs-validade');
+        const qnt = button.getAttribute('data-bs-qnt');
+        
+        modalLote.querySelector('#edtIdLote').value = id;
+        modalLote.querySelector('#edtLote').value = codigo;
+        modalLote.querySelector('#edtProduto').value = produto;
+        modalLote.querySelector('#edtValidade').value = validade;
+        modalLote.querySelector('#edtQnt').value = qnt;
 
     })
 }

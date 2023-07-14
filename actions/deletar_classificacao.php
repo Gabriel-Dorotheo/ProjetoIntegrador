@@ -1,4 +1,6 @@
 <?php 
+session_start();
+if($_SERVER['REQUEST_METHOD'] == 'POST' and isset($_SESSION['dados'])){
 if(isset($_GET['id'])){
     require_once("../classes/Classificacao.class.php");
     $f = new Classificacao();
@@ -13,4 +15,4 @@ if(isset($_GET['id'])){
     }
 } else{
     echo "Defina o ID do item a ser apagado!";
-}
+}}

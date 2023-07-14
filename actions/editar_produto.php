@@ -1,6 +1,7 @@
 <?php
 
-if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+session_start();
+if($_SERVER['REQUEST_METHOD'] == 'POST' and isset($_SESSION['dados'])){
     require_once('../classes/Produtos.class.php');
 
     $u = new Produtos();

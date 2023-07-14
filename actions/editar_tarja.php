@@ -1,6 +1,6 @@
 <?php
-
-if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+session_start();
+if($_SERVER['REQUEST_METHOD'] == 'POST' and isset($_SESSION['dados'])){
     require_once('../classes/Classificacao.class.php');
 
     $c = new Classificacao();

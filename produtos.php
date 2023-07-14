@@ -1,4 +1,14 @@
 <?php
+
+session_start();
+// Verificar se a sessão não existe;
+if (!isset($_SESSION['dados'])) {
+    // Se usuario não logado, redirecionar para o login;
+    header("location: index.php");
+    exit();
+}
+
+
 require_once('classes/Produtos.class.php');
 
 $pdt = new Produtos();
@@ -80,7 +90,7 @@ $listarClasse = $classeTerapeutica->Listar();
                         <!-- Menu Lateral -->
                         <div class="col-md-2">
                             <button class="btn btn-outline-secondary mt-5" type="button" data-bs-toggle="collapse" data-bs-target="#collapsePontos" aria-expanded="false" aria-controls="collapseExample">
-                            <i class="bi bi-three-dots-vertical"></i>
+                                <i class="bi bi-three-dots-vertical"></i>
                             </button>
                             <div class="collapse" id="collapsePontos">
                                 <div class="list-group">
@@ -90,8 +100,8 @@ $listarClasse = $classeTerapeutica->Listar();
                                             <li><a class="dropdown-item" href="#" id="classe_tarja">Classe Terapêutica / Tarja</a></li>
                                             <li><a class="dropdown-item" href="#" id="fornecedor">Fornecedor</a></li>
                                             <li><a class="dropdown-item" href="#" id="lote">Lote</a></li>
-                                            <li><a class="dropdown-item" href="#" id="adicionarPr">Produto</a></li>                                          
-                                                                                        
+                                            <li><a class="dropdown-item" href="#" id="adicionarPr">Produto</a></li>
+
                                         </ul>
                                     </button>
                                     <button type="button" class="btn btn-sm btn-primary fw-semibold mb-3 mt-3" id="gerenciar">Gerenciar
@@ -125,9 +135,7 @@ $listarClasse = $classeTerapeutica->Listar();
                             <?php require_once('formularios/form_cadastrar_lote.php') ?>
                             <?php require_once('tabelas/tabela_lote.php') ?>
                         </div>
-
                     </div>
-
                 </div>
                 <!-- rodapé -->
                 <?php require_once('components/rodape.php') ?>

@@ -1,11 +1,11 @@
 <?php
-
 require_once('../classes/Usuario.class.php');
 $c = new Usuario();
 $c->usuario_email = $_POST['nome'];
 $c->senha = $_POST['senha'];
 
 $resultado = $c->Logar();
+
 // print_r($resultado);
 // Verificar se existem linhas no resultado:
 
@@ -20,10 +20,9 @@ if(count($resultado) == 1){
     exit();
 
 }else{
-
     // echo "Usuario ou senha inválidos!";
-    header('Location: ../index.php?errouser=0');
-    
+    header('Location: ../index.php');
+
     exit();
 }
 

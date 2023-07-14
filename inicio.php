@@ -1,4 +1,12 @@
 <?php
+session_start();
+// Verificar se a sessão não existe;
+if (!isset($_SESSION['dados'])) {
+    // Se usuario não logado, redirecionar para o login;
+    header("location: index.php");
+    exit();
+}
+
 require_once('classes/Usuario.class.php');
 $usuario = new Usuario;
 $resultado = $usuario->Listar();
@@ -39,11 +47,11 @@ $resultado = $usuario->Listar();
                     <div class="container mt-5 mb-5 border rounded-2 shadow bg-body-secondary rounded mx-auto">
                         <div class="row">
                             <div class="col fs-5 mt-5 d-flex justify-content-evenly">
-                                <button type="button" class="btn btn-danger btn-lg" id="btnMudar1" disabled><i class="bi bi-bell-fill"></i>
+                                <button type="button" class="btn btn-danger btn-lg" id="btnMudar1"><i class="bi bi-bell-fill"></i>
                                     Avisos
                                 </button>
 
-                                <button type="button" class="btn btn-info btn-lg" id="btnMudar2" disabled><i class="bi bi-bar-chart-fill"></i>
+                                <button type="button" class="btn btn-info btn-lg" id="btnMudar2"><i class="bi bi-bar-chart-fill"></i>
                                     Gráficos
                                 </button>
                             </div>

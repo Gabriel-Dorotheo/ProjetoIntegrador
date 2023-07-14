@@ -1,4 +1,10 @@
 <?php
+// Verificar se a sessão não existe;
+if (!isset($_SESSION['dados'])) {
+    // Se usuario não logado, redirecionar para o login;
+    header("location: index.php");
+    exit();
+}
 
 $msg = [
     "Cadastro realizado com sucesso!",

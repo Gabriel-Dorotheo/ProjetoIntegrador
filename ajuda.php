@@ -1,8 +1,20 @@
+<?php
+session_start();
+// Verificar se a sessão não existe;
+if (!isset($_SESSION['dados'])) {
+  // Se usuario não logado, redirecionar para o login;
+  header("location: index.php");
+  exit();
+}
+
+require_once('classes/Usuario.class.php');
+$usuario = new Usuario;
+$resultado = $usuario->Listar();
+?>
 <!doctype html>
 <html lang="pt-br">
 
 <head>
-
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Ajuda | Pharma Flow</title>
@@ -19,6 +31,13 @@
 </head>
 
 <body>
+
+<style>
+  div.center{
+    text-align:center;
+  }
+</style>
+
   <div class="container-fluid overflow-x-hidden p-0 m-0" style="min-height: 100vh;">
 
     <div class="row bg-transparent">
@@ -26,56 +45,51 @@
         <?php require_once('components/menu.php'); ?>
       </div>
 
+
       <!-- Menu -->
       <div class="row mx-auto">
         <div class="col">
-          <div class="h1 text-center text-white m-4 sombra-texto">Manual</div>
+          <div class="h1 text-center text-white m-4 sombra-texto">Ajuda</div>
           <div class="container mt-5 mb-5 border rounded-2 shadow bg-body-secondary rounded mx-auto">
-          </div>
-
-          <div class="container">
             <div class="row">
-              <div class="col d-flex flex-wrap justify-content-evenly m-3">
-                <button class="border-0 mb-3 bg-transparent text-light">Gerenciamento de produtos | Cadastro de produto</button>
-                <button class="border-0 mb-3 bg-transparent text-light">Cadastro de fornecedor</button>
-                <button class="border-0 mb-3 bg-transparent text-light">Cadastro de lote</button>
-                <button class="border-0 mb-3 bg-transparent text-light">Cadastro Classes | Tarjas</button>
-                <button class="border-0 mb-3 bg-transparent text-light">Gerenciamento de contas</button>
-              </div>
             </div>
-            <div class="row mt-5">
+
+            <div class="row center">
               <div class="col">
-                <div id="carouselExample" class="carousel slide">
-                  <div class="carousel-inner">
-                    <div class="carousel-item active">
-                      <img src="img/" class="d-block w-100"  alt="...">
-                    </div>
-                    <div class="carousel-item">
-                      <img src="..." class="d-block w-100" alt="...">
-                    </div>
-                    <div class="carousel-item">
-                      <img src="..." class="d-block w-100" alt="...">
-                    </div>
-                  </div>
-                  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Previous</span>
-                  </button>
-                  <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Next</span>
-                  </button>
+                <!-- Informações do item Avisos -->
+                <div class="avisos m-5 p-0 fs-5">
+                  <h3>Como Cadastrar Classes e Tarjas</h3>
+                  <img src="img/Cadastrarclasse.png" alt="TutorialClasseETarja">
+                </div>
+                <br>
+                <div class="avisos m-5 p-0 fs-5">
+                  <h3>Como cadastrar um Fornecedor</h3>
+                  <img src="img/cadastroFornecedor.png" alt="TutorialFornecedor">
+                </div>
+                <br>
+                <div class="avisos m-5 p-0 fs-5">
+                  <h3>Como cadastrar um Lote</h3>
+                  <img src="img/cadastrarLote.png" alt="TutorialLote">
+                </div>
+                <br>
+                <div class="avisos m-5 p-0 fs-5">
+                  <h3>Como cadastrar um Produto</h3>
+                  <img src="img/cadastrarProduto.png" alt="TutorialFornecedor">
                 </div>
               </div>
-
             </div>
           </div>
+        </div>
+      </div>
+      <!-- rodapé -->
+      <?php require_once('components/rodape.php') ?>
+    </div>
 
-          <!-- Bootstrap -->
-          <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+    <!-- Bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
 
-          <!-- Jquery -->
-          <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js" integrity="sha512-pumBsjNRGGqkPzKHndZMaAG+bir374sORyzM3uulLV14lN5LyykqNk8eEeUlUkB3U0M4FApyaHraT65ihJhDpQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-          <script src="script/script.js"></script>
+    <!-- Jquery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js" integrity="sha512-pumBsjNRGGqkPzKHndZMaAG+bir374sORyzM3uulLV14lN5LyykqNk8eEeUlUkB3U0M4FApyaHraT65ihJhDpQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="script/script.js"></script>
 
 </html>

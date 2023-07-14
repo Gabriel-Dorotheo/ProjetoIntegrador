@@ -16,10 +16,8 @@
                             <tr>
                                 <td scope="row"><?= $class['tipo'] ?></td>
                                 <td>
-                                    <button type="submit" class="btn btn-primary btn-sm fs-5 mb-2" data-bs-toggle="modal" data-bs-target="#editarClasse" data-bs-id="<?= $class['id']; ?>" data-bs-tipo="<?= $class['tipo']; ?>">                                      
-                                    <i class="bi bi-pencil-square"></i>
-                                    </button>
-
+                                    <a href="#"><i class="bi bi-pencil-square fs-4 me-3" data-bs-toggle="modal" data-bs-target="#editarClasse" data-bs-id="<?= $class['id']; ?>" data-bs-tipo="<?= $class['tipo']; ?>"></i>
+                                    </a>
                                 </td>
                             </tr>
                         <?php } ?>
@@ -41,7 +39,7 @@
                             <tr>
                                 <td scope="row"><?= $tarja['tipo'] ?></td>
                                 <td>
-                                    <button type="submit" class="btn btn-primary btn-sm fs-5" data-bs-toggle="modal" data-bs-target="#editarTarja" data-bs-idTarja="<?= $tarja['id']; ?>" data-bs-tarja="<?= $tarja['tipo']; ?>"><i class="bi bi-pencil-square"></i></button>
+                                    <a href="#"><i class="bi bi-pencil-square fs-4" data-bs-toggle="modal" data-bs-target="#editarTarja" data-bs-idTarja="<?= $tarja['id']; ?>" data-bs-tarja="<?= $tarja['tipo']; ?>"></i></a>
                                 </td>
                             </tr>
                         </tbody>

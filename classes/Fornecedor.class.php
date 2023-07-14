@@ -10,28 +10,18 @@ class Fornecedor
     public $id_telefone;
     public $email;
     public $telefone;
-
-    public function ObterIDEmail(){
-
-        $sql = "SELECT MAX(id) from email;";
-        $banco = Banco::conectar();
-        //Transformar a string em comando sql:
-        $comando = $banco->prepare($sql);
-        $id_email = $comando->fetchAll(PDO::FETCH_ASSOC);
-        
-    } 
     
 
     public function Cadastrar()
     {
-        $sql = "INSERT INTO fornecedor(nome, razao_social, cnpj, id_email, id_telefone) VALUE(?,?,?,?,?)";
+        $sql = "INSERT INTO fornecedor(nome, razao_social, cnpj, email, telefone) VALUE(?,?,?,?,?)";
         //Trabalhar com o banco:
         //Conectando:
         $banco = Banco::conectar();
         //Transformar a string em comando sql:
         $comando = $banco->prepare($sql);
         //Executar e substituit os corngas (?):
-        $comando->execute(array($this->nome, $this->razao_social, $this->cnpj, $this->id_email, $this->id_telefone));
+        $comando->execute(array($this->nome, $this->razao_social, $this->cnpj, $this->email, $this->telefone));
         //Desconectar do banco:
         Banco::desconectar();
     }
@@ -39,17 +29,13 @@ class Fornecedor
     public function Listar()
     {
         //Copiei do listar
-
         $banco = Banco::conectar();
         $sql = "SELECT * FROM fornecedor";
         $comando = $banco->prepare($sql);
-
         $comando->execute();
         // "Salvar" o resultado da consulta (tabela) na $resultado
         $resultado = $comando->fetchAll(PDO::FETCH_ASSOC);
-
         Banco::desconectar();
-
         return $resultado;
     }
 
@@ -67,10 +53,10 @@ class Fornecedor
 
     public function Atualizar(){
         $banco = Banco::conectar();
-        $sql = "UPDATE fornecedor SET nome = ?, razao_social = ?, cnpj=? WHERE id=?";
+        $sql = "UPDATE fornecedor SET nome = ?, razao_social = ?, cnpj= ?, email= ?, telefone= ? WHERE id= ?";
         $banco->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         $comando = $banco->prepare($sql);
-        $comando->execute(array($this->nome,$this->razao_social,$this->cnpj));
+        $comando->execute(array($this->nome,$this->razao_social,$this->cnpj,$this->email,$this->telefone,$this->id));
         Banco::desconectar();
         // Retornar quantidade de linhas apagadas:
         return $comando->rowCount();
@@ -83,13 +69,9 @@ class Fornecedor
         $comando->execute(array($this->id));
         // "Salvar" o resultado da consulta (tabela) na $resultado
         $resultado = $comando->fetchAll(PDO::FETCH_ASSOC);
-  
         Banco::desconectar();
-  
         return $resultado;
     }
-
-
   
 }
 ?>

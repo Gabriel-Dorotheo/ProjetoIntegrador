@@ -1,5 +1,5 @@
 <?php
- 
+
 class Banco
 {
     private static $dbNome = 'pharma2';

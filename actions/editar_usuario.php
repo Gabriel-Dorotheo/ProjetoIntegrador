@@ -1,6 +1,6 @@
 <?php
 session_start();
-if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+if($_SERVER['REQUEST_METHOD'] == 'POST' and isset($_SESSION['dados'])){
     require_once('../classes/Usuario.class.php');
 
     $u = new Usuario();

@@ -12,12 +12,11 @@ $p->id_produto = $_POST['id_produto'];
 $p->id_fornecedor = $_POST['id_fornecedor'];
 $p->validade= $_POST['validade'];
 $p->quantidade = $_POST['quantidade'];
-$p->observacao = $_POST['observacao'];
 
 
 if($p->Atualizar() == 1){
 
-    header('Location: ../.php');
+    header('Location: ../formularios/form_cadastrar_lote.php');
 }else{
     echo "Falha ao modificar.";
 }
