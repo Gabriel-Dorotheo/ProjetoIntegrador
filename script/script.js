@@ -20,6 +20,27 @@ $(document).ready(function() {
     $('#cnpj').mask('00.000.000/0000-00', {reverse: true});
     $('.cnp').mask('00.000.000/0000-00', {reverse: true});
 });
+const modalLote = document.getElementById('editarLote');
+if (modalLote) {
+    modalLote.addEventListener('show.bs.modal', event => {
+        // Button that triggered the modal
+        const button = event.relatedTarget
+        // Extract info from data-bs-* attributes
+        const id = button.getAttribute('data-bs-idLote');
+        const codigo = button.getAttribute('data-bs-codLote');
+        const fornece = button.getAttribute('data-bs-fornece');
+        const produto = button.getAttribute('data-bs-produtoLote');
+        const validade = button.getAttribute('data-bs-validadeLote');
+        const qnt = button.getAttribute('data-bs-qntLote');
+        
+        modalLote.querySelector('#edtIdLote').value = id;
+        modalLote.querySelector('#edtLote').value = codigo;
+        modalLote.querySelector('#edtFornece').value = fornece;
+        modalLote.querySelector('#edtProduto').value = produto;
+        modalLote.querySelector('#edtValidade').value = validade;
+        modalLote.querySelector('#edtQnt').value = qnt;
+    })
+}
 
 const exampleModal = document.getElementById('editar');
 if (exampleModal) {
@@ -104,26 +125,6 @@ if (modalTarja) {
         
         modalTarja.querySelector('#edtIdTarja').value = id;
         modalTarja.querySelector('#edtTarja').value = tarja;
-
-    })
-}
-const modalLote = document.getElementById('editarLote');
-if (modalLote) {
-    modalLote.addEventListener('show.bs.modal', event => {
-        // Button that triggered the modal
-        const button = event.relatedTarget
-        // Extract info from data-bs-* attributes
-        const id = button.getAttribute('data-bs-id')
-        const codigo = button.getAttribute('data-bs-cod');
-        const produto = button.getAttribute('data-bs-produto');
-        const validade = button.getAttribute('data-bs-validade');
-        const qnt = button.getAttribute('data-bs-qnt');
-        
-        modalLote.querySelector('#edtIdLote').value = id;
-        modalLote.querySelector('#edtLote').value = codigo;
-        modalLote.querySelector('#edtProduto').value = produto;
-        modalLote.querySelector('#edtValidade').value = validade;
-        modalLote.querySelector('#edtQnt').value = qnt;
 
     })
 }

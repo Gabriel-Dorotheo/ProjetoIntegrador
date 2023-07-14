@@ -16,7 +16,7 @@ $p->quantidade = $_POST['quantidade'];
 
 if($p->Atualizar() == 1){
 
-    header('Location: ../formularios/form_cadastrar_lote.php');
+    header('Location: ../produtos.php');
 }else{
     echo "Falha ao modificar.";
 }

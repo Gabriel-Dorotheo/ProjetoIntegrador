@@ -31,9 +31,7 @@
                                     data-bs-emailFornecedor="<?= $f['email'] ?>"
                                     data-bs-telefoneFornecedor="<?= $f['telefone'] ?>"
                                     data-bs-razaoFornecedor="<?= $f['razao_social'] ?>"
-                                    data-bs-cnpjFornecedor="<?= $f['cnpj']?>"
-
-                                     ;>
+                                    data-bs-cnpjFornecedor="<?= $f['cnpj']?>";>
                                         
                                      <i class="bi bi-pencil-square"></i>
 

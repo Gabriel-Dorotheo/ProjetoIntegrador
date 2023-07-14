@@ -60,7 +60,7 @@ class Lote{
       $sql = "UPDATE lote SET cod_lote = ?, id_fornecedor = ?, validade=?, quantidade=? WHERE id=?";
       $banco->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
       $comando = $banco->prepare($sql);
-      $comando->execute(array($this->cod_lote,$this->id_fornecedor,$this->validade,$this->quantidade));
+      $comando->execute(array($this->cod_lote,$this->id_fornecedor,$this->validade,$this->quantidade,$this->id));
       Banco::desconectar();
       // Retornar quantidade de linhas apagadas:
       return $comando->rowCount();
