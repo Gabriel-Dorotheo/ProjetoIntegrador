@@ -22,7 +22,7 @@
                          <th scope="col">Código</th>
                          <th scope="col">Produto</th>
                          <th scope="col">Validade (Ano/Mes/Dia)</th>
-                         <th scope="col">Quantidade</th>
+                         <th scope="col">Quantidade (g)</th>
                          <th scope="col">Editar</th>
                      </tr>
                  </thead>
@@ -34,8 +34,8 @@
                              <td><?= $l['validade'] ?></td>
                              <td><?= $l['quantidade'] ?></td>
                              <td>
-                                 <a href="#" style="text-decoration: none;"><i class="bi bi-pencil-square fs-4 me-3" data-bs-toggle="modal" data-bs-target="#editarLote" data-bs-idLote="<?= $l['id'] ?>" data-bs-codLote="<?= $l['cod_lote'] ?>" data-bs-fornece="<?= $l['id_fornecedor'] ?>" data-bs-produtoLote="<?= $l['produtos']?>" data-bs-validadeLote="<?= $l['validade'] ?>" data-bs-qntLote="<?= $l['quantidade'] ?>">
-                                 </i></a>
+                                 <a href="#" style="text-decoration: none;"><i class="bi bi-pencil-square fs-4 me-3" data-bs-toggle="modal" data-bs-target="#editarLote" data-bs-idLote="<?= $l['id'] ?>" data-bs-codLote="<?= $l['cod_lote'] ?>" data-bs-fornece="<?= $l['id_fornecedor'] ?>" data-bs-produtoLote="<?= $l['id_produto'] ?>" data-bs-validadeLote="<?= $l['validade'] ?>" data-bs-qntLote="<?= $l['quantidade'] ?>">
+                                     </i></a>
 
                                  <a href="#" onclick="confirmarLote(<?= $l['id']; ?>); return false;">
                                      <i class="bi bi-trash3 fs-4"></i>
@@ -55,7 +55,7 @@
      <div class="modal-dialog">
          <div class="modal-content">
              <div class="modal-header">
-                 <h1 class="modal-title fs-5" id="staticBackdropLabel">Editar</h1>
+                 <h1 class="modal-title fs-5" id="staticBackdropLabel">Editar Lote</h1>
                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
              </div>
              <div class="modal-body">
@@ -71,9 +71,9 @@
                      <div class="col-12">
                          <label for="edtProduto" class="form-label">Produto</label>
                          <div class="input-group mb-3">
-                             <select class="custom-select" id="edtProduto" name="id_produto" style="min-width:100px; width:200px; max-width: 350px;" required>
+                             <select class="form-select" id="edtProduto" name="id_produto" required>
                                  <?php foreach ($nm_produto as $nmproduto) { ?>
-                                     <option><?= $nmproduto['nome'] ?></option>
+                                    <option value="<?= $nmproduto['id'] ?>"><?= $nmproduto['nome'] ?></option>
                                  <?php } ?>
                              </select>
                          </div>
@@ -81,7 +81,7 @@
                      <div class="col-12">
                          <label for="edtFornece" class="form-label">Fornecedor</label>
                          <div class="input-group mb-3">
-                             <select class="custom-select" id="edtFornece" name="id_fornecedor" style="min-width:100px; width:200px; max-width: 350px;" required>
+                             <select class="form-select" id="edtFornece" name="id_fornecedor" required>
                                  <?php foreach ($listar_fornecedor as $nome_fornecedor) { ?>
                                      <option value="<?= $nome_fornecedor['id'] ?>"><?= $nome_fornecedor['nome'] ?></option>
                                  <?php } ?>

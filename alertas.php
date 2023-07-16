@@ -11,8 +11,8 @@ $msg = [
     "Cadastro excluido com sucesso!",
     "Cadastro atualizado com sucesso!",
     "Produto cadastrado com sucesso!",
-    "Produto excluido com sucesso",
-    "Produto atualizado com sucesso",
+    "Produto excluido com sucesso!",
+    "Produto atualizado com sucesso!",
     "Lote cadastrado com sucesso!",
     "Lote excluido com sucesso!",
     "Classe alterada com sucesso!",
@@ -21,7 +21,9 @@ $msg = [
     "Tarja cadastrada com sucesso!",
     "Lote atualizado com sucesso!",
     "Usuário e/ou senha inválidos!.",
-    "Fornecedor atualizado com sucesso!."
+    "Fornecedor atualizado com sucesso!.",
+    "Fornecedor excluido com sucesso!",
+    "Fornecedor cadastrado com sucesso!",
 ];
 
 $erro = [
@@ -162,6 +164,22 @@ $alertaConta = [
                 if (willDelete) {
                     // Redirecionar para o apagar:
                     window.location.href = "actions/deletar_lote.php?id=" + id;
+                }
+            });
+    }
+    function confirmarFornecedor(id) {
+        // alert('Você clicou em apagar '+id);
+        swal({
+                title: "Atenção",
+                text: "Excluir este fornecedor irá remover todos os produtos relacionado a ele. Tem certeza que deseja apagar este fornecedor?",
+                icon: "warning",
+                buttons: ["Não", "Sim"],
+                dangerMode: true,
+            })
+            .then((willDelete) => {
+                if (willDelete) {
+                    // Redirecionar para o apagar:
+                    window.location.href = "actions/deletar_fornecedor.php?id=" + id;
                 }
             });
     }

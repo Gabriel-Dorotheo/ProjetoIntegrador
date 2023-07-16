@@ -105,128 +105,51 @@ $resultado = $produto->Listar();
                                     </p>
                                 </div>
                             </div>
-                            <!-- Tabela de cada classe terapêuticas -->
+                            <!-- Tabela de cada classe terapêutica -->
                             <div class="grafico">
                                 <div class="row">
                                     <div class="col d-flex flex-wrap justify-content-evenly m-3">
-                                        <button class="border-0 mb-3 bg-transparent text-start" id="btnTrocar1">Antibióticos</button>
-                                        <button class="border-0 mb-3 bg-transparent text-start" id="btnTrocar2">Probióticos</button>
-                                        <button class="border-0 mb-3 bg-transparent text-start" id="btnTrocar3">Antialérgicos</button>
-                                        <button class="border-0 mb-3 bg-transparent text-start">Antidepressivos</button>
-                                        <button class="border-0 mb-3 bg-transparent text-start">Anti-inflamatórios</button>
+                                        <button class="border-0 mb-3 bg-transparent text-start">Classe terapêutica</button>
                                     </div>
                                 </div>
                                 <!-- Linha e Coluna que serão exibidas as tabelas -->
                                 <div class="row">
                                     <div class="col ms-5 mb-5 me-5">
                                         <!-- Conteudo Item 1 -->
-                                        <div class="antibioticos">
-                                            <div class="card card-body">
-                                                <div class="h2 text-center mb-5 mt-3">Antibióticos</div>
-                                                <div class="table-responsive ms-5 me-5">
-                                                    <table class="table">
-                                                        <thead>
+                                        <div class="card card-body">
+                                            <div class="h2 text-center mb-5 mt-3">Antibióticos</div>
+                                            <div class="table-responsive ms-5 me-5">
+                                                <table class="table">
+                                                    <thead>
+                                                        <tr>
+                                                            <th scope="col">#</th>
+                                                            <th scope="col">Nome</th>
+                                                            <th scope="col">Quantidade</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody class="table-group-divider">
+                                                        <?php foreach ($resultado as $produtos) { ?>
+
                                                             <tr>
-                                                                <th scope="col">#</th>
-                                                                <th scope="col">Nome</th>
-                                                                <th scope="col">Quantidade</th>
+                                                                <td>
+                                                                    <?= $produtos['id'] ?>
+                                                                </td>
+                                                                <td>
+                                                                    <?= $produtos['nome'] ?>
+                                                                </td>
+                                                                <td>
+                                                                    <div class="progress" role="progressbar" aria-label="success example" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">
+                                                                        <div class="progress-bar bg-success" style="width: 100%">100%</div>
+                                                                    </div>
+                                                                </td>
                                                             </tr>
-                                                        </thead>
-                                                        <tbody class="table-group-divider">
-                                                            <?php foreach ($resultado as $produtos) { ?>
+                                                        <?php } ?>
 
-                                                                <tr>
-                                                                    <td>
-                                                                        <?= $produtos['id'] ?>
-                                                                    </td>
-                                                                    <td>
-                                                                        <?= $produtos['nome'] ?>
-                                                                    </td>
-                                                                    <td>
-                                                                        <div class="progress" role="progressbar" aria-label="success example" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">
-                                                                            <div class="progress-bar bg-success" style="width: 100%">100%</div>
-                                                                        </div>
-                                                                    </td>
-                                                                </tr>
-                                                            <?php } ?>
-
-                                                        </tbody>
-                                                    </table>
-                                                </div>
+                                                    </tbody>
+                                                </table>
                                             </div>
                                         </div>
-                                        <!-- Conteudo Item 2  -->
-                                        <div class="probioticos" style="display: none">
-                                            <div class="card card-body">
-                                                <div class="h2 text-center mb-5 mt-3">Probióticos</div>
-                                                <div class="table-responsive ms-5 me-5">
-                                                    <table class="table">
-                                                        <thead>
-                                                            <tr>
-                                                                <th scope="col">#</th>
-                                                                <th scope="col">Nome</th>
-                                                                <th scope="col">Quantidade</th>
-                                                            </tr>
-                                                        </thead>
-                                                        <tbody class="table-group-divider">
-                                                            <?php foreach ($resultado as $produtos) { ?>
 
-                                                                <tr>
-                                                                    <td>
-                                                                        <?= $produtos['id'] ?>
-                                                                    </td>
-                                                                    <td>
-                                                                        <?= $produtos['nome'] ?>
-                                                                    </td>
-                                                                    <td>
-                                                                        <div class="progress" role="progressbar" aria-label="primary example" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">
-                                                                            <div class="progress-bar bg-primary" style="width: 100%">100%</div>
-                                                                        </div>
-                                                                    </td>
-                                                                </tr>
-                                                            <?php } ?>
-
-                                                        </tbody>
-                                                    </table>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <!--Conteudo Item 3  -->
-                                        <div class="antialergicos" style="display: none">
-                                            <div class="card card-body">
-                                                <div class="h2 text-center mb-5 mt-3">Antialérgicos</div>
-                                                <div class="table-responsive ms-5 me-5">
-                                                    <table class="table">
-                                                        <thead>
-                                                            <tr>
-                                                                <th scope="col">#</th>
-                                                                <th scope="col">Nome</th>
-                                                                <th scope="col">Quantidade</th>
-                                                            </tr>
-                                                        </thead>
-                                                        <tbody class="table-group-divider">
-                                                            <?php foreach ($resultado as $produtos) { ?>
-
-                                                                <tr>
-                                                                    <td>
-                                                                        <?= $produtos['id'] ?>
-                                                                    </td>
-                                                                    <td>
-                                                                        <?= $produtos['nome'] ?>
-                                                                    </td>
-                                                                    <td>
-                                                                        <div class="progress" role="progressbar" aria-label="danger example" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">
-                                                                            <div class="progress-bar bg-danger" style="width: 100%">100%</div>
-                                                                        </div>
-                                                                    </td>
-                                                                </tr>
-                                                            <?php } ?>
-
-                                                        </tbody>
-                                                    </table>
-                                                </div>
-                                            </div>
-                                        </div>
                                     </div>
                                 </div>
                             </div>

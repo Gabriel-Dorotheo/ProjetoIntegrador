@@ -24,7 +24,7 @@ class Classe_terapeutica
         //Copiei do listar
 
         $banco = Banco::conectar();
-        $sql = "SELECT * FROM classe_terapeutica";
+        $sql = "SELECT * FROM classe_terapeutica ORDER BY tipo asc";
         $comando = $banco->prepare($sql);
 
         $comando->execute();

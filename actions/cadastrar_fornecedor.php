@@ -21,7 +21,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'and isset($_SESSION['dados'])) {
 
     // echo "cadastrado com sucesso!";
     // Redirecionar o jovem de volta:
-    header('Location: ../produtos.php');
+    header('Location: ../produtos.php?msg=16');
     exit();
 } else {
     echo "Erro";

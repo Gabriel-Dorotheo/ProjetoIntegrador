@@ -50,7 +50,7 @@ $lstUser = $listarUsuario->Listar();
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h1 class="modal-title fs-5" id="staticBackdropLabel">Editar</h1>
+                <h1 class="modal-title fs-5" id="staticBackdropLabel">Editar usuário</h1>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
@@ -79,7 +79,7 @@ $lstUser = $listarUsuario->Listar();
                     <div class="col-md-6">
                         <label for="edtNivelUser" class="form-label">Nível de acesso</label>
                         <div class="input-group mb-3">
-                            <select class="custom-select" id="edtNivelUser" name="id_nivel">
+                            <select class="form-select" id="edtNivelUser" name="id_nivel">
                                 <option value="1">1 - Administrador</option>
                                 <option value="2">2 - Moderador</option>
                                 <option value="3">3 - Visitante</option>

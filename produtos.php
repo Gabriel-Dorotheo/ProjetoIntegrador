@@ -19,7 +19,7 @@ $listProduto = $pdt->Listar();
 $p = new Produtos();
 $totalRegistros = $p->ObterQtdRegistro()[0]['qtd'];
 // Numero de registros exibidos por pagina 
-$registrosPorPagina = 5;
+$registrosPorPagina = 20;
 // Calcula o numero total de paginas 
 $totalPaginas = ceil($totalRegistros / $registrosPorPagina);
 // Obtem o numero da pagina atual 
@@ -88,9 +88,9 @@ $listarClasse = $classeTerapeutica->Listar();
                     <!-- Conteúdo da tabela -->
                     <div class="row">
                         <!-- Menu Lateral -->
-                        <div class="col-md-2">
-                            <button class="btn btn-outline-secondary mt-5" type="button" data-bs-toggle="collapse" data-bs-target="#collapsePontos" aria-expanded="false" aria-controls="collapseExample">
-                                <i class="bi bi-three-dots-vertical"> Menu</i>
+                        <div class="col-md-2 ">
+                            <button class="btn btn-secondary mt-5 d-flex mx-auto col-md-12 col-sm-5" type="button" data-bs-toggle="collapse" data-bs-target="#collapsePontos" aria-expanded="false" aria-controls="collapseExample">
+                            <i class="bi bi-list mx-auto"></i>
                             </button>
                             <div class="collapse" id="collapsePontos">
                                 <div class="list-group">
@@ -149,7 +149,7 @@ $listarClasse = $classeTerapeutica->Listar();
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h1 class="modal-title fs-5" id="staticBackdropLabel">Editar</h1>
+                    <h1 class="modal-title fs-5" id="staticBackdropLabel">Editar Produto</h1>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
@@ -165,7 +165,7 @@ $listarClasse = $classeTerapeutica->Listar();
                         <div class="col-12">
                             <label for="tipo_classificacao" class="form-label">Classificação</label>
                             <div class="input-group mb-3">
-                                <select class="custom-select" id="edtClasse" name="id_classificacao">
+                                <select class="form-select" id="edtClasse" name="id_classificacao">
                                     <?php foreach ($valor as $classifica) { ?>
                                         <option> <?= $classifica["id"] ?> - <?= $classifica['tipo'] ?></option>
                                     <?php } ?>
@@ -175,7 +175,7 @@ $listarClasse = $classeTerapeutica->Listar();
                         <div class="col-12">
                             <label for="tipo" class="form-label">Tipo</label>
                             <div class="input-group mb-3">
-                                <select class="custom-select" id="edtTipo" name="id_tipo" required>
+                                <select class="form-select" id="edtTipo" name="id_tipo" required>
                                     <?php foreach ($listarClasse as $tipo) { ?>
                                         <option><?= $tipo["id"] ?> - <?= $tipo['tipo'] ?></option>
                                     <?php } ?>
@@ -185,7 +185,7 @@ $listarClasse = $classeTerapeutica->Listar();
                         <div class="col-12">
                             <label for="nome_fornecedor" class="form-label">Fornecedor</label>
                             <div class="input-group mb-3">
-                                <select class="custom-select" value="id_fornecedor" id="edtFornecedor" name="id_fornecedor">
+                                <select class="form-select" value="id_fornecedor" id="edtFornecedor" name="id_fornecedor">
                                     <?php foreach ($nm_fornecedor as $nm_forn) { ?>
                                         <option> <?= $nm_forn["id"] ?> - <?= $nm_forn['nome'] ?></option>
                                     <?php } ?>

@@ -30,7 +30,7 @@ class Movimentacao{
    //Copiei do listar
 
    $banco = Banco::conectar();
-       $sql = "SELECT * FROM view_movimentacao";
+       $sql = "SELECT * FROM view_movimentacao ORDER BY nome ASC";
        $comando = $banco->prepare($sql);
 
        $comando->execute();

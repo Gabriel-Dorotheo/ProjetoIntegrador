@@ -130,24 +130,6 @@ if (modalTarja) {
 }
 
 
-//alteração das tabelas de suas respectivas classes terapeuticas
-$("#btnTrocar1").click(function () {
-    $(".antibioticos").fadeIn();
-    $(".probioticos").hide();
-    $(".antialergicos").hide();
-})
-$("#btnTrocar2").click(function () {
-    $(".probioticos").fadeIn();
-    $(".antibioticos").hide();
-    $(".antialergicos").hide();
-})
-$("#btnTrocar3").click(function () {
-    $(".antialergicos").fadeIn();
-    $(".antibioticos").hide();
-    $(".probioticos").hide();
-})
-
-
 //menu lateral da página de produtos de produtos
 $("#gerenciar").click(function(){
     $(".gerenciarTabela").fadeIn();

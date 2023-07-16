@@ -99,7 +99,7 @@ class Produtos
 
     public function ListarPag(){
         $banco = Banco::conectar();
-        $sql = "SELECT * FROM view_produtos LIMIT :inicio,:fim";
+        $sql = "SELECT * FROM view_produtos ORDER BY nome ASC LIMIT :inicio, :fim";
         $comando = $banco->prepare($sql);
         $comando->bindParam(":inicio", $this->inicio);
         $comando->bindParam(":inicio", $this->inicio, PDO::PARAM_INT);

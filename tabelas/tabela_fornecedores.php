@@ -26,7 +26,7 @@
                                 <td>
                                     <a href="#"><i class="bi bi-pencil-square me-3 mb-2 fs-4" data-bs-toggle="modal" data-bs-target="#editarFornecedor" data-bs-idFornecedor="<?= $f['id'] ?>" data-bs-nomeFornecedor="<?= $f['nome'] ?>" data-bs-emailFornecedor="<?= $f['email'] ?>" data-bs-telefoneFornecedor="<?= $f['telefone'] ?>" data-bs-razaoFornecedor="<?= $f['razao_social'] ?>" data-bs-cnpjFornecedor="<?= $f['cnpj'] ?>" ;></i>
                                     </a>
-                                    <a href="#">
+                                    <a href="#" onclick="confirmarFornecedor(<?= $f['id']; ?>)">
                                         <i class="bi bi-trash3 fs-4 me-3 mb-2"></i>
                                     </a>
                                 </td>

@@ -32,7 +32,7 @@ class Lote{
    //Copiei do listar
 
    $banco = Banco::conectar();
-       $sql = "SELECT * FROM view_lote";
+       $sql = "SELECT * FROM view_lote ORDER BY produtos asc";
        $comando = $banco->prepare($sql);
 
        $comando->execute();
@@ -57,10 +57,10 @@ class Lote{
 
   public function Atualizar(){
       $banco = Banco::conectar();
-      $sql = "UPDATE lote SET cod_lote = ?, id_fornecedor = ?, validade=?, quantidade=? WHERE id=?";
+      $sql = "UPDATE lote SET cod_lote = ?, id_produto = ?, id_fornecedor = ?, validade=?, quantidade=? WHERE id=?";
       $banco->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
       $comando = $banco->prepare($sql);
-      $comando->execute(array($this->cod_lote,$this->id_fornecedor,$this->validade,$this->quantidade,$this->id));
+      $comando->execute(array($this->cod_lote,$this->id_produto,$this->id_fornecedor,$this->validade,$this->quantidade,$this->id));
       Banco::desconectar();
       // Retornar quantidade de linhas apagadas:
       return $comando->rowCount();

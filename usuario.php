@@ -101,10 +101,8 @@ $resultado = $usuario->Listar();
                         <div class="col-12">
                             <label for="id_nivel" class="form-label">Nível de acesso</label>
                             <div class="input-group mb-3">
-                                <select class="custom-select" id="id_nivel" name="id_nivel">
-                                    <option value="1">1 - Administrador</option>
-                                    <option value="2">2 - Moderador</option>
-                                    <option value="3">3 - Visitante</option>
+                                <select class="form-select form-select" id="id_nivel" name="id_nivel">
+                                    <option value="1">Administrador</option>
                                 </select>
                             </div>
                         </div>

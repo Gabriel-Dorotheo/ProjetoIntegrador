@@ -68,7 +68,7 @@
                     </div>
                     <div class="col-md-12">
                         <label for="classe" class="form-label">Nome</label>
-                        <input type="text" class="form-control" name="nome" id="edtClasse">
+                        <input type="text" class="form-control" name="nome" id="edtClasse" required>
                     </div>
                     <div>
                         <input type="submit" class="btn btn-primary" value="Salvar">
@@ -96,7 +96,7 @@
                     </div>
                     <div class="col-md-12">
                         <label for="edtTarja" class="form-label">Nome</label>
-                        <input type="text" class="form-control" name="tipo" id="edtTarja">
+                        <input type="text" class="form-control" name="tipo" id="edtTarja" required>
                     </div>
                     <div>
                         <input type="submit" class="btn btn-primary" value="Salvar">

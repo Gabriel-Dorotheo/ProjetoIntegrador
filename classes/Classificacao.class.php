@@ -33,7 +33,7 @@ class Classificacao{
         //Copiei do listar
    
         $banco = Banco::conectar();
-            $sql = "SELECT * FROM classificacao";
+            $sql = "SELECT * FROM classificacao ORDER BY tipo asc";
             $comando = $banco->prepare($sql);
 
             $comando->execute();
