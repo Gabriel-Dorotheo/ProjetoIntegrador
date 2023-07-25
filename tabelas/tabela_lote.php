@@ -32,7 +32,7 @@
                              <th scope="row"><?= $l['cod_lote'] ?></th>
                              <td><?= $l['produtos'] ?></td>
                              <td><?= $l['validade'] ?></td>
-                             <td><?= $l['quantidade'] ?></td>
+                             <td><?= $l['quantidade'] ?>  g</td>
                              <td>
                                  <a href="#" style="text-decoration: none;"><i class="bi bi-pencil-square fs-4 me-3" data-bs-toggle="modal" data-bs-target="#editarLote" data-bs-idLote="<?= $l['id'] ?>" data-bs-codLote="<?= $l['cod_lote'] ?>" data-bs-fornece="<?= $l['id_fornecedor'] ?>" data-bs-produtoLote="<?= $l['id_produto'] ?>" data-bs-validadeLote="<?= $l['validade'] ?>" data-bs-qntLote="<?= $l['quantidade'] ?>">
                                      </i></a>

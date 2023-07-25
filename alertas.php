@@ -1,10 +1,4 @@
 <?php
-// Verificar se a sessão não existe;
-if (!isset($_SESSION['dados'])) {
-    // Se usuario não logado, redirecionar para o login;
-    header("location: index.php");
-    exit();
-}
 
 $msg = [
     "Cadastro realizado com sucesso!",
@@ -31,21 +25,8 @@ $erro = [
     "Falha ao realizar seu cadastro, verifique as informações digitadas",
     "Falha ao cadastrar produto",
     "Falha ao excluir produto",
-    "Falha ao modificar produto"
-];
-
-$errouser = [
-    "Usuário e/ou senha inválidos."
-];
-
-$alertaproduto = [
-    "ALERTA!"
-];
-$alertaFornecedor = [
-    "ALERTA"
-];
-$alertaConta = [
-    "ALERTA"
+    "Falha ao modificar produto",
+    "Falha ao cadastrar lote, código do lote já existente!"
 ];
 ?>
 
@@ -58,7 +39,7 @@ $alertaConta = [
 
 <script>
     <?php if (isset($_GET['erro'])) {  ?>
-        swal("Erro!", "<?= $errouser[$_GET['erro']]; ?>", "error");
+        swal("Erro!", "<?= $erro[$_GET['erro']]; ?>", "error");
         // Remover o parametro da url:
         window.history.replaceState(null, null, window.location.pathname);
     <?php } ?>

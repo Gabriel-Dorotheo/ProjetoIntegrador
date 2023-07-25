@@ -11,6 +11,10 @@ if (!isset($_SESSION['dados'])) {
 require_once('classes/Usuario.class.php');
 $usuario = new Usuario;
 $resultado = $usuario->Listar();
+
+require_once('classes/Lote.class.php');
+$listarLote = new Lote();
+$lote = $listarLote->Listar();
 ?>
 <!doctype html>
 <html lang="pt-br">
@@ -32,6 +36,8 @@ $resultado = $usuario->Listar();
     <link href="https://unpkg.com/tabulator-tables/dist/css/tabulator.min.css" rel="stylesheet">
     <link rel="shortcut icon" href="img/pilulas.png" type="image/x-icon">
 
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.5/css/jquery.dataTables.min.css">
 </head>
 
 <body>
@@ -51,7 +57,7 @@ $resultado = $usuario->Listar();
                 <div class="titulo text-center m-5 sombra-texto text-white">
                     <h1 class="h1">Gerenciamento de Estoque</h1>
                 </div>
-                <div class="container mt-5 mb-5 border rounded-2 shadow bg-body-secondary rounded vh-100">
+                <div class="container mt-5 mb-5 border rounded-2 shadow bg-body-secondary rounded">
 
                     <div class="row">
                         <?php require_once('tabelas/tabela_estoque.php') ?>
@@ -71,5 +77,24 @@ $resultado = $usuario->Listar();
 
     <!-- Meu Javascript -->
     <script src="script/script.js"></script>
+
+    <!-- DataTables Requires -->
+    <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+    <script src="https://cdn.datatables.net/1.13.5/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.13.5/js/dataTables.jqueryui.min.js"></script>
+    <script>
+        new DataTable('#example', {
+            language: {
+                "info": "Mostrando página _PAGE_ de _PAGES_",
+                "infoEmpty": "Nenhum registro disponível",
+                "sInfoPostFix": "",
+                "sInfoThousands": ".",
+                "sLoadingRecords": "Carregando...",
+                "sProcessing": "Processando...",
+                "sZeroRecords": "Nenhum registro encontrado",
+                "sSearch": "Pesquisar",
+            }
+        });
+    </script>
 
 </html>
